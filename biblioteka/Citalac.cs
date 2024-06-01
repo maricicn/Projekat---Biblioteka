@@ -8,5 +8,6 @@ namespace Bibiloteka
     internal class Citalac : Osoba, ICitalac
     {
 
+
     }
 }
