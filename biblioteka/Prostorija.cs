@@ -7,6 +7,17 @@ namespace Bibiloteka
 {
     internal class Prostorija : IProstorija
     {
+        public void Dodavanje(string ID, string oznaka, List<string> police, List<Napomena> napomena)
+        {
 
+        }
+        public void IspravljanjePodataka(int ID)
+        {
+
+        }
+        public void PromenaStatusa()
+        {
+
+        }
     }
 }
