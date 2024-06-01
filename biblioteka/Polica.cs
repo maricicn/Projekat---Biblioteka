@@ -7,6 +7,17 @@ namespace Bibiloteka
 {
     internal class Polica : IPolica
     {
+        public void Dodavanje(string ID, string oznaka, string prostorija, List<Napomena> napomena)
+        {
 
+        }
+        public void IspravljanjePodataka(int ID)
+        {
+
+        }
+        public void PromenaStatusa()
+        {
+
+        }
     }
 }
