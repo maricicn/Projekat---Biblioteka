@@ -7,32 +7,12 @@ namespace Bibiloteka
 {
     public class Covek : ICovek
     {
-        string ID;
-        string Status;
-        string Ime;
-        string Prezime;
-        string Pol;
-        int GodinaRodjenja;
-        List<string> Naponena = new List<string>();
-
-
-        public void Dodavanje(string ID, string status, string ime, string prezime, string pol, int godina_rodjenja, List<Napomena> napomena)
-        {
-
-        }
-        public void IspravljanjePodataka(int ID)
-        {
-
-        }
-        public void PromenaStatusa()
-        {
-
-        }
+        
 
         public string ID;
 
         string status;
-        string Status
+        public string Status
         {
             get 
             { 
@@ -51,7 +31,7 @@ namespace Bibiloteka
         public string Prezime;
 
         string pol;
-        string Pol
+        public string Pol
         {
             get
             {
@@ -67,7 +47,7 @@ namespace Bibiloteka
 
         }
         public int GodinaRodjenja;
-        public List<string> Naponena = new List<string>();
+        public List<string> Napomena = new List<string>();
 
         public Covek(string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena)
         {
@@ -77,8 +57,10 @@ namespace Bibiloteka
             this.Prezime = prezime;
             this.Pol = pol;
             this.GodinaRodjenja = godinarodjenja;
-            this.Naponena = napomena;
+            this.Napomena = napomena;
         }
+
+
 
         public void Dodavanje(string ID, string status, string ime, string prezime, string pol, int godina_rodjenja, List<Napomena> napomena)
         {
@@ -92,6 +74,8 @@ namespace Bibiloteka
         {
 
         }
+
+
 
     }
 }
