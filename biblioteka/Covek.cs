@@ -59,7 +59,10 @@ namespace Bibiloteka
             this.GodinaRodjenja = godinarodjenja;
             this.Napomena = napomena;
         }
+        public Covek()
+        {
 
+        }
 
 
         public void Dodavanje(string ID, string status, string ime, string prezime, string pol, int godina_rodjenja, List<Napomena> napomena)
