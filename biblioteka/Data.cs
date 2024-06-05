@@ -11,8 +11,6 @@ namespace biblioteka
     {
         public static List<Pisac> ListaPisaca = new List<Pisac>();
 
-
-
         public static void DodajPisca(Pisac p)
         {
             ListaPisaca.Add(p);
