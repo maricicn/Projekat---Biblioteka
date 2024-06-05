@@ -102,6 +102,7 @@
             this.pisac.TabIndex = 5;
             this.pisac.Text = "pisac";
             this.pisac.UseVisualStyleBackColor = true;
+            this.pisac.Click += new System.EventHandler(this.pisac_Click);
             // 
             // knjiga
             // 

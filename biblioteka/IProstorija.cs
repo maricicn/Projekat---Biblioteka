@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
-namespace Bibiloteka
+namespace biblioteka
 {
     internal interface IProstorija
     {

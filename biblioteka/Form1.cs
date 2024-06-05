@@ -12,13 +12,24 @@ using System.IO;
 
 namespace biblioteka
 {
+
+
     public partial class Form1 : Form
     {
+
 
         private List<Librarian> librarians;
         public Form1()
         {
             InitializeComponent();
+
+            Data.UcitajPisce();
+
+
+
+
+
+
             //SetCustomCursor();
             librarians = new List<Librarian>
             {
@@ -29,7 +40,6 @@ namespace biblioteka
         private void Form1_Load(object sender, EventArgs e)
         {
             
-
         }
         private void SetCustomCursor1()
         {
@@ -108,6 +118,12 @@ namespace biblioteka
         private void button1_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("username je admin, a password je admin123");
+        }
+
+        private void pisac_Click(object sender, EventArgs e)
+        {
+            FormPisac forma = new FormPisac();
+            forma.ShowDialog();
         }
     }
 }

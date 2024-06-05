@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace Bibiloteka
+namespace biblioteka
 {
     public class Osoba : Covek, IOsoba
-        
     {
         
         public string ImeJednogRoditelja;
