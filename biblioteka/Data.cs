@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Linq.Expressions;
 
 namespace biblioteka
 {
@@ -18,23 +19,30 @@ namespace biblioteka
 
         public static void UcitajPisce()
         {
-            StreamReader sr = new StreamReader("pisci.txt", true);
-            while (!sr.EndOfStream)
+            try
             {
-                string l = sr.ReadLine();
-                string[] delovi = l.Split(',');
-
-                List<string> napomene = new List<string>();
-                if (delovi.Length >= 7)
+                StreamReader sr = new StreamReader("pisci.txt", true);
+                while (!sr.EndOfStream)
                 {
-                    napomene = delovi[6].Split('$').ToList<string>();
-                }
+                    string l = sr.ReadLine();
+                    string[] delovi = l.Split(',');
 
-                Pisac p = new Pisac(delovi[0], delovi[1], delovi[2], delovi[3], delovi[4], int.Parse(delovi[5]), napomene);
-                ListaPisaca.Add(p);
+                    List<string> napomene = new List<string>();
+                    if (delovi.Length >= 7)
+                    {
+                        napomene = delovi[6].Split('$').ToList<string>();
+                    }
+
+                    Pisac p = new Pisac(delovi[0], delovi[1], delovi[2], delovi[3], delovi[4], int.Parse(delovi[5]), napomene);
+                    ListaPisaca.Add(p);
                     //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
+                }
+                sr.Close();
             }
-            sr.Close();
+            catch (Exception e)
+            {
+
+            }
         }
 
         public static void SacuvajPisce()
@@ -56,6 +64,7 @@ namespace biblioteka
 
             sw.Close();
         }
+        
 
     }
 }
