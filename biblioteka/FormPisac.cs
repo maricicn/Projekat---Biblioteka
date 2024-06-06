@@ -18,17 +18,17 @@ namespace biblioteka
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public FormPisac(Pisac p)
         {
-            List<string> napomene = new List<string>();
+            InitializeComponent();
+            cbStatusPisca.Text = p.Status;
+            txtImePisca.Text = p.Ime;
+            txtPrezimePisca.Text = p.Prezime;
+            cbPol.Text = p.Pol;
+            txtGodinaRodjenjaPisca.Text = p.GodinaRodjenja.ToString();
 
-            napomene = txtNapomenePisca.Lines.ToList<string>();
+            txtNapomenePisca.Lines = p.Napomena.ToArray();
 
-            int g = int.Parse(txtGodinaRodjenjaPisca.Text);
-            Pisac p = new Pisac((Data.ListaPisaca.Count + 1).ToString(), cbStatusPisca.Text, txtImePisca.Text, txtPrezimePisca.Text, cbPol.Text, g, napomene);
-            Data.DodajPisca(p);
-            Data.SacuvajPisce();
         }
 
         private void label1_Click(object sender, EventArgs e)

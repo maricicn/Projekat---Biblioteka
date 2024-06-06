@@ -122,7 +122,7 @@ namespace biblioteka
 
         private void pisac_Click(object sender, EventArgs e)
         {
-            FormPisac forma = new FormPisac();
+            FormaPisacEditIliUnesi forma = new FormaPisacEditIliUnesi();
             forma.ShowDialog();
         }
     }

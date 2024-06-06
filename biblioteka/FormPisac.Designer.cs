@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btDodajPisca = new System.Windows.Forms.Button();
             this.txtImePisca = new System.Windows.Forms.TextBox();
             this.txtPrezimePisca = new System.Windows.Forms.TextBox();
             this.txtGodinaRodjenjaPisca = new System.Windows.Forms.TextBox();
@@ -41,17 +40,8 @@
             this.cbPol = new System.Windows.Forms.ComboBox();
             this.lblNapomenePisca = new System.Windows.Forms.Label();
             this.txtNapomenePisca = new System.Windows.Forms.TextBox();
+            this.btOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btDodajPisca
-            // 
-            this.btDodajPisca.Location = new System.Drawing.Point(469, 125);
-            this.btDodajPisca.Name = "btDodajPisca";
-            this.btDodajPisca.Size = new System.Drawing.Size(75, 23);
-            this.btDodajPisca.TabIndex = 0;
-            this.btDodajPisca.Text = "Dodaj";
-            this.btDodajPisca.UseVisualStyleBackColor = true;
-            this.btDodajPisca.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtImePisca
             // 
@@ -154,6 +144,7 @@
             // 
             // txtNapomenePisca
             // 
+            this.txtNapomenePisca.AcceptsReturn = true;
             this.txtNapomenePisca.Location = new System.Drawing.Point(222, 215);
             this.txtNapomenePisca.Multiline = true;
             this.txtNapomenePisca.Name = "txtNapomenePisca";
@@ -161,11 +152,24 @@
             this.txtNapomenePisca.TabIndex = 13;
             this.txtNapomenePisca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btOk
+            // 
+            this.btOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btOk.Location = new System.Drawing.Point(510, 161);
+            this.btOk.Name = "btOk";
+            this.btOk.Size = new System.Drawing.Size(75, 23);
+            this.btOk.TabIndex = 14;
+            this.btOk.Text = "Ok";
+            this.btOk.UseVisualStyleBackColor = true;
+            // 
             // FormPisac
             // 
+            this.AcceptButton = this.btOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(822, 450);
+            this.Controls.Add(this.btOk);
             this.Controls.Add(this.txtNapomenePisca);
             this.Controls.Add(this.lblNapomenePisca);
             this.Controls.Add(this.cbPol);
@@ -178,7 +182,6 @@
             this.Controls.Add(this.txtGodinaRodjenjaPisca);
             this.Controls.Add(this.txtPrezimePisca);
             this.Controls.Add(this.txtImePisca);
-            this.Controls.Add(this.btDodajPisca);
             this.Name = "FormPisac";
             this.Text = "FormPisac";
             this.ResumeLayout(false);
@@ -187,19 +190,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btDodajPisca;
-        private System.Windows.Forms.TextBox txtImePisca;
-        private System.Windows.Forms.TextBox txtPrezimePisca;
-        private System.Windows.Forms.TextBox txtGodinaRodjenjaPisca;
-        private System.Windows.Forms.ComboBox cbStatusPisca;
         private System.Windows.Forms.Label lblStatusPisca;
         private System.Windows.Forms.Label lblImePisca;
         private System.Windows.Forms.Label lblPrezimePisca;
         private System.Windows.Forms.Label lblGodinaRodjenjaPisca;
         private System.Windows.Forms.Label lblPolPisca;
-        private System.Windows.Forms.ComboBox cbPol;
         private System.Windows.Forms.Label lblNapomenePisca;
-        private System.Windows.Forms.TextBox txtNapomenePisca;
+        public System.Windows.Forms.TextBox txtImePisca;
+        public System.Windows.Forms.TextBox txtPrezimePisca;
+        public System.Windows.Forms.TextBox txtGodinaRodjenjaPisca;
+        public System.Windows.Forms.ComboBox cbStatusPisca;
+        public System.Windows.Forms.ComboBox cbPol;
+        public System.Windows.Forms.TextBox txtNapomenePisca;
+        private System.Windows.Forms.Button btOk;
     }
 }

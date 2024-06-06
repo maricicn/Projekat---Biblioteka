@@ -53,10 +53,11 @@ namespace biblioteka
             {
                 Pisac p = ListaPisaca[i];
                 string n = "";
-                for (int j = 0; j < p.Napomena.Count; j++)
+                for (int j = 0; j < p.Napomena.Count-1; j++)
                 {
                     n += p.Napomena[j] + '$';
                 }
+                n += p.Napomena[p.Napomena.Count - 1];
 
 
                 sw.WriteLine(p.ID + "," + p.Status + "," + p.Ime + "," + p.Prezime + "," + p.Pol + "," + p.GodinaRodjenja + "," + n);

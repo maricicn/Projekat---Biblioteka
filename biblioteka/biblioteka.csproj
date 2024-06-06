@@ -63,6 +63,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaPisacEditIliUnesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPisacEditIliUnesi.Designer.cs">
+      <DependentUpon>FormaPisacEditIliUnesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPisac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Prostorija.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPisacEditIliUnesi.resx">
+      <DependentUpon>FormaPisacEditIliUnesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPisac.resx">
       <DependentUpon>FormPisac.cs</DependentUpon>

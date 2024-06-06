@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace biblioteka
 {
-    internal class Pisac : Covek, IPisac
+    public class Pisac : Covek, IPisac
     {
         public Pisac(string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena)
         {
