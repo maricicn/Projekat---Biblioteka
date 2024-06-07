@@ -19,11 +19,6 @@ namespace biblioteka
         }
 
 
-
-
-
-
-
         public static void SacuvajKnjige()
         {
             StreamWriter sw = new StreamWriter("Knjige.txt");
@@ -74,15 +69,6 @@ namespace biblioteka
             sw.Close();
         }
 
-
-    
-
-
-
-
-
-
-
         public static void UcitajKnjige()
         {
             try
@@ -106,12 +92,9 @@ namespace biblioteka
                         Pisac = delovi[delovi.Count - 3].Split('$').ToList<string>();
                     }
 
-
-                    
                     //sva izdanja, pisac, napomena;
                     Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], DateTime.Parse(delovi[14]), DateTime.Parse(delovi[15]) ,SvaIzdanja, Pisac,napomene);
                     ListaKnjiga.Add(k);
-                    //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
                 }
                 sr.Close();
             }
