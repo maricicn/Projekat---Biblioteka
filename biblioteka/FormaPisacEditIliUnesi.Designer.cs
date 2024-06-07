@@ -32,6 +32,7 @@ namespace biblioteka
             this.btDodajPisca = new System.Windows.Forms.Button();
             this.btEditPisca = new System.Windows.Forms.Button();
             this.cbPisci = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // btDodajPisca
@@ -83,5 +84,6 @@ namespace biblioteka
         private System.Windows.Forms.Button btDodajPisca;
         private System.Windows.Forms.Button btEditPisca;
         private System.Windows.Forms.ComboBox cbPisci;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

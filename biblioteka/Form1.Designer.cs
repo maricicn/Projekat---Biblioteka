@@ -112,6 +112,7 @@
             this.knjiga.TabIndex = 6;
             this.knjiga.Text = "knjiga";
             this.knjiga.UseVisualStyleBackColor = true;
+            this.knjiga.Click += new System.EventHandler(this.knjiga_Click);
             // 
             // prostorija
             // 

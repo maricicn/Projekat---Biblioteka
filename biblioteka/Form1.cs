@@ -125,5 +125,11 @@ namespace biblioteka
             FormaPisacEditIliUnesi forma = new FormaPisacEditIliUnesi();
             forma.ShowDialog();
         }
+
+        private void knjiga_Click(object sender, EventArgs e)
+        {
+            FormaKnjigaUnesiIliEdituj forma = new FormaKnjigaUnesiIliEdituj();
+            forma.ShowDialog();
+        }
     }
 }
