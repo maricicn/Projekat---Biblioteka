@@ -51,6 +51,7 @@ namespace biblioteka
             this.btEditKnjiga.TabIndex = 4;
             this.btEditKnjiga.Text = "Edituj Knjigu";
             this.btEditKnjiga.UseVisualStyleBackColor = true;
+            this.btEditKnjiga.Click += new System.EventHandler(this.btEditKnjiga_Click);
             // 
             // btDodajKnjigu
             // 

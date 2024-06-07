@@ -15,9 +15,7 @@ namespace biblioteka
         public FormaPisacEditIliUnesi()
         {
             InitializeComponent();
-
             popuniComboBox();
-
         }
 
 
@@ -46,8 +44,6 @@ namespace biblioteka
                 Data.SacuvajPisce();
                 popuniComboBox();
             }
-
-
         }
 
         private void btEditPisca_Click(object sender, EventArgs e)
