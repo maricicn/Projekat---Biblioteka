@@ -81,11 +81,23 @@
     <Compile Include="FormaPisacEditIliUnesi.Designer.cs">
       <DependentUpon>FormaPisacEditIliUnesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIzdavanjeKnjige.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzdavanjeKnjige.Designer.cs">
+      <DependentUpon>FormIzdavanjeKnjige.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPisac.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPisac.Designer.cs">
       <DependentUpon>FormPisac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVracanjeKnjige.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVracanjeKnjige.Designer.cs">
+      <DependentUpon>FormVracanjeKnjige.cs</DependentUpon>
     </Compile>
     <Compile Include="IBibliotekar.cs" />
     <Compile Include="ICitalac.cs" />
@@ -116,8 +128,14 @@
     <EmbeddedResource Include="FormaPisacEditIliUnesi.resx">
       <DependentUpon>FormaPisacEditIliUnesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIzdavanjeKnjige.resx">
+      <DependentUpon>FormIzdavanjeKnjige.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPisac.resx">
       <DependentUpon>FormPisac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVracanjeKnjige.resx">
+      <DependentUpon>FormVracanjeKnjige.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

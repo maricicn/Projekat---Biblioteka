@@ -131,5 +131,17 @@ namespace biblioteka
             FormaKnjigaUnesiIliEdituj forma = new FormaKnjigaUnesiIliEdituj();
             forma.ShowDialog();
         }
+
+        private void izdavanje_knjiga_Click(object sender, EventArgs e)
+        {
+            FormIzdavanjeKnjige izdavanje = new FormIzdavanjeKnjige();
+            izdavanje.ShowDialog();
+        }
+
+        private void vracanje_knjiga_Click(object sender, EventArgs e)
+        {
+            FormVracanjeKnjige vracanje = new FormVracanjeKnjige();
+            vracanje.ShowDialog();
+        }
     }
 }
