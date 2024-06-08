@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
+using System.Security.Policy;
 
 namespace biblioteka
 {
@@ -17,6 +19,12 @@ namespace biblioteka
     public partial class Form1 : Form
     {
 
+        Size[] sizes;
+        Point[] points;
+        Font[] fonts;
+        Padding[] paddings;
+
+        Size size;
 
         private List<Librarian> librarians;
         public Form1()
@@ -26,8 +34,21 @@ namespace biblioteka
             Data.UcitajPisce();
             Data.UcitajKnjige();
 
+            //Resizovanje
+            sizes = new Size[Controls.Count];
+            points = new Point[Controls.Count];
+            fonts = new Font[Controls.Count];
+            paddings = new Padding[Controls.Count];
 
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                sizes[i] = Controls[i].Size;
+                points[i] = Controls[i].Location;
+                fonts[i] = Controls[i].Font;
+                paddings[i] = Controls[i].Padding;
+            }
 
+            size = ClientSize;
 
 
 
@@ -154,6 +175,20 @@ namespace biblioteka
         private void prostorija_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            float ratioX = (float)ClientSize.Width / size.Width;
+            float ratioY = (float)ClientSize.Height / size.Height;
+
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                Controls[i].Location = new Point((int)(points[i].X * ratioX), (int)(points[i].Y * ratioY));
+                Controls[i].Size = new Size((int)(sizes[i].Width * ratioX), (int)(sizes[i].Height * ratioY));
+                Controls[i].Font = new Font(fonts[i].FontFamily, fonts[i].Size * ratioY);
+                Controls[i].Padding = new Padding((int)(paddings[i].Left * ratioX), (int)(paddings[i].Top * ratioY), (int)(paddings[i].Right * ratioX), (int)(paddings[i].Bottom * ratioY));
+            }
         }
     }
 }
