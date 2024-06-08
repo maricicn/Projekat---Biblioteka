@@ -193,7 +193,7 @@ namespace biblioteka
 
         private void bibliotekar_Click(object sender, EventArgs e)
         {
-            FormaBibliotekar bibliotekar = new FormaBibliotekar();
+            BibliotekarLoby bibliotekar = new BibliotekarLoby();
             bibliotekar.ShowDialog();
         }
     }

@@ -38,12 +38,23 @@ namespace biblioteka
 
         }
 
+        public string Text(List<string> lista)
+        {
+            string rez = "";
+            foreach (string s in lista)
+            {
+                rez = rez + s;
+            }
+            return rez;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //skupljanje podataka iz svih onih textboxova
             string ime = textBox1.Text;
             string prezime = textBox2.Text;
             string pol = comboBox4.SelectedItem.ToString();
+            string status = comboBox1.SelectedItem.ToString();
             int dan_rodj = Convert.ToInt32(textBox5.Text);
             int mesec_rodj = Convert.ToInt32(textBox6.Text);
             int god_rodj = Convert.ToInt32(textBox3.Text);
@@ -60,15 +71,22 @@ namespace biblioteka
             DateTime datum_zaposlenja = dateTimePicker1.Value;
             string username = textBox18.Text;
             string password = textBox19.Text;
-            string napomena = textBox4.Text;
+            List<string> napomena = textBox4.Lines.ToList();
+
+            List<string> izdate_knige = new List<string>();
+            List<string> primljene_knjige = new List<string>();
 
             //pravljenje streamwritera za fajl bibliotekari.csv
             StreamWriter pisac = new StreamWriter("Bibliotekari.csv", append: true);
             
             //upisivanje podataka u csv fajl
-            pisac.WriteLine(Convert.ToString(Bibliotekar.id) + "," + "/" + "," + ime + "," + prezime + "," + pol + "," + Convert.ToString(god_rodj) + "," + napomena + "," + ime_roditelja + "," + Convert.ToString(dan_rodj) + "," + Convert.ToString(mesec_rodj) + "," + jmbg + "," + ulica_broj + "," + grad + "," + Convert.ToString(post_broj) + "," + tel + "," + email + "," + strucna_sprema + "," + skolsko_zvanje + "," + radna_poz + "," + Convert.ToString(datum_zaposlenja) + "," + username + "," + password);
+            pisac.WriteLine(Convert.ToString(Bibliotekar.id) + "," + status + "," + ime + "," + prezime + "," + pol + "," + Convert.ToString(god_rodj) + "," + Text(napomena) + "," + ime_roditelja + "," + Convert.ToString(dan_rodj) + "," + Convert.ToString(mesec_rodj) + "," + jmbg + "," + ulica_broj + "," + grad + "," + Convert.ToString(post_broj) + "," + tel + "," + email + "," + strucna_sprema + "," + skolsko_zvanje + "," + radna_poz + "," + Convert.ToString(datum_zaposlenja) + "," + username + "," + password);
             pisac.Close();
 
+            //pravljenje objekta i dodavanje u listu
+            Bibliotekar bib = new Bibliotekar(Convert.ToString(Bibliotekar.id), status, ime, prezime, pol, god_rodj, napomena, ime_roditelja, dan_rodj, mesec_rodj, jmbg, ulica_broj, grad, post_broj, tel, email, strucna_sprema, skolsko_zvanje, radna_poz, datum_zaposlenja, username, password, izdate_knige, primljene_knjige);
+            Bibliotekar.bibliotekari.Add(bib);
+            
             //rucno povecavanje id bibliotekara
             Bibliotekar.id++;
         }
