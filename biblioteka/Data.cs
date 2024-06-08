@@ -30,69 +30,104 @@ namespace biblioteka
         }
 
 
-        public static void SacuvajKnjige()
-        {
-            StreamWriter sw = new StreamWriter("Knjige.txt.tmp");
 
+        public static Knjiga pomeranjeKnjige(int g)
+        {
+            string indeks = g.ToString();
+            Knjiga k = new Knjiga();
             for (int i = 0; i < ListaKnjiga.Count; i++)
             {
-                Knjiga k = ListaKnjiga[i];
-                string si = "";
-                string p = "";
-                string n = "";
-
-                if (k.Napomena.Count > 0)
+                if(ListaKnjiga[i].ID == indeks)
                 {
-                    for (int j = 0; j < k.Napomena.Count - 1; j++)
-                    {
-                        n += k.Napomena[j] + '$';
-                    }
-                    n += k.Napomena[k.Napomena.Count - 1];
+                    k = ListaKnjiga[i];
                 }
-                
-
-                if (k.Pisac.Count > 0)
-                {
-                    for (int j = 0; j < k.Pisac.Count - 1; j++)
-                    {
-                        p += k.Pisac[j] + '$';
-                    }
-                    p += k.Pisac[k.Pisac.Count - 1];
-                }
-                
-
-                if (k.SvaIzdavanja.Count > 0)
-                {
-                    for (int j = 0; j < k.SvaIzdavanja.Count - 1; j++)
-                    {
-                        p = k.SvaIzdavanja[j] + '$';
-                    }
-                    p = k.SvaIzdavanja[k.SvaIzdavanja.Count - 1];
-                }
-                
-
-
-                sw.WriteLine(k.ID + "," +
-                    k.Status + "," +
-                    k.Naziv + "," +
-                    k.Zanr + "," +
-                    k.RedniBrojIzdanja + "," +
-                    k.GodinaIzdavanja + "," +
-                    k.Izdavac + "," +
-                    k.ISBN + "," +
-                    k.Stanje + "," +
-                    k.Prostorija + "," +
-                    k.Polica + "," +
-                    k.UkupanBrojPrimeraka + "," +
-                    k.Citalac + "," +
-                    k.Bibliotekar + "," +
-                    k.DatumIzdavanja + "," +
-                    k.RokZaVracanje + si + "," + p + "," + n);
             }
+            return k;
+        }
 
-            sw.Close();
-            File.Delete("knjige.txt");
-            File.Move("knjige.txt.tmp", "knjige.txt");
+        public static Pisac pomeranjePisca(int g)
+        {
+            string indeks = g.ToString();
+            Pisac p = new Pisac();
+            for (int i = 0; i < ListaPisaca.Count; i++)
+            {
+                if(ListaPisaca[i].ID == indeks)
+                {
+                    p = ListaPisaca[i];
+                }
+            }
+            return p;
+        }
+
+
+        public static void SacuvajKnjige()
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter("knjige.txt");
+
+                for (int i = 0; i < ListaKnjiga.Count; i++)
+                {
+                    Knjiga k = ListaKnjiga[i];
+                    string si = "";
+                    string p = "";
+                    string n = "";
+
+                    if (k.Napomena.Count > 0)
+                    {
+                        for (int j = 0; j < k.Napomena.Count - 1; j++)
+                        {
+                            n += k.Napomena[j] + '$';
+                        }
+                        n += k.Napomena[k.Napomena.Count - 1];
+                    }
+
+
+                    if (k.Pisac.Count > 0)
+                    {
+                        for (int j = 0; j < k.Pisac.Count - 1; j++)
+                        {
+                            p += k.Pisac[j] + '$';
+                        }
+                        p += k.Pisac[k.Pisac.Count - 1];
+                    }
+
+
+                    if (k.SvaIzdavanja.Count > 0)
+                    {
+                        for (int j = 0; j < k.SvaIzdavanja.Count - 1; j++)
+                        {
+                            p = k.SvaIzdavanja[j] + '$';
+                        }
+                        p = k.SvaIzdavanja[k.SvaIzdavanja.Count - 1];
+                    }
+
+
+
+                    sw.WriteLine(k.ID + "," +
+                        k.Status + "," +
+                        k.Naziv + "," +
+                        k.Zanr + "," +
+                        k.RedniBrojIzdanja + "," +
+                        k.GodinaIzdavanja + "," +
+                        k.Izdavac + "," +
+                        k.ISBN + "," +
+                        k.Stanje + "," +
+                        k.Prostorija + "," +
+                        k.Polica + "," +
+                        k.UkupanBrojPrimeraka + "," +
+                        k.Citalac + "," +
+                        k.Bibliotekar + "," +
+                        k.DatumIzdavanja + "," +
+                        k.RokZaVracanje + si + "," + p + "," + n);
+                }
+
+                sw.Close();
+            }
+            catch (Exception e) 
+            {
+
+            }
 
         }
 

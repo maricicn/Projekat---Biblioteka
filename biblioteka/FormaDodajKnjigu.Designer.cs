@@ -66,6 +66,8 @@ namespace biblioteka
             this.clbPisci = new System.Windows.Forms.CheckedListBox();
             this.clbSvaIzdavanja = new System.Windows.Forms.CheckedListBox();
             this.btOk = new System.Windows.Forms.Button();
+            this.btLevo = new System.Windows.Forms.Button();
+            this.btDesno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -361,19 +363,10 @@ namespace biblioteka
             // clbPisci
             // 
             this.clbPisci.FormattingEnabled = true;
-            this.clbPisci.Items.AddRange(new object[] {
-            "da",
-            "da",
-            "da",
-            "da",
-            "da",
-            "ne",
-            "ne",
-            "ne"});
-            this.clbPisci.Location = new System.Drawing.Point(238, 92);
+            this.clbPisci.Location = new System.Drawing.Point(390, 53);
             this.clbPisci.Name = "clbPisci";
             this.clbPisci.ScrollAlwaysVisible = true;
-            this.clbPisci.Size = new System.Drawing.Size(123, 38);
+            this.clbPisci.Size = new System.Drawing.Size(123, 123);
             this.clbPisci.TabIndex = 46;
             // 
             // clbSvaIzdavanja
@@ -405,12 +398,34 @@ namespace biblioteka
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
+            // btLevo
+            // 
+            this.btLevo.Location = new System.Drawing.Point(524, 506);
+            this.btLevo.Name = "btLevo";
+            this.btLevo.Size = new System.Drawing.Size(75, 23);
+            this.btLevo.TabIndex = 50;
+            this.btLevo.Text = "<";
+            this.btLevo.UseVisualStyleBackColor = true;
+            this.btLevo.Click += new System.EventHandler(this.btLevo_Click);
+            // 
+            // btDesno
+            // 
+            this.btDesno.Location = new System.Drawing.Point(851, 506);
+            this.btDesno.Name = "btDesno";
+            this.btDesno.Size = new System.Drawing.Size(75, 23);
+            this.btDesno.TabIndex = 49;
+            this.btDesno.Text = ">";
+            this.btDesno.UseVisualStyleBackColor = true;
+            this.btDesno.Click += new System.EventHandler(this.btDesno_Click);
+            // 
             // FormaDodajKnjigu
             // 
             this.AcceptButton = this.btOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 643);
+            this.Controls.Add(this.btLevo);
+            this.Controls.Add(this.btDesno);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.clbSvaIzdavanja);
             this.Controls.Add(this.clbPisci);
@@ -450,6 +465,7 @@ namespace biblioteka
             this.Controls.Add(this.lblStatus);
             this.Name = "FormaDodajKnjigu";
             this.Text = "FormaDodajKnjigu";
+            this.Load += new System.EventHandler(this.FormaDodajKnjigu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,5 +510,7 @@ namespace biblioteka
         public System.Windows.Forms.CheckedListBox clbPisci;
         public System.Windows.Forms.CheckedListBox clbSvaIzdavanja;
         public System.Windows.Forms.Button btOk;
+        public System.Windows.Forms.Button btLevo;
+        public System.Windows.Forms.Button btDesno;
     }
 }
