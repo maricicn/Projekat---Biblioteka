@@ -45,5 +45,10 @@ namespace biblioteka
         {
 
         }
+
+        private void btOk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

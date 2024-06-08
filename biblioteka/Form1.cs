@@ -190,5 +190,11 @@ namespace biblioteka
                 Controls[i].Padding = new Padding((int)(paddings[i].Left * ratioX), (int)(paddings[i].Top * ratioY), (int)(paddings[i].Right * ratioX), (int)(paddings[i].Bottom * ratioY));
             }
         }
+
+        private void bibliotekar_Click(object sender, EventArgs e)
+        {
+            FormaBibliotekar bibliotekar = new FormaBibliotekar();
+            bibliotekar.ShowDialog();
+        }
     }
 }
