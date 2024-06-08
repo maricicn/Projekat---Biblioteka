@@ -12,6 +12,10 @@ namespace biblioteka
 {
     public partial class FormaKnjigaUnesiIliEdituj : Form
     {
+
+
+        public int indeksPronadjeneKnjige;
+
         public FormaKnjigaUnesiIliEdituj()
         {
             InitializeComponent();
@@ -31,40 +35,25 @@ namespace biblioteka
 
         private void btDodajKnjigu_Click(object sender, EventArgs e)
         {
-            /*FormPisac dodajPisca = new FormPisac();
-            dodajPisca.ShowDialog();
-            if (dodajPisca.DialogResult == DialogResult.OK)
-            {
-                List<string> napomene = new List<string>();
-
-                napomene = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
-
-                int g = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
-                Pisac p = new Pisac((Data.ListaPisaca.Count + 1).ToString(), dodajPisca.cbStatusPisca.Text, dodajPisca.txtImePisca.Text, dodajPisca.txtPrezimePisca.Text, dodajPisca.cbPol.Text, g, napomene);
-                Data.DodajPisca(p);
-                Data.SacuvajPisce();
-                popuniComboBox();
-            }*/
-
-
-
             FormaDodajKnjigu dodajKnjigu = new FormaDodajKnjigu();
             dodajKnjigu.ShowDialog();
-            if(dodajKnjigu.DialogResult == DialogResult.OK)
+            dodajKnjigu.btDesno.Hide();
+            dodajKnjigu.btLevo.Hide();
+            if (dodajKnjigu.DialogResult == DialogResult.OK)
             {
                 List<string> napomene = new List<string>();
                 napomene = dodajKnjigu.txtNapomene.Lines.ToList<string>();
 
                 List<string> pisci = new List<string>();
-                for (int i = 0; i < dodajKnjigu.clbPisci.SelectedItems.Count; i++)
+                for (int i = 0; i < dodajKnjigu.clbPisci.CheckedItems.Count; i++)
                 {
-                    pisci.Add(dodajKnjigu.clbPisci.SelectedItems[i].ToString());
+                    pisci.Add(dodajKnjigu.clbPisci.CheckedItems[i].ToString());
                 }
 
                 List<string> svaIzdanja = new List<string>();
-                for (int i = 0; i < dodajKnjigu.clbSvaIzdavanja.SelectedItems.Count; i++)
+                for (int i = 0; i < dodajKnjigu.clbSvaIzdavanja.CheckedItems.Count; i++)
                 {
-                    svaIzdanja.Add(dodajKnjigu.clbSvaIzdavanja.SelectedItems[i].ToString());
+                    svaIzdanja.Add(dodajKnjigu.clbSvaIzdavanja.CheckedItems[i].ToString());
                 }
 
 
@@ -93,82 +82,62 @@ namespace biblioteka
                 Data.SacuvajKnjige();
                 popuniComboBox();
 
-            }    
-
-
+            }
         }
 
         private void btEditKnjiga_Click(object sender, EventArgs e)
         {
-
-
-            /*int indeks = cbPisci.SelectedIndex;
-            if (indeks != -1)
+        
+            int indeks = cbPisci.SelectedIndex + 1;
+            if (indeks == 0)
             {
-                Pisac p = Data.ListaPisaca[indeks];
-                FormPisac dodajPisca = new FormPisac(p);
-                dodajPisca.ShowDialog();
-                if (dodajPisca.DialogResult == DialogResult.OK)
-                {
-                    List<string> napomene = new List<string>();
-
-                    napomene = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
-
-                    int g = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
-                    p.Status = dodajPisca.cbStatusPisca.Text;
-                    p.Ime = dodajPisca.txtImePisca.Text;
-                    p.Prezime = dodajPisca.txtPrezimePisca.Text;
-                    p.Pol = dodajPisca.cbPol.Text;
-                    p.GodinaRodjenja = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
-                    p.Napomena = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
-
-                    Data.SacuvajPisce();
-                    popuniComboBox();
-                }
-            }*/
-
-
-            int indeks = cbPisci.SelectedIndex;
-            if (indeks != -1)
+                indeks = indeksPronadjeneKnjige;
+            }
+            if (indeks != 0)
             {
-                Knjiga k = Data.ListaKnjiga[indeks];
-                FormaDodajKnjigu dodajKnjigu = new FormaDodajKnjigu(k);
+                Knjiga k = Data.ListaKnjiga[indeks-1];
+                FormaDodajKnjigu dodajKnjigu = new FormaDodajKnjigu(k, indeks);
                 dodajKnjigu.ShowDialog();
+                dodajKnjigu.btDesno.Show();
+                dodajKnjigu.btLevo.Show();
                 if (dodajKnjigu.DialogResult == DialogResult.OK)
                 {
                     List<string> napomene = new List<string>();
+
+                    Knjiga k2 = Data.pomeranjeKnjige(dodajKnjigu.indeks);
+
                     napomene = dodajKnjigu.txtNapomene.Lines.ToList<string>();
 
                     List<string> pisci = new List<string>();
-                    for (int i = 0; i < dodajKnjigu.clbPisci.SelectedItems.Count; i++)
+                    for (int i = 0; i < dodajKnjigu.clbPisci.CheckedItems.Count; i++)
                     {
-                        pisci.Add(dodajKnjigu.clbPisci.SelectedItems[i].ToString());
+                        pisci.Add(dodajKnjigu.clbPisci.CheckedItems[i].ToString());
                     }
 
                     List<string> svaIzdavanja = new List<string>();
-                    for (int i = 0; i < dodajKnjigu.clbSvaIzdavanja.SelectedItems.Count; i++)
+                    for (int i = 0; i < dodajKnjigu.clbSvaIzdavanja.CheckedItems.Count; i++)
                     {
-                        svaIzdavanja.Add(dodajKnjigu.clbSvaIzdavanja.SelectedItems[i].ToString());
+                        svaIzdavanja.Add(dodajKnjigu.clbSvaIzdavanja.CheckedItems[i].ToString());
                     }
 
-                    k.Status = dodajKnjigu.cbStatus.Text;
-                    k.Naziv = dodajKnjigu.txtNaziv.Text;
-                    k.Pisac = pisci;
-                    k.Zanr = dodajKnjigu.cbZanr.Text;
-                    k.RedniBrojIzdanja = int.Parse(dodajKnjigu.txtRedniBrojIzdanja.Text);
-                    k.GodinaIzdavanja = int.Parse(dodajKnjigu.txtGodinaIzdavanja.Text);
-                    k.Izdavac = dodajKnjigu.txtIzdavac.Text;
-                    k.ISBN = dodajKnjigu.txtISBN.Text;
-                    k.Stanje = dodajKnjigu.txtStanje.Text;
-                    k.Prostorija = dodajKnjigu.cbProstorija.Text;
-                    k.Polica = dodajKnjigu.cbPolica.Text;
-                    k.UkupanBrojPrimeraka = int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text);
-                    k.SvaIzdavanja = svaIzdavanja;
-                    k.Citalac = dodajKnjigu.cbCitalac.Text;
-                    k.DatumIzdavanja = dodajKnjigu.txtDatumIzdavanja.Text;
-                    k.RokZaVracanje = dodajKnjigu.txtRokZaVracanje.Text;
-                    k.Bibliotekar = dodajKnjigu.cbBibliotekar.Text;
-                    k.Napomena = napomene;
+                    k2.Status = dodajKnjigu.cbStatus.Text;
+                    k2.Naziv = dodajKnjigu.txtNaziv.Text;
+                    k2.Pisac = pisci;
+                    k2.Zanr = dodajKnjigu.cbZanr.Text;
+                    k2.RedniBrojIzdanja = int.Parse(dodajKnjigu.txtRedniBrojIzdanja.Text);
+                    k2.GodinaIzdavanja = int.Parse(dodajKnjigu.txtGodinaIzdavanja.Text);
+                    k2.Izdavac = dodajKnjigu.txtIzdavac.Text;
+                    k2.ISBN = dodajKnjigu.txtISBN.Text;
+                    k2.Stanje = dodajKnjigu.txtStanje.Text;
+                    k2.Prostorija = dodajKnjigu.cbProstorija.Text;
+                    k2.Polica = dodajKnjigu.cbPolica.Text;
+                    k2.UkupanBrojPrimeraka = int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text);
+                    k2.SvaIzdavanja = svaIzdavanja;
+                    k2.Citalac = dodajKnjigu.cbCitalac.Text;
+                    k2.DatumIzdavanja = dodajKnjigu.txtDatumIzdavanja.Text;
+                    k2.RokZaVracanje = dodajKnjigu.txtRokZaVracanje.Text;
+                    k2.Bibliotekar = dodajKnjigu.cbBibliotekar.Text;
+                    k2.Napomena = napomene;
 
                     Data.SacuvajKnjige();
                     popuniComboBox();
@@ -178,6 +147,59 @@ namespace biblioteka
 
 
 
+
+        }
+
+        private void cbPisci_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        {
+            /*string ime = "";
+            string prezime = "";
+            bool predji = false;
+            for (int i = 0; i < txtPretraga.Text.Length; i++)
+            {
+                if (txtPretraga.Text[i].Equals(' '))
+                {
+                    predji = true;
+                    continue;
+                }
+                if (predji == false)
+                {
+                    ime += txtPretraga.Text[i];
+                }
+                if (predji == true)
+                {
+                    prezime += txtPretraga.Text[i];
+                }
+            }
+
+
+
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
+            {
+                if (ime == Data.ListaPisaca[i].Ime && prezime == Data.ListaPisaca[i].Prezime)
+                {
+                    indeksPronadjenogPisca = int.Parse(Data.ListaPisaca[i].ID);
+                    lblPronadjenPisac.Text = Data.ListaPisaca[i].ID + " " + ime + " " + prezime;
+                }
+            }*/
+
+
+            string naziv = txtPretraga.Text;
+
+            for (int i = 0; i < Data.ListaKnjiga.Count; i++)
+            {
+                if (naziv == Data.ListaKnjiga[i].Naziv)
+                {
+                    indeksPronadjeneKnjige = int.Parse(Data.ListaKnjiga[i].ID);
+                    lblPronadjenaKnjiga.Text = Data.ListaKnjiga[i].ID + " " + naziv;
+                    
+                }
+            }
 
         }
     }
