@@ -154,6 +154,7 @@
             this.bibliotekar.TabIndex = 9;
             this.bibliotekar.Text = "bibliotekar";
             this.bibliotekar.UseVisualStyleBackColor = true;
+            this.bibliotekar.Click += new System.EventHandler(this.bibliotekar_Click);
             // 
             // citalac
             // 

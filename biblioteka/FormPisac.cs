@@ -50,6 +50,8 @@ namespace biblioteka
 
         }
 
+        
+
         private void btDesno_Click(object sender, EventArgs e)
         {
             indeks++;
