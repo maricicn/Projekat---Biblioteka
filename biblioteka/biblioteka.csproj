@@ -63,6 +63,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaBibliotekar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaBibliotekar.Designer.cs">
+      <DependentUpon>FormaBibliotekar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaDodajKnjigu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="Prostorija.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaBibliotekar.resx">
+      <DependentUpon>FormaBibliotekar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaDodajKnjigu.resx">
       <DependentUpon>FormaDodajKnjigu.cs</DependentUpon>
