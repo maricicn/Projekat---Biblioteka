@@ -41,6 +41,8 @@
             this.lblNapomenePisca = new System.Windows.Forms.Label();
             this.txtNapomenePisca = new System.Windows.Forms.TextBox();
             this.btOk = new System.Windows.Forms.Button();
+            this.btDesno = new System.Windows.Forms.Button();
+            this.btLevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtImePisca
@@ -176,13 +178,37 @@
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
+            // btDesno
+            // 
+            this.btDesno.Location = new System.Drawing.Point(549, 369);
+            this.btDesno.Name = "btDesno";
+            this.btDesno.Size = new System.Drawing.Size(75, 23);
+            this.btDesno.TabIndex = 15;
+            this.btDesno.Text = ">";
+            this.btDesno.UseVisualStyleBackColor = true;
+            this.btDesno.Click += new System.EventHandler(this.btDesno_Click);
+            // 
+            // btLevo
+            // 
+            this.btLevo.Location = new System.Drawing.Point(222, 369);
+            this.btLevo.Name = "btLevo";
+            this.btLevo.Size = new System.Drawing.Size(75, 23);
+            this.btLevo.TabIndex = 16;
+            this.btLevo.Text = "<";
+            this.btLevo.UseVisualStyleBackColor = true;
+            this.btLevo.Click += new System.EventHandler(this.btLevo_Click);
+            // 
             // FormPisac
             // 
             this.AcceptButton = this.btOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(616, 366);
+
+            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.Controls.Add(this.btLevo);
+            this.Controls.Add(this.btDesno);
+
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.txtNapomenePisca);
             this.Controls.Add(this.lblNapomenePisca);
@@ -218,5 +244,7 @@
         public System.Windows.Forms.ComboBox cbPol;
         public System.Windows.Forms.TextBox txtNapomenePisca;
         private System.Windows.Forms.Button btOk;
+        public System.Windows.Forms.Button btDesno;
+        public System.Windows.Forms.Button btLevo;
     }
 }

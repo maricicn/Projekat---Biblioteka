@@ -12,6 +12,7 @@ namespace biblioteka
 {
     public partial class FormaPisacEditIliUnesi : Form
     {
+        public int indeksPronadjenogPisca;
         public FormaPisacEditIliUnesi()
         {
             InitializeComponent();
@@ -32,8 +33,11 @@ namespace biblioteka
         {
             FormPisac dodajPisca = new FormPisac();
             dodajPisca.ShowDialog();
+            dodajPisca.btDesno.Hide();
+            dodajPisca.btLevo.Hide();
             if (dodajPisca.DialogResult == DialogResult.OK)
             {
+                
                 List<string> napomene = new List<string>();
 
                 napomene = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
@@ -48,25 +52,37 @@ namespace biblioteka
 
         private void btEditPisca_Click(object sender, EventArgs e)
         {
-            int indeks = cbPisci.SelectedIndex;
-            if (indeks != -1)
+            int indeks = cbPisci.SelectedIndex + 1;
+            if (indeks == 0)
             {
-                Pisac p = Data.ListaPisaca[indeks];
-                FormPisac dodajPisca = new FormPisac(p);
+                indeks = indeksPronadjenogPisca;
+            }
+
+            if (indeks != 0)
+            {
+                Pisac p = Data.ListaPisaca[indeks-1];
+                FormPisac dodajPisca = new FormPisac(p, indeks);
                 dodajPisca.ShowDialog();
+                dodajPisca.btDesno.Show();
+                dodajPisca.btLevo.Show();
+
+
+
                 if (dodajPisca.DialogResult == DialogResult.OK)
                 {
                     List<string> napomene = new List<string>();
 
+                    Pisac p2 = Data.pomeranjePisca(dodajPisca.indeks);
+
                     napomene = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
 
                     int g = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
-                    p.Status = dodajPisca.cbStatusPisca.Text;
-                    p.Ime = dodajPisca.txtImePisca.Text;
-                    p.Prezime = dodajPisca.txtPrezimePisca.Text;
-                    p.Pol = dodajPisca.cbPol.Text;
-                    p.GodinaRodjenja = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
-                    p.Napomena = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
+                    p2.Status = dodajPisca.cbStatusPisca.Text;
+                    p2.Ime = dodajPisca.txtImePisca.Text;
+                    p2.Prezime = dodajPisca.txtPrezimePisca.Text;
+                    p2.Pol = dodajPisca.cbPol.Text;
+                    p2.GodinaRodjenja = int.Parse(dodajPisca.txtGodinaRodjenjaPisca.Text);
+                    p2.Napomena = dodajPisca.txtNapomenePisca.Lines.ToList<string>();
 
                     Data.SacuvajPisce();
                     popuniComboBox();
@@ -76,6 +92,46 @@ namespace biblioteka
 
         private void cbPisci_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void lblPronadjenPisac_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        {
+            string ime = "";
+            string prezime = "";
+            bool predji = false;
+            for (int i = 0; i < txtPretraga.Text.Length; i++)
+            {
+                if (txtPretraga.Text[i].Equals(' '))
+                {
+                    predji = true;
+                    continue;
+                }
+                if (predji == false)
+                {
+                    ime += txtPretraga.Text[i];
+                }
+                if (predji == true)
+                {
+                    prezime += txtPretraga.Text[i];
+                }
+            }
+
+
+
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
+            {
+                if (ime == Data.ListaPisaca[i].Ime && prezime == Data.ListaPisaca[i].Prezime)
+                {
+                    indeksPronadjenogPisca = int.Parse(Data.ListaPisaca[i].ID);
+                    lblPronadjenPisac.Text = Data.ListaPisaca[i].ID + " " + ime + " " + prezime;
+                }
+            }
 
         }
     }
