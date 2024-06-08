@@ -24,6 +24,7 @@ namespace biblioteka
             InitializeComponent();
 
             Data.UcitajPisce();
+            Data.UcitajKnjige();
 
 
 

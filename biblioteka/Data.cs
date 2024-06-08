@@ -17,11 +17,15 @@ namespace biblioteka
         {
             ListaPisaca.Add(p);
         }
+        public static void DodajKnjigu(Knjiga k)
+        {
+            ListaKnjiga.Add(k);
+        }
 
 
         public static void SacuvajKnjige()
         {
-            StreamWriter sw = new StreamWriter("Knjige.txt");
+            StreamWriter sw = new StreamWriter("Knjige.txt.tmp");
 
             for (int i = 0; i < ListaKnjiga.Count; i++)
             {
@@ -29,23 +33,36 @@ namespace biblioteka
                 string si = "";
                 string p = "";
                 string n = "";
-                for (int j = 0; j < k.Napomena.Count - 1; j++)
-                {
-                    n += k.Napomena[j] + '$';
-                }
-                n += k.Napomena[k.Napomena.Count - 1];
 
-                for (int j = 0; j < k.Pisac.Count - 1; j++)
+                if (k.Napomena.Count > 0)
                 {
-                    p += k.Pisac[j] + '$';
+                    for (int j = 0; j < k.Napomena.Count - 1; j++)
+                    {
+                        n += k.Napomena[j] + '$';
+                    }
+                    n += k.Napomena[k.Napomena.Count - 1];
                 }
-                p += k.Pisac[k.Pisac.Count - 1];
+                
 
-                for (int j = 0; j < k.SvaIzdavanja.Count - 1; j++)
+                if (k.Pisac.Count > 0)
                 {
-                    p = k.SvaIzdavanja[j] + '$';
+                    for (int j = 0; j < k.Pisac.Count - 1; j++)
+                    {
+                        p += k.Pisac[j] + '$';
+                    }
+                    p += k.Pisac[k.Pisac.Count - 1];
                 }
-                p = k.SvaIzdavanja[k.SvaIzdavanja.Count - 1];
+                
+
+                if (k.SvaIzdavanja.Count > 0)
+                {
+                    for (int j = 0; j < k.SvaIzdavanja.Count - 1; j++)
+                    {
+                        p = k.SvaIzdavanja[j] + '$';
+                    }
+                    p = k.SvaIzdavanja[k.SvaIzdavanja.Count - 1];
+                }
+                
 
 
                 sw.WriteLine(k.ID + "," +
@@ -67,6 +84,9 @@ namespace biblioteka
             }
 
             sw.Close();
+            File.Delete("knjige.txt");
+            File.Move("knjige.txt.tmp", "knjige.txt");
+
         }
 
         public static void UcitajKnjige()
@@ -93,7 +113,7 @@ namespace biblioteka
                     }
 
                     //sva izdanja, pisac, napomena;
-                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], DateTime.Parse(delovi[14]), DateTime.Parse(delovi[15]) ,SvaIzdanja, Pisac,napomene);
+                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], delovi[14], delovi[15] ,SvaIzdanja, Pisac,napomene);
                     ListaKnjiga.Add(k);
                 }
                 sr.Close();
@@ -140,11 +160,16 @@ namespace biblioteka
             {
                 Pisac p = ListaPisaca[i];
                 string n = "";
-                for (int j = 0; j < p.Napomena.Count-1; j++)
+
+                if (p.Napomena.Count > 0)
                 {
-                    n += p.Napomena[j] + '$';
+                    for (int j = 0; j < p.Napomena.Count - 1; j++)
+                    {
+                        n += p.Napomena[j] + '$';
+                    }
+                    n += p.Napomena[p.Napomena.Count - 1];
                 }
-                n += p.Napomena[p.Napomena.Count - 1];
+                
 
 
                 sw.WriteLine(p.ID + "," + p.Status + "," + p.Ime + "," + p.Prezime + "," + p.Pol + "," + p.GodinaRodjenja + "," + n);
