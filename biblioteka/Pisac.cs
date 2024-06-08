@@ -9,6 +9,11 @@ namespace biblioteka
     {
         public List<string> knjige = new List<string>();
 
+        public Pisac()
+        {
+
+        }
+
         public Pisac(string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena)
         {
             this.ID = id;
