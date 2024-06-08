@@ -5,13 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Linq.Expressions;
+using System.Windows.Forms;
+using System.Reflection;
 
 namespace biblioteka
 {
     internal class Data
     {
+        public static string ImeFaJlaGDESECJUPOliCe = "OvdeSeCuvajuDugackeRavneDaskaPricvrscenaHorizontalnoCestoUzZidIliUOrmaricuTakoDaSeNaNjojMoguCuvatiPredmeti.csv";
         public static List<Pisac> ListaPisaca = new List<Pisac>();
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
+        public static List<Polica> listaPolica = new List<Polica>();
+        private static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
+
+        public static string ImeFaJlaGDESECJUprost = "prostor unutar građevine. Najčešće je odvojena zidom i vratima.txt";
 
         public static void DodajPisca(Pisac p)
         {
@@ -148,7 +155,7 @@ namespace biblioteka
             }
             catch (Exception e)
             {
-
+                
             }
         }
 
@@ -177,7 +184,34 @@ namespace biblioteka
 
             sw.Close();
         }
-        
 
+        public static void DodajPolicu(Polica p)
+        {
+            listaPolica.Add(p);
+        }
+
+        public static void SP()
+        {
+            SacuvajListu(listaPolica, ImeFaJlaGDESECJUPOliCe);
+        }
+
+        public static void DP(Prostorija pROStorija)
+        {
+            prostorGdeSeNalazeProstorije.Add(pROStorija);
+        }
+
+        public static void SCUVAj()
+        {
+            SacuvajListu(prostorGdeSeNalazeProstorije, ImeFaJlaGDESECJUprost);
+        }
+
+        public static void SacuvajListu<T>(List<T> listazaCuvanje, string imeFajla){
+            StreamWriter upisivac = new StreamWriter(imeFajla);
+            for (int i = 0; i < listazaCuvanje.Count; i++)
+            {
+                upisivac.WriteLine(listazaCuvanje[i].ToString());
+            }
+            upisivac.Close();
+        }
     }
 }

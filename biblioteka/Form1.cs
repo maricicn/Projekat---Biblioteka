@@ -144,5 +144,16 @@ namespace biblioteka
             FormVracanjeKnjige vracanje = new FormVracanjeKnjige();
             vracanje.ShowDialog();
         }
+
+        private void polica_Click(object sender, EventArgs e)
+        {
+            POLICA2 pOLICA2 = new POLICA2();
+            pOLICA2.ShowDialog();
+        }
+
+        private void prostorija_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
