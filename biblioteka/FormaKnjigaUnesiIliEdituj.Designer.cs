@@ -32,6 +32,9 @@ namespace biblioteka
             this.cbPisci = new System.Windows.Forms.ComboBox();
             this.btEditKnjiga = new System.Windows.Forms.Button();
             this.btDodajKnjigu = new System.Windows.Forms.Button();
+            this.lblPronadjenaKnjiga = new System.Windows.Forms.Label();
+            this.txtPretraga = new System.Windows.Forms.TextBox();
+            this.lblPretraga = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbPisci
@@ -41,7 +44,7 @@ namespace biblioteka
             this.cbPisci.Name = "cbPisci";
             this.cbPisci.Size = new System.Drawing.Size(229, 24);
             this.cbPisci.TabIndex = 5;
-            this.cbPisci.Text = "Pisci";
+            this.cbPisci.SelectedIndexChanged += new System.EventHandler(this.cbPisci_SelectedIndexChanged);
             // 
             // btEditKnjiga
             // 
@@ -63,17 +66,47 @@ namespace biblioteka
             this.btDodajKnjigu.UseVisualStyleBackColor = true;
             this.btDodajKnjigu.Click += new System.EventHandler(this.btDodajKnjigu_Click);
             // 
+            // lblPronadjenaKnjiga
+            // 
+            this.lblPronadjenaKnjiga.AutoSize = true;
+            this.lblPronadjenaKnjiga.Location = new System.Drawing.Point(170, 366);
+            this.lblPronadjenaKnjiga.Name = "lblPronadjenaKnjiga";
+            this.lblPronadjenaKnjiga.Size = new System.Drawing.Size(47, 17);
+            this.lblPronadjenaKnjiga.TabIndex = 9;
+            this.lblPronadjenaKnjiga.Text = "Knjiga";
+            // 
+            // txtPretraga
+            // 
+            this.txtPretraga.Location = new System.Drawing.Point(173, 327);
+            this.txtPretraga.Name = "txtPretraga";
+            this.txtPretraga.Size = new System.Drawing.Size(179, 22);
+            this.txtPretraga.TabIndex = 8;
+            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
+            // 
+            // lblPretraga
+            // 
+            this.lblPretraga.AutoSize = true;
+            this.lblPretraga.Location = new System.Drawing.Point(170, 294);
+            this.lblPretraga.Name = "lblPretraga";
+            this.lblPretraga.Size = new System.Drawing.Size(63, 17);
+            this.lblPretraga.TabIndex = 7;
+            this.lblPretraga.Text = "Pretraga";
+            // 
             // FormaKnjigaUnesiIliEdituj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPronadjenaKnjiga);
+            this.Controls.Add(this.txtPretraga);
+            this.Controls.Add(this.lblPretraga);
             this.Controls.Add(this.cbPisci);
             this.Controls.Add(this.btEditKnjiga);
             this.Controls.Add(this.btDodajKnjigu);
             this.Name = "FormaKnjigaUnesiIliEdituj";
             this.Text = "FormaKnjigaUnesiIliEdituj";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +115,8 @@ namespace biblioteka
         private System.Windows.Forms.ComboBox cbPisci;
         private System.Windows.Forms.Button btEditKnjiga;
         private System.Windows.Forms.Button btDodajKnjigu;
+        private System.Windows.Forms.Label lblPronadjenaKnjiga;
+        private System.Windows.Forms.TextBox txtPretraga;
+        private System.Windows.Forms.Label lblPretraga;
     }
 }
