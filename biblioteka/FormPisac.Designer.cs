@@ -47,26 +47,26 @@
             // 
             // txtImePisca
             // 
-            this.txtImePisca.Location = new System.Drawing.Point(166, 75);
-            this.txtImePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtImePisca.Location = new System.Drawing.Point(221, 92);
+            this.txtImePisca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImePisca.Name = "txtImePisca";
-            this.txtImePisca.Size = new System.Drawing.Size(76, 20);
+            this.txtImePisca.Size = new System.Drawing.Size(100, 22);
             this.txtImePisca.TabIndex = 2;
             // 
             // txtPrezimePisca
             // 
-            this.txtPrezimePisca.Location = new System.Drawing.Point(166, 98);
-            this.txtPrezimePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrezimePisca.Location = new System.Drawing.Point(221, 121);
+            this.txtPrezimePisca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrezimePisca.Name = "txtPrezimePisca";
-            this.txtPrezimePisca.Size = new System.Drawing.Size(76, 20);
+            this.txtPrezimePisca.Size = new System.Drawing.Size(100, 22);
             this.txtPrezimePisca.TabIndex = 3;
             // 
             // txtGodinaRodjenjaPisca
             // 
-            this.txtGodinaRodjenjaPisca.Location = new System.Drawing.Point(166, 145);
-            this.txtGodinaRodjenjaPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGodinaRodjenjaPisca.Location = new System.Drawing.Point(221, 178);
+            this.txtGodinaRodjenjaPisca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGodinaRodjenjaPisca.Name = "txtGodinaRodjenjaPisca";
-            this.txtGodinaRodjenjaPisca.Size = new System.Drawing.Size(76, 20);
+            this.txtGodinaRodjenjaPisca.Size = new System.Drawing.Size(100, 22);
             this.txtGodinaRodjenjaPisca.TabIndex = 4;
             // 
             // cbStatusPisca
@@ -75,19 +75,18 @@
             this.cbStatusPisca.Items.AddRange(new object[] {
             "Aktivan",
             "Neaktivan"});
-            this.cbStatusPisca.Location = new System.Drawing.Point(166, 50);
-            this.cbStatusPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbStatusPisca.Location = new System.Drawing.Point(221, 62);
+            this.cbStatusPisca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbStatusPisca.Name = "cbStatusPisca";
-            this.cbStatusPisca.Size = new System.Drawing.Size(92, 21);
+            this.cbStatusPisca.Size = new System.Drawing.Size(121, 24);
             this.cbStatusPisca.TabIndex = 5;
             // 
             // lblStatusPisca
             // 
             this.lblStatusPisca.AutoSize = true;
-            this.lblStatusPisca.Location = new System.Drawing.Point(97, 53);
-            this.lblStatusPisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStatusPisca.Location = new System.Drawing.Point(129, 65);
             this.lblStatusPisca.Name = "lblStatusPisca";
-            this.lblStatusPisca.Size = new System.Drawing.Size(37, 13);
+            this.lblStatusPisca.Size = new System.Drawing.Size(48, 17);
             this.lblStatusPisca.TabIndex = 6;
             this.lblStatusPisca.Text = "Status";
             this.lblStatusPisca.Click += new System.EventHandler(this.label1_Click);
@@ -95,40 +94,36 @@
             // lblImePisca
             // 
             this.lblImePisca.AutoSize = true;
-            this.lblImePisca.Location = new System.Drawing.Point(97, 79);
-            this.lblImePisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblImePisca.Location = new System.Drawing.Point(129, 97);
             this.lblImePisca.Name = "lblImePisca";
-            this.lblImePisca.Size = new System.Drawing.Size(24, 13);
+            this.lblImePisca.Size = new System.Drawing.Size(30, 17);
             this.lblImePisca.TabIndex = 7;
             this.lblImePisca.Text = "Ime";
             // 
             // lblPrezimePisca
             // 
             this.lblPrezimePisca.AutoSize = true;
-            this.lblPrezimePisca.Location = new System.Drawing.Point(97, 102);
-            this.lblPrezimePisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrezimePisca.Location = new System.Drawing.Point(129, 126);
             this.lblPrezimePisca.Name = "lblPrezimePisca";
-            this.lblPrezimePisca.Size = new System.Drawing.Size(44, 13);
+            this.lblPrezimePisca.Size = new System.Drawing.Size(59, 17);
             this.lblPrezimePisca.TabIndex = 8;
             this.lblPrezimePisca.Text = "Prezime";
             // 
             // lblGodinaRodjenjaPisca
             // 
             this.lblGodinaRodjenjaPisca.AutoSize = true;
-            this.lblGodinaRodjenjaPisca.Location = new System.Drawing.Point(58, 147);
-            this.lblGodinaRodjenjaPisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGodinaRodjenjaPisca.Location = new System.Drawing.Point(77, 181);
             this.lblGodinaRodjenjaPisca.Name = "lblGodinaRodjenjaPisca";
-            this.lblGodinaRodjenjaPisca.Size = new System.Drawing.Size(83, 13);
+            this.lblGodinaRodjenjaPisca.Size = new System.Drawing.Size(110, 17);
             this.lblGodinaRodjenjaPisca.TabIndex = 9;
             this.lblGodinaRodjenjaPisca.Text = "GodinaRodjenja";
             // 
             // lblPolPisca
             // 
             this.lblPolPisca.AutoSize = true;
-            this.lblPolPisca.Location = new System.Drawing.Point(97, 123);
-            this.lblPolPisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPolPisca.Location = new System.Drawing.Point(129, 151);
             this.lblPolPisca.Name = "lblPolPisca";
-            this.lblPolPisca.Size = new System.Drawing.Size(22, 13);
+            this.lblPolPisca.Size = new System.Drawing.Size(28, 17);
             this.lblPolPisca.TabIndex = 10;
             this.lblPolPisca.Text = "Pol";
             this.lblPolPisca.Click += new System.EventHandler(this.lblPol_Click);
@@ -139,50 +134,49 @@
             this.cbPol.Items.AddRange(new object[] {
             "Muski",
             "Zenski"});
-            this.cbPol.Location = new System.Drawing.Point(166, 120);
-            this.cbPol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPol.Location = new System.Drawing.Point(221, 148);
+            this.cbPol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPol.Name = "cbPol";
-            this.cbPol.Size = new System.Drawing.Size(92, 21);
+            this.cbPol.Size = new System.Drawing.Size(121, 24);
             this.cbPol.TabIndex = 11;
             // 
             // lblNapomenePisca
             // 
             this.lblNapomenePisca.AutoSize = true;
-            this.lblNapomenePisca.Location = new System.Drawing.Point(58, 175);
-            this.lblNapomenePisca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNapomenePisca.Location = new System.Drawing.Point(77, 215);
             this.lblNapomenePisca.Name = "lblNapomenePisca";
-            this.lblNapomenePisca.Size = new System.Drawing.Size(59, 13);
+            this.lblNapomenePisca.Size = new System.Drawing.Size(77, 17);
             this.lblNapomenePisca.TabIndex = 12;
             this.lblNapomenePisca.Text = "Napomene";
             // 
             // txtNapomenePisca
             // 
             this.txtNapomenePisca.AcceptsReturn = true;
-            this.txtNapomenePisca.Location = new System.Drawing.Point(166, 175);
-            this.txtNapomenePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNapomenePisca.Location = new System.Drawing.Point(221, 215);
+            this.txtNapomenePisca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNapomenePisca.Multiline = true;
             this.txtNapomenePisca.Name = "txtNapomenePisca";
-            this.txtNapomenePisca.Size = new System.Drawing.Size(167, 86);
+            this.txtNapomenePisca.Size = new System.Drawing.Size(221, 105);
             this.txtNapomenePisca.TabIndex = 13;
             this.txtNapomenePisca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btOk
             // 
             this.btOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btOk.Location = new System.Drawing.Point(382, 131);
-            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btOk.Location = new System.Drawing.Point(509, 161);
+            this.btOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(56, 19);
+            this.btOk.Size = new System.Drawing.Size(232, 101);
             this.btOk.TabIndex = 14;
             this.btOk.Text = "Ok";
             this.btOk.UseVisualStyleBackColor = true;
-            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // btDesno
             // 
-            this.btDesno.Location = new System.Drawing.Point(549, 369);
+            this.btDesno.Location = new System.Drawing.Point(732, 454);
+            this.btDesno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btDesno.Name = "btDesno";
-            this.btDesno.Size = new System.Drawing.Size(75, 23);
+            this.btDesno.Size = new System.Drawing.Size(100, 28);
             this.btDesno.TabIndex = 15;
             this.btDesno.Text = ">";
             this.btDesno.UseVisualStyleBackColor = true;
@@ -190,9 +184,10 @@
             // 
             // btLevo
             // 
-            this.btLevo.Location = new System.Drawing.Point(222, 369);
+            this.btLevo.Location = new System.Drawing.Point(296, 454);
+            this.btLevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btLevo.Name = "btLevo";
-            this.btLevo.Size = new System.Drawing.Size(75, 23);
+            this.btLevo.Size = new System.Drawing.Size(100, 28);
             this.btLevo.TabIndex = 16;
             this.btLevo.Text = "<";
             this.btLevo.UseVisualStyleBackColor = true;
@@ -201,14 +196,12 @@
             // FormPisac
             // 
             this.AcceptButton = this.btOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-
-            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.ClientSize = new System.Drawing.Size(1096, 554);
             this.Controls.Add(this.btLevo);
             this.Controls.Add(this.btDesno);
-
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.txtNapomenePisca);
             this.Controls.Add(this.lblNapomenePisca);
@@ -222,7 +215,7 @@
             this.Controls.Add(this.txtGodinaRodjenjaPisca);
             this.Controls.Add(this.txtPrezimePisca);
             this.Controls.Add(this.txtImePisca);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPisac";
             this.Text = "FormPisac";
             this.ResumeLayout(false);
