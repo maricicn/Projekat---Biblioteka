@@ -89,6 +89,7 @@ namespace biblioteka
             
             //rucno povecavanje id bibliotekara
             Bibliotekar.id++;
+
         }
 
         private void FormaBibliotekar_Load(object sender, EventArgs e)
