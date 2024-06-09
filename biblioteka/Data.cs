@@ -17,6 +17,7 @@ namespace biblioteka
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
         public static List<Polica> listaPolica = new List<Polica>();
         private static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
+        public static List<Bibliotekar> bibliotekari = new List<Bibliotekar>();
 
         public static string ImeFaJlaGDESECJUprost = "prostor unutar građevine. Najčešće je odvojena zidom i vratima.txt";
 
@@ -27,6 +28,10 @@ namespace biblioteka
         public static void DodajKnjigu(Knjiga k)
         {
             ListaKnjiga.Add(k);
+        }
+        public static void DodajBib(Bibliotekar b)
+        {
+            bibliotekari.Add(b);
         }
 
 
@@ -218,6 +223,33 @@ namespace biblioteka
             }
 
             sw.Close();
+        }
+
+        public static void UcitajBib()
+        {
+            try
+            {
+                StreamReader citac = new StreamReader("Bibliotekari.csv");
+                while (!citac.EndOfStream)
+                {
+                    string t = citac.ReadLine();
+                    string[] delovi = t.Split(',');
+
+                    List<string> napomena = new List<string>();
+                    napomena.Add(delovi[6]);
+
+                    List<string> izdate_knj = new List<string>();
+                    List<string> primljene_knj = new List<string>();
+
+                    Bibliotekar tr = new Bibliotekar(delovi[0], delovi[1], delovi[2], delovi[3], delovi[4], Convert.ToInt32(delovi[5]), napomena, delovi[7], Convert.ToInt32(delovi[8]), Convert.ToInt32(delovi[9]), delovi[10], delovi[11], delovi[12], Convert.ToInt32(delovi[13]), delovi[14], delovi[15], delovi[16], delovi[17], delovi[18], Convert.ToDateTime(delovi[19]), delovi[20], delovi[21], izdate_knj, primljene_knj);
+                    
+                }
+                citac.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
 
         public static void DodajPolicu(Polica p)

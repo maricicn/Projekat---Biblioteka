@@ -85,7 +85,7 @@ namespace biblioteka
 
             //pravljenje objekta i dodavanje u listu
             Bibliotekar bib = new Bibliotekar(Convert.ToString(Bibliotekar.id), status, ime, prezime, pol, god_rodj, napomena, ime_roditelja, dan_rodj, mesec_rodj, jmbg, ulica_broj, grad, post_broj, tel, email, strucna_sprema, skolsko_zvanje, radna_poz, datum_zaposlenja, username, password, izdate_knige, primljene_knjige);
-            Bibliotekar.bibliotekari.Add(bib);
+            Data.DodajBib(bib);
             
             //rucno povecavanje id bibliotekara
             Bibliotekar.id++;
@@ -94,7 +94,7 @@ namespace biblioteka
 
         private void FormaBibliotekar_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

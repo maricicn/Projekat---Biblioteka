@@ -33,6 +33,7 @@ namespace biblioteka
 
             Data.UcitajPisce();
             Data.UcitajKnjige();
+            Data.UcitajBib();
 
             //Resizovanje
             sizes = new Size[Controls.Count];

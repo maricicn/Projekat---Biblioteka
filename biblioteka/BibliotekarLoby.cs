@@ -16,12 +16,30 @@ namespace biblioteka
         public BibliotekarLoby()
         {
             InitializeComponent();
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FormaBibliotekar formaBibliotekar = new FormaBibliotekar();
             formaBibliotekar.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormaBibliotekar formaIzmena = new FormaBibliotekar();
+            formaIzmena.ShowDialog();
+
+        }
+
+        private void BibliotekarLoby_Load(object sender, EventArgs e)
+        {
+            foreach (Bibliotekar b in Data.bibliotekari)
+            {
+                string s = b.Ime + " " + b.Prezime;
+                comboBox1.Items.Add(s);
+            }
         }
     }
 }
