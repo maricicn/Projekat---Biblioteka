@@ -70,7 +70,6 @@
             // 
             // cBCitalac
             // 
-
             this.cBCitalac.FormattingEnabled = true;
             this.cBCitalac.Location = new System.Drawing.Point(53, 180);
             this.cBCitalac.Name = "cBCitalac";
@@ -133,6 +132,7 @@
             this.dTIzdavanje.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dTVracanje
+            // 
             this.dTVracanje.Location = new System.Drawing.Point(348, 307);
             this.dTVracanje.Name = "dTVracanje";
             this.dTVracanje.Size = new System.Drawing.Size(200, 20);
@@ -145,7 +145,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
             this.label6.Image = global::biblioteka.Properties.Resources.images;
-            this.label6.Location = new System.Drawing.Point(613, 210);
+            this.label6.Location = new System.Drawing.Point(609, 201);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 29);
             this.label6.TabIndex = 9;
