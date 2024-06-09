@@ -95,6 +95,7 @@
             // 
             this.Dolor.Location = new System.Drawing.Point(12, 64);
             this.Dolor.Name = "Dolor";
+            this.Dolor.ReadOnly = true;
             this.Dolor.Size = new System.Drawing.Size(100, 20);
             this.Dolor.TabIndex = 12;
             // 

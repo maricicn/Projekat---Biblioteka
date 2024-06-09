@@ -74,9 +74,9 @@ namespace biblioteka
             string s = "";
             for (int i = 0; i < r.p.Count; i++)
             {
-                s = $"{s},{r.p[i].Id}";
+                s = $"{s},{r.p[i].Id} {r.p[i].o}";
             }
-            s = s.Substring(1, s.Length - 1);
+            if(s.Length > 0) s = s.Substring(1, s.Length - 1);
             Dolor.Text = s;
         }
 
@@ -101,6 +101,7 @@ namespace biblioteka
             Lorem.Text = "";
             Ipsum.Text = "";
             Dolor.Text = "";
+            comboBox1.Text = "";
         }
     }
 }
