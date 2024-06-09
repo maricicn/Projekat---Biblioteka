@@ -70,6 +70,7 @@
             // 
             // potvrdi
             // 
+            this.potvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potvrdi.Location = new System.Drawing.Point(133, 320);
             this.potvrdi.Margin = new System.Windows.Forms.Padding(2);
             this.potvrdi.Name = "potvrdi";
@@ -92,10 +93,10 @@
             // 
             // vracanje_knjiga
             // 
-            this.vracanje_knjiga.Location = new System.Drawing.Point(35, 98);
+            this.vracanje_knjiga.Location = new System.Drawing.Point(35, 96);
             this.vracanje_knjiga.Margin = new System.Windows.Forms.Padding(2);
             this.vracanje_knjiga.Name = "vracanje_knjiga";
-            this.vracanje_knjiga.Size = new System.Drawing.Size(90, 19);
+            this.vracanje_knjiga.Size = new System.Drawing.Size(90, 25);
             this.vracanje_knjiga.TabIndex = 4;
             this.vracanje_knjiga.Text = "vracanje knjiga";
             this.vracanje_knjiga.UseVisualStyleBackColor = true;
@@ -103,10 +104,10 @@
             // 
             // pisac
             // 
-            this.pisac.Location = new System.Drawing.Point(399, 196);
+            this.pisac.Location = new System.Drawing.Point(399, 195);
             this.pisac.Margin = new System.Windows.Forms.Padding(2);
             this.pisac.Name = "pisac";
-            this.pisac.Size = new System.Drawing.Size(44, 19);
+            this.pisac.Size = new System.Drawing.Size(44, 22);
             this.pisac.TabIndex = 5;
             this.pisac.Text = "pisac";
             this.pisac.UseVisualStyleBackColor = true;
@@ -114,10 +115,10 @@
             // 
             // knjiga
             // 
-            this.knjiga.Location = new System.Drawing.Point(621, 196);
+            this.knjiga.Location = new System.Drawing.Point(621, 190);
             this.knjiga.Margin = new System.Windows.Forms.Padding(2);
             this.knjiga.Name = "knjiga";
-            this.knjiga.Size = new System.Drawing.Size(56, 19);
+            this.knjiga.Size = new System.Drawing.Size(56, 25);
             this.knjiga.TabIndex = 6;
             this.knjiga.Text = "knjiga";
             this.knjiga.UseVisualStyleBackColor = true;
@@ -125,10 +126,10 @@
             // 
             // prostorija
             // 
-            this.prostorija.Location = new System.Drawing.Point(399, 98);
+            this.prostorija.Location = new System.Drawing.Point(396, 97);
             this.prostorija.Margin = new System.Windows.Forms.Padding(2);
             this.prostorija.Name = "prostorija";
-            this.prostorija.Size = new System.Drawing.Size(56, 19);
+            this.prostorija.Size = new System.Drawing.Size(65, 26);
             this.prostorija.TabIndex = 7;
             this.prostorija.Text = "prostorija";
             this.prostorija.UseVisualStyleBackColor = true;
@@ -136,10 +137,10 @@
             // 
             // polica
             // 
-            this.polica.Location = new System.Drawing.Point(621, 98);
+            this.polica.Location = new System.Drawing.Point(617, 98);
             this.polica.Margin = new System.Windows.Forms.Padding(2);
             this.polica.Name = "polica";
-            this.polica.Size = new System.Drawing.Size(56, 19);
+            this.polica.Size = new System.Drawing.Size(56, 25);
             this.polica.TabIndex = 8;
             this.polica.Text = "polica";
             this.polica.UseVisualStyleBackColor = true;
@@ -182,10 +183,10 @@
             // 
             // izvestaj
             // 
-            this.izvestaj.Location = new System.Drawing.Point(133, 236);
+            this.izvestaj.Location = new System.Drawing.Point(133, 234);
             this.izvestaj.Margin = new System.Windows.Forms.Padding(2);
             this.izvestaj.Name = "izvestaj";
-            this.izvestaj.Size = new System.Drawing.Size(56, 19);
+            this.izvestaj.Size = new System.Drawing.Size(56, 24);
             this.izvestaj.TabIndex = 12;
             this.izvestaj.Text = "izvestaj";
             this.izvestaj.UseVisualStyleBackColor = true;
