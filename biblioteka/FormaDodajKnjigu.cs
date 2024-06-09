@@ -65,8 +65,8 @@ namespace biblioteka
             }
 
             cbCitalac.Text = k.Citalac;
-            txtDatumIzdavanja.Text = k.DatumIzdavanja.ToString();
-            txtRokZaVracanje.Text = k.RokZaVracanje.ToString();
+            dateTimePicker1.Value = k.DatumIzdavanja;
+            dateTimePicker2.Value = k.RokZaVracanje;
             cbBibliotekar.Text = k.Bibliotekar;
             txtNapomene.Lines = k.Napomena.ToArray();
 
@@ -118,8 +118,8 @@ namespace biblioteka
             }
 
             cbCitalac.Text = k.Citalac;
-            txtDatumIzdavanja.Text = k.DatumIzdavanja.ToString();
-            txtRokZaVracanje.Text = k.RokZaVracanje.ToString();
+            dateTimePicker1.Value = k.DatumIzdavanja;
+            dateTimePicker2.Value = k.RokZaVracanje;
             cbBibliotekar.Text = k.Bibliotekar;
             txtNapomene.Lines = k.Napomena.ToArray();
 
@@ -162,8 +162,8 @@ namespace biblioteka
             }
 
             cbCitalac.Text = k.Citalac;
-            txtDatumIzdavanja.Text = k.DatumIzdavanja.ToString();
-            txtRokZaVracanje.Text = k.RokZaVracanje.ToString();
+            dateTimePicker1.Value = k.DatumIzdavanja;
+            dateTimePicker2.Value = k.RokZaVracanje;
             cbBibliotekar.Text = k.Bibliotekar;
             txtNapomene.Lines = k.Napomena.ToArray();
         }

@@ -22,8 +22,8 @@ namespace biblioteka
         public int UkupanBrojPrimeraka;
         public List<string> SvaIzdavanja = new List<string>();
         public string Citalac;
-        public string DatumIzdavanja;
-        public string RokZaVracanje;
+        public DateTime DatumIzdavanja;
+        public DateTime RokZaVracanje;
         public string Bibliotekar;
         public List<string> Napomena = new List<string>();
 
@@ -33,7 +33,7 @@ namespace biblioteka
 
         }
 
-        public Knjiga(string ID, string status, string naziv, string zanr, int redni_broj_izdanja, int godina_izdavanja, string izdavac, string ISBN, string stanje, string prostorija, string polica, int broj_primeraka, string citalac, string bibliotekar, string datum_izdavanja, string rok, List<string> sva_izdanja, List<string> pisac, List<string> napomena)
+        public Knjiga(string ID, string status, string naziv, string zanr, int redni_broj_izdanja, int godina_izdavanja, string izdavac, string ISBN, string stanje, string prostorija, string polica, int broj_primeraka, string citalac, string bibliotekar, DateTime datum_izdavanja, DateTime rok, List<string> sva_izdanja, List<string> pisac, List<string> napomena)
         {
             this.ID = ID;
             this.Status = status;
