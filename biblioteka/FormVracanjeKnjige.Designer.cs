@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dTBibliotekar = new System.Windows.Forms.ComboBox();
+            this.cBBibliotekar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dTVracanje = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,15 +38,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // dTBibliotekar
+            // cBBibliotekar
             // 
-            this.dTBibliotekar.FormattingEnabled = true;
-            this.dTBibliotekar.Location = new System.Drawing.Point(586, 242);
-            this.dTBibliotekar.Name = "dTBibliotekar";
-            this.dTBibliotekar.Size = new System.Drawing.Size(192, 21);
-            this.dTBibliotekar.TabIndex = 21;
+            this.cBBibliotekar.FormattingEnabled = true;
+            this.cBBibliotekar.Location = new System.Drawing.Point(586, 242);
+            this.cBBibliotekar.Name = "cBBibliotekar";
+            this.cBBibliotekar.Size = new System.Drawing.Size(192, 21);
+            this.cBBibliotekar.TabIndex = 21;
             // 
             // label6
             // 
@@ -55,7 +57,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
             this.label6.Image = global::biblioteka.Properties.Resources.images;
-            this.label6.Location = new System.Drawing.Point(609, 230);
+            this.label6.Location = new System.Drawing.Point(610, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 29);
             this.label6.TabIndex = 20;
@@ -63,7 +65,7 @@
             // 
             // dTVracanje
             // 
-            this.dTVracanje.Location = new System.Drawing.Point(337, 243);
+            this.dTVracanje.Location = new System.Drawing.Point(337, 315);
             this.dTVracanje.Name = "dTVracanje";
             this.dTVracanje.Size = new System.Drawing.Size(200, 20);
             this.dTVracanje.TabIndex = 19;
@@ -75,7 +77,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.IndianRed;
             this.label5.Image = global::biblioteka.Properties.Resources.images;
-            this.label5.Location = new System.Drawing.Point(340, 230);
+            this.label5.Location = new System.Drawing.Point(341, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(183, 29);
             this.label5.TabIndex = 17;
@@ -149,6 +151,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(353, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Rok za vracanje knjige:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(337, 201);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 24;
+            // 
             // FormVracanjeKnjige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,8 +176,10 @@
             this.BackgroundImage = global::biblioteka.Properties.Resources.Untitled_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dTBibliotekar);
+            this.Controls.Add(this.cBBibliotekar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dTVracanje);
             this.Controls.Add(this.label5);
@@ -176,7 +197,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox dTBibliotekar;
+        private System.Windows.Forms.ComboBox cBBibliotekar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dTVracanje;
         private System.Windows.Forms.Label label5;
@@ -186,5 +207,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

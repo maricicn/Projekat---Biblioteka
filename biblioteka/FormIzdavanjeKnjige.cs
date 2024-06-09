@@ -48,7 +48,6 @@ namespace biblioteka
                 izdavanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dTIzdavanje.Text + ";" + dTVracanje.Text);
                 string[] line = cBKnjiga.Text.Split(' ');
                 int index = int.Parse(line[0]);
-                MessageBox.Show(index.ToString());
                 //Izmena podatak izdate knjige (stanje - izdata, citalac, bibliotekar, datumi)
                 Data.ListaKnjiga[index - 1].Stanje = "izdata";
                 Data.ListaKnjiga[index - 1].Bibliotekar = cBBibliotekar.Text;
@@ -61,12 +60,21 @@ namespace biblioteka
                 cBKnjiga.Text = string.Empty;
                 izdavanjeknjige.Close();
                 MessageBox.Show("Izdavanje knjige je zabelezeno!");
+                ControlClear();
             }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dTVracanje.Value = dTIzdavanje.Value.AddDays(21);
+        }
+        private void ControlClear()
+        {
+            cBCitalac.Text = string.Empty;
+            cBKnjiga.Text = string.Empty;
+            dTIzdavanje.Value = DateTime.Now;
+            dTVracanje.Value = DateTime.Now;
+            cBBibliotekar.Text = string.Empty;
         }
     }
 }
