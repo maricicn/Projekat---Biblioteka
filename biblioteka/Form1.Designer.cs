@@ -190,6 +190,7 @@
             this.izvestaj.TabIndex = 12;
             this.izvestaj.Text = "izvestaj";
             this.izvestaj.UseVisualStyleBackColor = true;
+            this.izvestaj.Click += new System.EventHandler(this.izvestaj_Click);
             // 
             // novi
             // 

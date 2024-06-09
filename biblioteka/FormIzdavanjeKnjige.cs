@@ -45,9 +45,12 @@ namespace biblioteka
             else
             {
                 StreamWriter izdavanjeknjige = new StreamWriter("izdavanjeFile.csv", append: true);
-                izdavanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dTIzdavanje.Text + ";" + dTVracanje.Text);
+                izdavanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dTIzdavanje.Value + ";" + dTVracanje.Value);
+                Izdavanje izd = new Izdavanje(cBCitalac.Text, cBKnjiga.Text, dTIzdavanje.Value, dTVracanje.Value, cBBibliotekar.Text);
+                Data.ListaIzdavanja.Add(izd);
                 string[] line = cBKnjiga.Text.Split(' ');
                 int index = int.Parse(line[0]);
+    
                 //Izmena podatak izdate knjige (stanje - izdata, citalac, bibliotekar, datumi)
                 Data.ListaKnjiga[index - 1].Stanje = "izdata";
                 Data.ListaKnjiga[index - 1].Bibliotekar = cBBibliotekar.Text;
