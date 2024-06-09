@@ -229,5 +229,17 @@
   <ItemGroup>
     <None Include="Resources\Untitled-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
