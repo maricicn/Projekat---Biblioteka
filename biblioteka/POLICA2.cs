@@ -19,16 +19,38 @@ namespace biblioteka
             Data.UP1();
             foreach (Prostorija p in Data.prostorGdeSeNalazeProstorije)
             {
-                comboBox2.Items.Add(p.Id);
+                comboBox2.Items.Add(p.o);
             }
         }
 
         private void Sacuvaj_Click(object sender, EventArgs e)
         {
             Polica p = new Polica(Lorem.Text, Ipsum.Text, comboBox2.Text, comboBox1.Text == "Aktivan");
+            if (string.IsNullOrEmpty(comboBox2.Text)) throw new Exception("polica nije u prostoriji");
             try
             {
+               Data.listaPolica[Data.IP] = Data.listaPolica[Data.IP];
+                for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
+                {
+                    for (int j = Data.prostorGdeSeNalazeProstorije[i].p.Count - 1; j >= 0; j--)
+                    {
+                        if (Data.prostorGdeSeNalazeProstorije[i].p[j].o.Trim() == p.o.Trim())
+                        {
+                            Data.prostorGdeSeNalazeProstorije[i].p.RemoveAt(j);
+                        }
+                    }
+                }
+                Data.SCUVAj();
                 Data.listaPolica[Data.IP] = p;
+                Data.listaPolica.Add(p);
+                for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
+                {
+                    if (p.p == Data.prostorGdeSeNalazeProstorije[i].o)
+                    {
+                        Data.prostorGdeSeNalazeProstorije[i].p.Add(p);
+                        Data.SCUVAj();
+                    }
+                }
             }
             catch
             {

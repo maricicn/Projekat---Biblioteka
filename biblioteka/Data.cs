@@ -394,6 +394,14 @@ namespace biblioteka
         public static void DodajPolicu(Polica p)
         {
             listaPolica.Add(p);
+            for (int i = 0; i < prostorGdeSeNalazeProstorije.Count; i++)
+            {
+                if(p.p == prostorGdeSeNalazeProstorije[i].o)
+                {
+                    prostorGdeSeNalazeProstorije[i].p.Add(p);
+                    SCUVAj();
+                }
+            }
         }
 
         public void PromenaPolice(string ID, Polica n)
