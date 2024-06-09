@@ -41,6 +41,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -59,10 +61,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(118, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(428, 13);
+            this.label3.Size = new System.Drawing.Size(436, 13);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Oved Treba Da Se Nalazi Ime Prostorije U Kojoj Se Nalazi Polica Koja Se Trenutno " +
-    "Unosi";
+            this.label3.Text = "Oved Treba Da Se Nalazi Imena Polica Koje Se Nalaze U Prostoriji Koja Se Trenutno" +
+    " Unos";
             // 
             // label2
             // 
@@ -112,17 +114,17 @@
             // 
             // Sacuvaj
             // 
-            this.Sacuvaj.Location = new System.Drawing.Point(12, 116);
+            this.Sacuvaj.Location = new System.Drawing.Point(12, 142);
             this.Sacuvaj.Name = "Sacuvaj";
             this.Sacuvaj.Size = new System.Drawing.Size(75, 23);
             this.Sacuvaj.TabIndex = 9;
-            this.Sacuvaj.Text = "button1";
+            this.Sacuvaj.Text = "Sacuvaj";
             this.Sacuvaj.UseVisualStyleBackColor = true;
             this.Sacuvaj.Click += new System.EventHandler(this.Sacuvaj_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 145);
+            this.button1.Location = new System.Drawing.Point(12, 171);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 18;
@@ -132,7 +134,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(121, 145);
+            this.button3.Location = new System.Drawing.Point(121, 171);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 23);
             this.button3.TabIndex = 19;
@@ -142,7 +144,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(168, 145);
+            this.button4.Location = new System.Drawing.Point(168, 171);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(41, 23);
             this.button4.TabIndex = 20;
@@ -152,7 +154,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(215, 145);
+            this.button5.Location = new System.Drawing.Point(215, 171);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(41, 23);
             this.button5.TabIndex = 21;
@@ -160,11 +162,33 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(139, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(250, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Ovde Treba Da Se Nalazi Da Li Se Prostorija Koristi";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Aktivan",
+            "Neaktivan"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 116);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 24;
+            // 
             // PROSTORIJA37
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -200,5 +224,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

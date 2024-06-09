@@ -16,11 +16,16 @@ namespace biblioteka
         {
             InitializeComponent();
             Data.UP();
+            Data.UP1();
+            foreach (Prostorija p in Data.prostorGdeSeNalazeProstorije)
+            {
+                comboBox2.Items.Add(p.Id);
+            }
         }
 
         private void Sacuvaj_Click(object sender, EventArgs e)
         {
-            Polica p = new Polica(Lorem.Text, Ipsum.Text, Dolor.Text);
+            Polica p = new Polica(Lorem.Text, Ipsum.Text, comboBox2.Text, comboBox1.Text == "Aktivan");
             try
             {
                 Data.listaPolica[Data.IP] = p;
@@ -38,7 +43,8 @@ namespace biblioteka
         Polica r = Data.GP1();
         Lorem.Text = r.Id;
         Ipsum.Text = r.o;
-        Dolor.Text = r.p;
+        comboBox2.Text = r.p;
+        comboBox1.Text = r.L_Aktivan ? "Aktivan" : "Neaktivan";
             }
 
         private void button3_Click(object sender, EventArgs e)
@@ -47,7 +53,8 @@ namespace biblioteka
             Polica r = Data.GP1();
             Lorem.Text = r.Id;
             Ipsum.Text = r.o;
-            Dolor.Text = r.p;
+            comboBox2.Text = r.p;
+            comboBox1.Text = r.L_Aktivan ? "Aktivan" : "Neaktivan";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -56,7 +63,8 @@ namespace biblioteka
             Polica r = Data.GP1();
             Lorem.Text = r.Id;
             Ipsum.Text = r.o;
-            Dolor.Text = r.p;
+            comboBox2.Text = r.p;
+            comboBox1.Text = r.L_Aktivan ? "Aktivan" : "Neaktivan";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -64,7 +72,8 @@ namespace biblioteka
             Data.NP();
             Lorem.Text = "";
             Ipsum.Text = "";
-            Dolor.Text = "";
+            comboBox2.Text = "";
+            comboBox1.Text = "";
         }
     }
 }

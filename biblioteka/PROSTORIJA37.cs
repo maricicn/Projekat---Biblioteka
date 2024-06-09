@@ -48,7 +48,7 @@ namespace biblioteka
                     }
                 }
             }
-            Prostorija po1 = new Prostorija(Lorem.Text, Ipsum.Text, s);
+            Prostorija po1 = new Prostorija(Lorem.Text, Ipsum.Text, s, comboBox1.Text == "Aktivan");
             try
             {
                 Data.prostorGdeSeNalazeProstorije[Data.IP1] = po1;
@@ -70,6 +70,7 @@ namespace biblioteka
         {
             Lorem.Text = r.Id;
             Ipsum.Text = r.o;
+            comboBox1.Text = r.L_Aktivan ? "Aktivan" : "Neaktivan";
             string s = "";
             for (int i = 0; i < r.p.Count; i++)
             {
@@ -81,8 +82,7 @@ namespace biblioteka
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("a");
-            Data.IP1++;
+            Data.IP1= (Data.IP1 +1)%Data.prostorGdeSeNalazeProstorije.Count;
             Prostorija r = Data.GP2();
             IP(r);
         }

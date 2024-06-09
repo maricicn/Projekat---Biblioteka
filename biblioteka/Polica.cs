@@ -28,25 +28,26 @@ namespace biblioteka
         }
         public string o;
         public string p;
-        bool L_Aktivan;
+        public bool L_Aktivan;
         //List<string> nap = new List<string>();
 
-        public Polica(string ID, string LOZNAKA, string PROST)
+        public Polica(string ID, string LOZNAKA, string PROST, bool lla)
         {
             if (string.IsNullOrEmpty(ID) || string.IsNullOrEmpty(LOZNAKA) || string.IsNullOrEmpty(PROST)) return;
             this.ID = ID;
             o = LOZNAKA;
             p = PROST;
+            L_Aktivan = lla;
         }
 
         public Polica(string s)
         {
-            string[] S = s.Split(',');
-            if (S.Length != 3) return;
+            string[] S = s.Split(';');
+            if (S.Length != 4) return;
             ID = S[0];
             o=S[1];
-            p = S[2];
-
+            L_Aktivan = S[2] == "True";
+            p = S[3];
         }
 
         public void Dodavanje(string ID, string oznaka, string SobaUBiblioteciGdeSeIzlazuKnjige, List<Napomena> OvaPromenjlivaSeNeKoristiAliMoraDaBudeOvdeJerMiInterfejsTakoKazeAMislimDaNemaPoente){
@@ -68,7 +69,7 @@ namespace biblioteka
 
         public override string ToString()
         {
-            return $"{ID},{o},{p}";
+            return $"{ID};{o};{L_Aktivan};{p}";
         }
     }
 }
