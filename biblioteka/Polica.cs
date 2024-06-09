@@ -19,16 +19,34 @@ namespace biblioteka
         //- „pomeranje“ na sledeću ili prethodnu policu u listi.
 
         string ID;
-        string oznaka;
-        string p;
+        public string Id
+        {
+                get
+                {
+            return ID;
+                 }
+        }
+        public string o;
+        public string p;
         bool L_Aktivan;
         //List<string> nap = new List<string>();
 
         public Polica(string ID, string LOZNAKA, string PROST)
         {
+            if (string.IsNullOrEmpty(ID) || string.IsNullOrEmpty(LOZNAKA) || string.IsNullOrEmpty(PROST)) return;
             this.ID = ID;
-            oznaka = LOZNAKA;
+            o = LOZNAKA;
             p = PROST;
+        }
+
+        public Polica(string s)
+        {
+            string[] S = s.Split(',');
+            if (S.Length != 3) return;
+            ID = S[0];
+            o=S[1];
+            p = S[2];
+
         }
 
         public void Dodavanje(string ID, string oznaka, string SobaUBiblioteciGdeSeIzlazuKnjige, List<Napomena> OvaPromenjlivaSeNeKoristiAliMoraDaBudeOvdeJerMiInterfejsTakoKazeAMislimDaNemaPoente){
@@ -50,7 +68,7 @@ namespace biblioteka
 
         public override string ToString()
         {
-            return $"{ID},{oznaka},{p}";
+            return $"{ID},{o},{p}";
         }
     }
 }
