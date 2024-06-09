@@ -33,6 +33,24 @@ namespace biblioteka
 
 
 
+
+
+        public static Bibliotekar pomeranjeBibliotekara(int g)
+        {
+            string indeks = g.ToString();
+            Bibliotekar b = new Bibliotekar();
+            for (int i = 0; i < Bibliotekar.bibliotekari.Count; i++)
+            {
+                if (ListaKnjiga[i].ID == indeks)
+                {
+                    b = Bibliotekar.bibliotekari[i];
+                }
+            }
+            return b;
+        }
+
+
+
         public static Knjiga pomeranjeKnjige(int g)
         {
             string indeks = g.ToString();
@@ -273,7 +291,7 @@ namespace biblioteka
                     //bib.WriteLine(Convert.ToString(Bibliotekar.id) + ";" + b.Status + ";" + b.Ime + ";" + b.Prezime + ";" + b.Pol + ";" + Convert.ToString(b.GodinaRodjenja) + ";" + n + ";" + b.ImeJednogRoditelja + ";" + Convert.ToString(b.DanRodjenja) + ";" + Convert.ToString(b.MesecRodjenja) + ";" + b.JMBG + ";" + b.AdresaUlicaBr + ";" + b.AdresaGrad + ";" + Convert.ToString(b.AdresaPostanskiBr) + ";" + b.Telefon + ";" + b.Mail + ";" + b.StepenStrucneSpreme + ";" + b.SkolskoZvanje + ";" + b.RadnaPozicija + ";" + Convert.ToString(b.DatumZaposlenja) + ";" + b.KorisnickoIme + ";" + b.Lozinka);
                     
                     Bibliotekar.bibliotekari.Add(bib);
-                    Bibliotekar.id++;
+                    //Bibliotekar.id++;
                     //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
                 }
                 sr.Close();
@@ -327,7 +345,7 @@ namespace biblioteka
                         spk = b.SvePrimljeneKnjige[b.SvePrimljeneKnjige.Count - 1];
                     }
 
-                    bib.WriteLine(Convert.ToString(Bibliotekar.id) + ";" + b.Status + ";" + b.Ime + ";" + b.Prezime + ";" + b.Pol + ";" + Convert.ToString(b.GodinaRodjenja) + ";" + n + ";" + b.ImeJednogRoditelja + ";" + Convert.ToString(b.DanRodjenja) + ";" + Convert.ToString(b.MesecRodjenja) + ";" + b.JMBG + ";" + b.AdresaUlicaBr + ";" + b.AdresaGrad + ";" + Convert.ToString(b.AdresaPostanskiBr) + ";" + b.Telefon + ";" + b.Mail + ";" + b.StepenStrucneSpreme + ";" + b.SkolskoZvanje + ";" + b.RadnaPozicija + ";" + Convert.ToString(b.DatumZaposlenja) + ";" + b.KorisnickoIme + ";" + b.Lozinka + ";" + sik + ";" + spk);
+                    bib.WriteLine(b.ID + ";" + b.Status + ";" + b.Ime + ";" + b.Prezime + ";" + b.Pol + ";" + Convert.ToString(b.GodinaRodjenja) + ";" + n + ";" + b.ImeJednogRoditelja + ";" + Convert.ToString(b.DanRodjenja) + ";" + Convert.ToString(b.MesecRodjenja) + ";" + b.JMBG + ";" + b.AdresaUlicaBr + ";" + b.AdresaGrad + ";" + Convert.ToString(b.AdresaPostanskiBr) + ";" + b.Telefon + ";" + b.Mail + ";" + b.StepenStrucneSpreme + ";" + b.SkolskoZvanje + ";" + b.RadnaPozicija + ";" + Convert.ToString(b.DatumZaposlenja) + ";" + b.KorisnickoIme + ";" + b.Lozinka + ";" + sik + ";" + spk);
 
                 }
 
