@@ -104,7 +104,6 @@ namespace biblioteka
             this.Controls.Add(this.btEditKnjiga);
             this.Controls.Add(this.btDodajKnjigu);
             this.Name = "FormaKnjigaUnesiIliEdituj";
-            this.Text = "FormaKnjigaUnesiIliEdituj";
             this.ResumeLayout(false);
             this.PerformLayout();
 
