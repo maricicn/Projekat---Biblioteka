@@ -18,23 +18,25 @@ namespace biblioteka
         }
         public string o;
         public List<Polica> p = new List<Polica>();
-        bool L_Aktivan;
+        public bool L_Aktivan;
 
-        public Prostorija(string lID, string lo, List<Polica> llp)
+        public Prostorija(string lID, string lo, List<Polica> llp, bool lla)
         {
             if (string.IsNullOrEmpty(lID) || string.IsNullOrEmpty(lo) || llp == null) return;
             ID = lID;
 o = lo;
             p = llp;
+            L_Aktivan = lla;
         }
 
         public Prostorija(string s)
         {
-            string[] S = s.Split(',');
+            string[] S = s.Split(';');
             //if (S.Length != 3) return;
             ID = S[0];
             o = S[1];
-            for (int i = 2; i < S.Length; i++)
+            L_Aktivan = S[2] == "True";
+            for (int i = 3; i < S.Length; i++)
             {
                 p.Add(Data.FP(S[i]));
             }
@@ -61,9 +63,9 @@ o = lo;
             string s = "";
             foreach (Polica lp in p)
             {
-                s = $"{s},{lp.Id}";
+                s = $"{s};{lp.Id}";
             }
-            return $"{ID},{o}{s}";
+            return $"{ID};{o};{L_Aktivan}{s}";
         }
     }
 }
