@@ -45,9 +45,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(276, 44);
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Image = global::biblioteka.Properties.Resources.images;
+            this.label1.Location = new System.Drawing.Point(261, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(286, 42);
             this.label1.TabIndex = 0;
@@ -58,7 +60,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.NavajoWhite;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 136);
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Image = global::biblioteka.Properties.Resources.images;
+            this.label2.Location = new System.Drawing.Point(48, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 29);
             this.label2.TabIndex = 1;
@@ -66,6 +70,7 @@
             // 
             // cBCitalac
             // 
+
             this.cBCitalac.FormattingEnabled = true;
             this.cBCitalac.Location = new System.Drawing.Point(53, 180);
             this.cBCitalac.Name = "cBCitalac";
@@ -77,7 +82,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.NavajoWhite;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 258);
+            this.label3.ForeColor = System.Drawing.Color.IndianRed;
+            this.label3.Image = global::biblioteka.Properties.Resources.images;
+            this.label3.Location = new System.Drawing.Point(48, 274);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(240, 29);
             this.label3.TabIndex = 3;
@@ -96,7 +103,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.NavajoWhite;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(343, 136);
+            this.label4.ForeColor = System.Drawing.Color.IndianRed;
+            this.label4.Image = global::biblioteka.Properties.Resources.images;
+            this.label4.Location = new System.Drawing.Point(359, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 29);
             this.label4.TabIndex = 5;
@@ -107,7 +116,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.NavajoWhite;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(343, 258);
+            this.label5.ForeColor = System.Drawing.Color.IndianRed;
+            this.label5.Image = global::biblioteka.Properties.Resources.images;
+            this.label5.Location = new System.Drawing.Point(359, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 29);
             this.label5.TabIndex = 6;
@@ -122,7 +133,6 @@
             this.dTIzdavanje.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dTVracanje
-            // 
             this.dTVracanje.Location = new System.Drawing.Point(348, 307);
             this.dTVracanje.Name = "dTVracanje";
             this.dTVracanje.Size = new System.Drawing.Size(200, 20);
@@ -133,7 +143,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.NavajoWhite;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(609, 201);
+            this.label6.ForeColor = System.Drawing.Color.IndianRed;
+            this.label6.Image = global::biblioteka.Properties.Resources.images;
+            this.label6.Location = new System.Drawing.Point(613, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 29);
             this.label6.TabIndex = 9;
@@ -163,6 +175,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
+            this.BackgroundImage = global::biblioteka.Properties.Resources.Untitled_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cBBibliotekar);
@@ -176,6 +190,7 @@
             this.Controls.Add(this.cBCitalac);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "FormIzdavanjeKnjige";
             this.Text = "FormIzdavanjeKnjige";
             this.ResumeLayout(false);
