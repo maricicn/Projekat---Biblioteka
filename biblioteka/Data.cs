@@ -64,7 +64,7 @@ namespace biblioteka
         {
             try
             {
-                StreamWriter sw = new StreamWriter("knjige.txt");
+                StreamWriter sw = new StreamWriter("knjige.csv");
 
                 for (int i = 0; i < ListaKnjiga.Count; i++)
                 {
@@ -104,22 +104,22 @@ namespace biblioteka
 
 
 
-                    sw.WriteLine(k.ID + "," +
-                        k.Status + "," +
-                        k.Naziv + "," +
-                        k.Zanr + "," +
-                        k.RedniBrojIzdanja + "," +
-                        k.GodinaIzdavanja + "," +
-                        k.Izdavac + "," +
-                        k.ISBN + "," +
-                        k.Stanje + "," +
-                        k.Prostorija + "," +
-                        k.Polica + "," +
-                        k.UkupanBrojPrimeraka + "," +
-                        k.Citalac + "," +
-                        k.Bibliotekar + "," +
-                        k.DatumIzdavanja + "," +
-                        k.RokZaVracanje + si + "," + p + "," + n);
+                    sw.WriteLine(k.ID + ";" +
+                        k.Status + ";" +
+                        k.Naziv + ";" +
+                        k.Zanr + ";" +
+                        k.RedniBrojIzdanja + ";" +
+                        k.GodinaIzdavanja + ";" +
+                        k.Izdavac + ";" +
+                        k.ISBN + ";" +
+                        k.Stanje + ";" +
+                        k.Prostorija + ";" +
+                        k.Polica + ";" +
+                        k.UkupanBrojPrimeraka + ";" +
+                        k.Citalac + ";" +
+                        k.Bibliotekar + ";" +
+                        k.DatumIzdavanja + ";" +
+                        k.RokZaVracanje + si + ";" + p + ";" + n);
                 }
 
                 sw.Close();
@@ -135,13 +135,13 @@ namespace biblioteka
         {
             try
             {
-                StreamReader sr = new StreamReader("knjige.txt", true);
+                StreamReader sr = new StreamReader("knjige.csv", true);
                 while (!sr.EndOfStream)
                 {
                     string l = sr.ReadLine();
 
                     List<string> delovi = new List<string>();
-                    delovi = l.Split(',').ToList<string>();
+                    delovi = l.Split(';').ToList<string>();
                     //string[] delovi = l.Split(',');
 
                     List<string> napomene = new List<string>();
@@ -155,7 +155,7 @@ namespace biblioteka
                     }
 
                     //sva izdanja, pisac, napomena;
-                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], delovi[14], delovi[15] ,SvaIzdanja, Pisac,napomene);
+                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], DateTime.Parse(delovi[14]), DateTime.Parse(delovi[15]) ,SvaIzdanja, Pisac,napomene);
                     ListaKnjiga.Add(k);
                 }
                 sr.Close();
@@ -170,11 +170,11 @@ namespace biblioteka
         {
             try
             {
-                StreamReader sr = new StreamReader("pisci.txt", true);
+                StreamReader sr = new StreamReader("pisci.csv", true);
                 while (!sr.EndOfStream)
                 {
                     string l = sr.ReadLine();
-                    string[] delovi = l.Split(',');
+                    string[] delovi = l.Split(';');
 
                     List<string> napomene = new List<string>();
                     if (delovi.Length >= 7)
@@ -196,7 +196,7 @@ namespace biblioteka
 
         public static void SacuvajPisce()
         {
-            StreamWriter sw = new StreamWriter("pisci.txt");
+            StreamWriter sw = new StreamWriter("pisci.csv");
 
             for (int i = 0; i < ListaPisaca.Count; i++)
             {
@@ -214,7 +214,7 @@ namespace biblioteka
                 
 
 
-                sw.WriteLine(p.ID + "," + p.Status + "," + p.Ime + "," + p.Prezime + "," + p.Pol + "," + p.GodinaRodjenja + "," + n);
+                sw.WriteLine(p.ID + ";" + p.Status + ";" + p.Ime + ";" + p.Prezime + ";" + p.Pol + ";" + p.GodinaRodjenja + ";" + n);
             }
 
             sw.Close();

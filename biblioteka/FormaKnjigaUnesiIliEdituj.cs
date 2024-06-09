@@ -72,8 +72,8 @@ namespace biblioteka
                     int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text),
                     dodajKnjigu.cbCitalac.Text,
                     dodajKnjigu.cbBibliotekar.Text,
-                    dodajKnjigu.txtDatumIzdavanja.Text,
-                    dodajKnjigu.txtRokZaVracanje.Text,
+                    dodajKnjigu.dateTimePicker1.Value,
+                    dodajKnjigu.dateTimePicker2.Value,
                     svaIzdanja,
                     pisci,
                     napomene);
@@ -134,8 +134,8 @@ namespace biblioteka
                     k2.UkupanBrojPrimeraka = int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text);
                     k2.SvaIzdavanja = svaIzdavanja;
                     k2.Citalac = dodajKnjigu.cbCitalac.Text;
-                    k2.DatumIzdavanja = dodajKnjigu.txtDatumIzdavanja.Text;
-                    k2.RokZaVracanje = dodajKnjigu.txtRokZaVracanje.Text;
+                    k2.DatumIzdavanja = dodajKnjigu.dateTimePicker1.Value;
+                    k2.RokZaVracanje = dodajKnjigu.dateTimePicker2.Value;
                     k2.Bibliotekar = dodajKnjigu.cbBibliotekar.Text;
                     k2.Napomena = napomene;
 

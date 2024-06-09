@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dTBibliotekar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dTVracanje = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBKnjiga = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBCitalac = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox3
+            // dTBibliotekar
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(586, 242);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(192, 21);
-            this.comboBox3.TabIndex = 21;
+            this.dTBibliotekar.FormattingEnabled = true;
+            this.dTBibliotekar.Location = new System.Drawing.Point(586, 242);
+            this.dTBibliotekar.Name = "dTBibliotekar";
+            this.dTBibliotekar.Size = new System.Drawing.Size(192, 21);
+            this.dTBibliotekar.TabIndex = 21;
             // 
             // label6
             // 
@@ -58,12 +59,12 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Bibliotekar:";
             // 
-            // dateTimePicker2
+            // dTVracanje
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(337, 243);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 19;
+            this.dTVracanje.Location = new System.Drawing.Point(337, 243);
+            this.dTVracanje.Name = "dTVracanje";
+            this.dTVracanje.Size = new System.Drawing.Size(200, 20);
+            this.dTVracanje.TabIndex = 19;
             // 
             // label5
             // 
@@ -76,13 +77,14 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Datum vraćanja:";
             // 
-            // comboBox2
+            // cBKnjiga
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(59, 315);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 21);
-            this.comboBox2.TabIndex = 15;
+            this.cBKnjiga.FormattingEnabled = true;
+            this.cBKnjiga.Location = new System.Drawing.Point(59, 315);
+            this.cBKnjiga.Name = "cBKnjiga";
+            this.cBKnjiga.Size = new System.Drawing.Size(192, 21);
+            this.cBKnjiga.TabIndex = 15;
+            this.cBKnjiga.SelectedIndexChanged += new System.EventHandler(this.cBKnjiga_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -95,13 +97,13 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Knjiga koja se vraća:";
             // 
-            // comboBox1
+            // cBCitalac
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(59, 189);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cBCitalac.FormattingEnabled = true;
+            this.cBCitalac.Location = new System.Drawing.Point(59, 189);
+            this.cBCitalac.Name = "cBCitalac";
+            this.cBCitalac.Size = new System.Drawing.Size(192, 21);
+            this.cBCitalac.TabIndex = 13;
             // 
             // label2
             // 
@@ -125,19 +127,31 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Vraćanje knjige";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.button1.Location = new System.Drawing.Point(641, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 67);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormVracanjeKnjige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dTBibliotekar);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dTVracanje);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cBKnjiga);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cBCitalac);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormVracanjeKnjige";
@@ -149,14 +163,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox dTBibliotekar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dTVracanje;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBKnjiga;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBCitalac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
