@@ -16,9 +16,11 @@ namespace biblioteka
         public static List<Pisac> ListaPisaca = new List<Pisac>();
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
         public static List<Polica> listaPolica = new List<Polica>();
-        private static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
+        public static int IP;
+        public static int IP1;
+        public static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
 
-        public static string ImeFaJlaGDESECJUprost = "prostor unutar građevine. Najčešće je odvojena zidom i vratima.txt";
+        public static string ImeFaJlaGDESECJUprost = "prostor unutar građevine. Najčešće je odvojena zidom i vratima.csv";
 
         public static void DodajPisca(Pisac p)
         {
@@ -58,7 +60,6 @@ namespace biblioteka
             }
             return p;
         }
-
 
         public static void SacuvajKnjige()
         {
@@ -166,6 +167,32 @@ namespace biblioteka
             }
         }
 
+        public static void UP1()
+        {
+            prostorGdeSeNalazeProstorije.Clear();
+            if (!File.Exists(ImeFaJlaGDESECJUprost)) return;
+            StreamReader sr = new StreamReader(ImeFaJlaGDESECJUprost);
+            foreach (string l in sr.ReadToEnd().Split('\n'))
+            {
+                if (string.IsNullOrEmpty(l)) continue;
+                prostorGdeSeNalazeProstorije.Add(new Prostorija(l));
+            }
+            sr.Close();
+        }
+
+        public static void UP()
+        {
+            listaPolica.Clear();
+            if (!File.Exists(ImeFaJlaGDESECJUPOliCe)) return;
+            StreamReader sr = new StreamReader(ImeFaJlaGDESECJUPOliCe);
+            foreach (string l in sr.ReadToEnd().Split('\n'))
+            {
+                if (string.IsNullOrEmpty(l)) continue;
+                listaPolica.Add(new Polica(l));
+            }
+            sr.Close();
+        }
+
         public static void UcitajPisce()
         {
             try
@@ -223,6 +250,78 @@ namespace biblioteka
         public static void DodajPolicu(Polica p)
         {
             listaPolica.Add(p);
+        }
+
+        public void PromenaPolice(string ID, Polica n)
+        {
+            for (int i = 0; i < listaPolica.Count; i++)
+            {
+                if (listaPolica[i].Id == ID)
+                {
+                    listaPolica[i] = n;
+                    SP();
+                    return;
+                }
+            }
+            MessageBox.Show("Polica sa datim ID-jem ne postoji");
+        }
+
+        public static void UDP()
+        {
+            IP =(IP + 1)%listaPolica.Count;
+        }
+
+        public static Polica GP1()
+        {
+            try
+            {
+                return listaPolica[IP];
+            }
+            catch
+            {
+                IP = 1;
+                return listaPolica[0];
+            }
+        }
+
+        public static Prostorija GP2()
+        {
+            try
+            {
+                return prostorGdeSeNalazeProstorije[IP1];
+            }
+            catch
+            {
+                IP1 = 0;
+                return prostorGdeSeNalazeProstorije[0];
+            }
+        }
+
+        public static Polica FP(string ln)
+        {
+            if (ln.EndsWith("\r"))
+            {
+                ln = ln.Substring(0, ln.Length - 1);
+            }
+            for (int i = 0; i < listaPolica.Count; i++)
+            {
+                if (listaPolica[i].Id == ln)
+                {
+                    SP();
+                    return listaPolica[i];
+                }
+            }
+            throw new Exception("Ne postoji polica sa datim ID-jem");
+        }
+
+        public static void ULP()
+        {
+            IP= (IP - 1+listaPolica.Count) % listaPolica.Count;
+        }
+
+        public static void NP()
+        {
+            IP = - 1;
         }
 
         public static void SP()

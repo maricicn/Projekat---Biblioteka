@@ -174,7 +174,8 @@ namespace biblioteka
 
         private void prostorija_Click(object sender, EventArgs e)
         {
-
+            PROSTORIJA37 p = new PROSTORIJA37();
+            p.ShowDialog();
         }
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
