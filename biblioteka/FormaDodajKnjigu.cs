@@ -12,42 +12,64 @@ namespace biblioteka
 {
     public partial class FormaDodajKnjigu : Form
     {
-
-    
-
-
         public int indeks;
         public FormaDodajKnjigu()
         {
             InitializeComponent();
 
 
-            
+            clbPisci.Items.Clear();
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
+            {
+                string IdImePrezimePisca = Data.ListaPisaca[i].ID + " " + Data.ListaPisaca[i].Ime + " " + Data.ListaPisaca[i].Prezime;
+                clbPisci.Items.Add(IdImePrezimePisca);
+            }
 
         }
 
         public void popuniComboBoxeve()
         {
             //dodaj i za sva izdavanja i jos nesto ako ima
-            for (int i = 0; i < Data.ListaPisaca.Count; i++)
+            //for (int i = 0; i < Data.ListaPisaca.Count; i++)
             {
-                clbPisci.Items.Add(Data.ListaPisaca[i].Ime);
+                //clbPisci.Items.Add(Data.ListaPisaca[i].Ime);
             }
         }
 
         public FormaDodajKnjigu(Knjiga k, int indeks)
         {
+            
             InitializeComponent();
 
+
+            clbPisci.Items.Clear();
             this.indeks = indeks;
             cbStatus.Text = k.Status;
             txtNaziv.Text = k.Naziv;
 
 
-            for (int i = 0; i < k.Pisac.Count; i++)
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
             {
-                clbPisci.Text += k.Pisac[i].ToString() + '\n';
+                string IdImePrezimePisca = Data.ListaPisaca[i].ID + " " + Data.ListaPisaca[i].Ime + " " + Data.ListaPisaca[i].Prezime;
+                clbPisci.Items.Add(IdImePrezimePisca);
+
+                if(k.Pisac.Contains(IdImePrezimePisca))
+                {
+                    clbPisci.SetItemChecked(i, true);
+                }
             }
+
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
+            {
+                for (int j = 0; j < k.Pisac.Count; j++)
+                {
+                    if (k.Pisac[j] == (Data.ListaPisaca[i].ID + " " + Data.ListaPisaca[i].Ime + " " + Data.ListaPisaca[i].Prezime))
+                    {
+                        clbPisci.SetItemChecked(i, true);
+                    }
+                }
+            }
+
 
             cbZanr.Text = k.Zanr;
             txtRedniBrojIzdanja.Text = k.RedniBrojIzdanja.ToString();
@@ -87,20 +109,29 @@ namespace biblioteka
             /*indeks--;
             if (indeks < 0) indeks = Data.ListaPisaca.Count;
             Pisac p = Data.pomeranjePisca(indeks);*/
-            
 
             indeks++;
             if (indeks > Data.ListaKnjiga.Count) indeks = 1;
             Knjiga k = Data.pomeranjeKnjige(indeks);
 
+
+            clbPisci.Items.Clear();
+
+
             cbStatus.Text = k.Status;
             txtNaziv.Text = k.Naziv;
 
-
-            for (int i = 0; i < k.Pisac.Count; i++)
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
             {
-                clbPisci.Text += k.Pisac[i].ToString() + '\n';
+                string IdImePrezimePisca = Data.ListaPisaca[i].ID + " " + Data.ListaPisaca[i].Ime + " " + Data.ListaPisaca[i].Prezime;
+                clbPisci.Items.Add(IdImePrezimePisca);
+
+                if (k.Pisac.Contains(IdImePrezimePisca))
+                {
+                    clbPisci.SetItemChecked(i, true);
+                }
             }
+
 
             cbZanr.Text = k.Zanr;
             txtRedniBrojIzdanja.Text = k.RedniBrojIzdanja.ToString();
@@ -137,14 +168,24 @@ namespace biblioteka
             if (indeks <= 0) indeks = Data.ListaKnjiga.Count;
             Knjiga k = Data.pomeranjeKnjige(indeks);
 
+
+            clbPisci.Items.Clear();
+
+
             cbStatus.Text = k.Status;
             txtNaziv.Text = k.Naziv;
 
-
-            for (int i = 0; i < k.Pisac.Count; i++)
+            for (int i = 0; i < Data.ListaPisaca.Count; i++)
             {
-                clbPisci.Text += k.Pisac[i].ToString() + '\n';
+                string IdImePrezimePisca = Data.ListaPisaca[i].ID + " " + Data.ListaPisaca[i].Ime + " " + Data.ListaPisaca[i].Prezime;
+                clbPisci.Items.Add(IdImePrezimePisca);
+
+                if (k.Pisac.Contains(IdImePrezimePisca))
+                {
+                    clbPisci.SetItemChecked(i, true);
+                }
             }
+
 
             cbZanr.Text = k.Zanr;
             txtRedniBrojIzdanja.Text = k.RedniBrojIzdanja.ToString();

@@ -39,6 +39,8 @@ namespace biblioteka
             dodajKnjigu.ShowDialog();
             dodajKnjigu.btDesno.Hide();
             dodajKnjigu.btLevo.Hide();
+
+
             if (dodajKnjigu.DialogResult == DialogResult.OK)
             {
                 List<string> napomene = new List<string>();
