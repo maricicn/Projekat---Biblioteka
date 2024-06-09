@@ -119,6 +119,13 @@
     <Compile Include="IPisac.cs" />
     <Compile Include="IPolica.cs" />
     <Compile Include="IProstorija.cs" />
+    <Compile Include="FormIzvestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzvestaj.Designer.cs">
+      <DependentUpon>FormIzvestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izdavanje.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Napomena.cs" />
@@ -160,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIzdavanjeKnjige.resx">
       <DependentUpon>FormIzdavanjeKnjige.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzvestaj.resx">
+      <DependentUpon>FormIzvestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPisac.resx">
       <DependentUpon>FormPisac.cs</DependentUpon>

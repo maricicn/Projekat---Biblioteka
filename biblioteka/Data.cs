@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace biblioteka
 {
@@ -16,6 +17,7 @@ namespace biblioteka
         public static List<Pisac> ListaPisaca = new List<Pisac>();
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
         public static List<Polica> listaPolica = new List<Polica>();
+        public static List<Izdavanje> ListaIzdavanja = new List<Izdavanje>();
         public static int IP;
         public static int IP1;
         public static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
@@ -237,6 +239,33 @@ namespace biblioteka
                 
             }
         }
+        public static void UcitajIzdavanja()
+        {
+            try
+            {
+                StreamReader izdavanja = new StreamReader("izdavanjeFile.csv");
+                while (!izdavanja.EndOfStream)
+                {
+                    string l = izdavanja.ReadLine();
+                    string[] delovi = l.Split(';');
+
+                    /*List<string> napomene = new List<string>();
+                    if (delovi.Length >= 7)
+                    {
+                        napomene = delovi[6].Split('$').ToList<string>();
+                    }*/
+
+                    Izdavanje i = new Izdavanje(delovi[0], delovi[1], DateTime.Parse(delovi[3]), DateTime.Parse(delovi[4]), delovi[2]);
+                    ListaIzdavanja.Add(i);
+                    //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
+                }
+                izdavanja.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
 
         public static void SacuvajPisce()
         {
@@ -263,6 +292,7 @@ namespace biblioteka
 
             sw.Close();
         }
+
 
 
 
@@ -356,11 +386,6 @@ namespace biblioteka
 
             }
         }
-
-
-
-
-
 
 
 

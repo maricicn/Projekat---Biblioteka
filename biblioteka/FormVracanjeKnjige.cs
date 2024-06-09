@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,8 @@ namespace biblioteka
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string zakasnjenje = "na vreme";
+            int zakasnjenjeDani = 0;
             if (cBCitalac.Text == string.Empty || cBKnjiga.Text == string.Empty || cBBibliotekar.Text == string.Empty)
             {
                 MessageBox.Show("Jedno od polja nije popunjeno!");
@@ -41,11 +44,23 @@ namespace biblioteka
                 if(dateTimePicker1.Value < dTVracanje.Value)
                 {
                     MessageBox.Show("Citalac je knjigu vratio sa zakasnjenjem!");
+                    zakasnjenje = "zakasnio";
+                    zakasnjenjeDani = (dTVracanje.Value - dateTimePicker1.Value).Days;
                 }
+                
                 StreamWriter vracanjeknjige = new StreamWriter("vracanjeFile.csv", append: true);
-                vracanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dateTimePicker1.Text + ";" + dTVracanje.Text);
+                vracanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dateTimePicker1.Text + ";" + dTVracanje.Text + ";" + zakasnjenje + ";" + zakasnjenjeDani);
+                
                 string[] line = cBKnjiga.Text.Split(' ');
                 int index = int.Parse(line[0]);
+
+                for(int i = 0; i < Data.ListaIzdavanja.Count(); i++)
+                {
+                    if (Data.ListaIzdavanja[i].knjiga == cBKnjiga.Text)
+                    {
+                        Data.ListaIzdavanja.RemoveAt(i);
+                    }
+                }
                 //Izmena podatak izdate knjige (stanje - u biblioteci, citalac, bibliotekar, datumi)
                 Data.ListaKnjiga[index - 1].Stanje = "u biblioteci";
                 Data.ListaKnjiga[index - 1].Bibliotekar = cBBibliotekar.Text;

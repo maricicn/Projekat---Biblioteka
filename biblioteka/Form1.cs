@@ -33,7 +33,9 @@ namespace biblioteka
 
             Data.UcitajPisce();
             Data.UcitajKnjige();
+            Data.UcitajIzdavanja();
             Data.ucitajBibliotekare();
+
 
             //Resizovanje
             sizes = new Size[Controls.Count];
@@ -197,6 +199,12 @@ namespace biblioteka
         {
             BibliotekarLoby bibliotekar = new BibliotekarLoby();
             bibliotekar.ShowDialog();
+        }
+
+        private void izvestaj_Click(object sender, EventArgs e)
+        {
+            FormIzvestaj izvestaj = new FormIzvestaj();
+            izvestaj.ShowDialog();
         }
     }
 }
