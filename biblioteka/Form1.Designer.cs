@@ -104,10 +104,10 @@
             // 
             // pisac
             // 
-            this.pisac.Location = new System.Drawing.Point(399, 195);
+            this.pisac.Location = new System.Drawing.Point(399, 190);
             this.pisac.Margin = new System.Windows.Forms.Padding(2);
             this.pisac.Name = "pisac";
-            this.pisac.Size = new System.Drawing.Size(44, 22);
+            this.pisac.Size = new System.Drawing.Size(44, 27);
             this.pisac.TabIndex = 5;
             this.pisac.Text = "pisac";
             this.pisac.UseVisualStyleBackColor = true;
