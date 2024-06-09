@@ -68,7 +68,7 @@ namespace biblioteka
                     int.Parse(dodajKnjigu.txtGodinaIzdavanja.Text),
                     dodajKnjigu.txtIzdavac.Text,
                     dodajKnjigu.txtISBN.Text,
-                    dodajKnjigu.txtStanje.Text,
+                    dodajKnjigu.cbStanje.Text,
                     dodajKnjigu.cbProstorija.Text,
                     dodajKnjigu.cbPolica.Text,
                     int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text),
@@ -130,7 +130,7 @@ namespace biblioteka
                     k2.GodinaIzdavanja = int.Parse(dodajKnjigu.txtGodinaIzdavanja.Text);
                     k2.Izdavac = dodajKnjigu.txtIzdavac.Text;
                     k2.ISBN = dodajKnjigu.txtISBN.Text;
-                    k2.Stanje = dodajKnjigu.txtStanje.Text;
+                    k2.Stanje = dodajKnjigu.cbStanje.Text;
                     k2.Prostorija = dodajKnjigu.cbProstorija.Text;
                     k2.Polica = dodajKnjigu.cbPolica.Text;
                     k2.UkupanBrojPrimeraka = int.Parse(dodajKnjigu.txtUkupanBrojPrimeraka.Text);

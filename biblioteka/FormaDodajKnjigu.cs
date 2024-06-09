@@ -76,7 +76,7 @@ namespace biblioteka
             txtGodinaIzdavanja.Text = k.GodinaIzdavanja.ToString();
             txtIzdavac.Text = k.Izdavac;
             txtISBN.Text = k.ISBN;
-            txtStanje.Text = k.Stanje;
+            cbStanje.Text = k.Stanje;
             cbProstorija.Text = k.Prostorija;
             cbPolica.Text = k.Polica;
             txtUkupanBrojPrimeraka.Text = k.UkupanBrojPrimeraka.ToString();
@@ -138,7 +138,7 @@ namespace biblioteka
             txtGodinaIzdavanja.Text = k.GodinaIzdavanja.ToString();
             txtIzdavac.Text = k.Izdavac;
             txtISBN.Text = k.ISBN;
-            txtStanje.Text = k.Stanje;
+            cbStanje.Text = k.Stanje;
             cbProstorija.Text = k.Prostorija;
             cbPolica.Text = k.Polica;
             txtUkupanBrojPrimeraka.Text = k.UkupanBrojPrimeraka.ToString();
@@ -192,7 +192,7 @@ namespace biblioteka
             txtGodinaIzdavanja.Text = k.GodinaIzdavanja.ToString();
             txtIzdavac.Text = k.Izdavac;
             txtISBN.Text = k.ISBN;
-            txtStanje.Text = k.Stanje;
+            cbStanje.Text = k.Stanje;
             cbProstorija.Text = k.Prostorija;
             cbPolica.Text = k.Polica;
             txtUkupanBrojPrimeraka.Text = k.UkupanBrojPrimeraka.ToString();
@@ -248,7 +248,7 @@ namespace biblioteka
             txtGodinaIzdavanja.Text = k.GodinaIzdavanja.ToString();
             txtIzdavac.Text = k.Izdavac;
             txtISBN.Text = k.ISBN;
-            txtStanje.Text = k.Stanje;
+            cbStanje.Text = k.Stanje;
             cbProstorija.Text = k.Prostorija;
             cbPolica.Text = k.Polica;
             txtUkupanBrojPrimeraka.Text = k.UkupanBrojPrimeraka.ToString();
@@ -295,7 +295,7 @@ namespace biblioteka
             txtGodinaIzdavanja.Text = k.GodinaIzdavanja.ToString();
             txtIzdavac.Text = k.Izdavac;
             txtISBN.Text = k.ISBN;
-            txtStanje.Text = k.Stanje;
+            cbStanje.Text = k.Stanje;
             cbProstorija.Text = k.Prostorija;
             cbPolica.Text = k.Polica;
             txtUkupanBrojPrimeraka.Text = k.UkupanBrojPrimeraka.ToString();

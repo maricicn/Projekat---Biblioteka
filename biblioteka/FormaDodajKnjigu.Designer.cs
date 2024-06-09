@@ -52,7 +52,6 @@ namespace biblioteka
             this.txtGodinaIzdavanja = new System.Windows.Forms.TextBox();
             this.txtIzdavac = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
-            this.txtStanje = new System.Windows.Forms.TextBox();
             this.txtUkupanBrojPrimeraka = new System.Windows.Forms.TextBox();
             this.txtNapomene = new System.Windows.Forms.TextBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -70,6 +69,7 @@ namespace biblioteka
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btSkrozLevo = new System.Windows.Forms.Button();
             this.btSkrozDesno = new System.Windows.Forms.Button();
+            this.cbStanje = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -274,14 +274,6 @@ namespace biblioteka
             this.txtISBN.Size = new System.Drawing.Size(123, 22);
             this.txtISBN.TabIndex = 25;
             // 
-            // txtStanje
-            // 
-            this.txtStanje.Location = new System.Drawing.Point(237, 281);
-            this.txtStanje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtStanje.Name = "txtStanje";
-            this.txtStanje.Size = new System.Drawing.Size(123, 22);
-            this.txtStanje.TabIndex = 26;
-            // 
             // txtUkupanBrojPrimeraka
             // 
             this.txtUkupanBrojPrimeraka.Location = new System.Drawing.Point(237, 375);
@@ -384,7 +376,7 @@ namespace biblioteka
             "ne",
             "ne",
             "ne"});
-            this.clbSvaIzdavanja.Location = new System.Drawing.Point(237, 402);
+            this.clbSvaIzdavanja.Location = new System.Drawing.Point(235, 414);
             this.clbSvaIzdavanja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clbSvaIzdavanja.Name = "clbSvaIzdavanja";
             this.clbSvaIzdavanja.ScrollAlwaysVisible = true;
@@ -428,7 +420,7 @@ namespace biblioteka
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(237, 478);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 22);
             this.dateTimePicker1.TabIndex = 51;
@@ -436,7 +428,7 @@ namespace biblioteka
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(237, 510);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(121, 22);
             this.dateTimePicker2.TabIndex = 52;
@@ -463,12 +455,24 @@ namespace biblioteka
             this.btSkrozDesno.UseVisualStyleBackColor = true;
             this.btSkrozDesno.Click += new System.EventHandler(this.btSkrozDesno_Click);
             // 
+            // cbStanje
+            // 
+            this.cbStanje.FormattingEnabled = true;
+            this.cbStanje.Items.AddRange(new object[] {
+            "u biblioteci",
+            "izdata"});
+            this.cbStanje.Location = new System.Drawing.Point(237, 283);
+            this.cbStanje.Name = "cbStanje";
+            this.cbStanje.Size = new System.Drawing.Size(121, 24);
+            this.cbStanje.TabIndex = 55;
+            // 
             // FormaDodajKnjigu
             // 
             this.AcceptButton = this.btOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 642);
+            this.Controls.Add(this.cbStanje);
             this.Controls.Add(this.btSkrozLevo);
             this.Controls.Add(this.btSkrozDesno);
             this.Controls.Add(this.dateTimePicker2);
@@ -486,7 +490,6 @@ namespace biblioteka
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.txtNapomene);
             this.Controls.Add(this.txtUkupanBrojPrimeraka);
-            this.Controls.Add(this.txtStanje);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.txtIzdavac);
             this.Controls.Add(this.txtGodinaIzdavanja);
@@ -544,7 +547,6 @@ namespace biblioteka
         public System.Windows.Forms.TextBox txtGodinaIzdavanja;
         public System.Windows.Forms.TextBox txtIzdavac;
         public System.Windows.Forms.TextBox txtISBN;
-        public System.Windows.Forms.TextBox txtStanje;
         public System.Windows.Forms.TextBox txtUkupanBrojPrimeraka;
         public System.Windows.Forms.TextBox txtNapomene;
         public System.Windows.Forms.ComboBox cbStatus;
@@ -562,5 +564,6 @@ namespace biblioteka
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
         public System.Windows.Forms.Button btSkrozLevo;
         public System.Windows.Forms.Button btSkrozDesno;
+        public System.Windows.Forms.ComboBox cbStanje;
     }
 }
