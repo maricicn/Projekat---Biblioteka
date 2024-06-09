@@ -13,8 +13,6 @@ namespace biblioteka
 {
     public partial class FormPisac : Form
     {
-
-
         public int indeks;
         public FormPisac()
         {
@@ -31,8 +29,6 @@ namespace biblioteka
             txtGodinaRodjenjaPisca.Text = p.GodinaRodjenja.ToString();
 
             txtNapomenePisca.Lines = p.Napomena.ToArray();
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -80,6 +76,32 @@ namespace biblioteka
 
             txtNapomenePisca.Lines = p.Napomena.ToArray();
 
+        }
+
+        private void btSkrozLevo_Click(object sender, EventArgs e)
+        {
+            indeks = 1;
+            Pisac p = Data.pomeranjePisca(indeks);
+            cbStatusPisca.Text = p.Status;
+            txtImePisca.Text = p.Ime;
+            txtPrezimePisca.Text = p.Prezime;
+            cbPol.Text = p.Pol;
+            txtGodinaRodjenjaPisca.Text = p.GodinaRodjenja.ToString();
+
+            txtNapomenePisca.Lines = p.Napomena.ToArray();
+        }
+
+        private void btSkrozDesno_Click(object sender, EventArgs e)
+        {
+            indeks = Data.ListaPisaca.Count;
+            Pisac p = Data.pomeranjePisca(indeks);
+            cbStatusPisca.Text = p.Status;
+            txtImePisca.Text = p.Ime;
+            txtPrezimePisca.Text = p.Prezime;
+            cbPol.Text = p.Pol;
+            txtGodinaRodjenjaPisca.Text = p.GodinaRodjenja.ToString();
+
+            txtNapomenePisca.Lines = p.Napomena.ToArray();
         }
     }
 }
