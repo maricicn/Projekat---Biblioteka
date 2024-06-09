@@ -35,8 +35,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(66, 77);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(296, 118);
             this.button1.TabIndex = 0;
@@ -46,8 +47,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(572, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(516, 77);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(296, 118);
             this.button2.TabIndex = 1;
@@ -58,7 +60,7 @@
             // cbBibliotekari
             // 
             this.cbBibliotekari.FormattingEnabled = true;
-            this.cbBibliotekari.Location = new System.Drawing.Point(572, 337);
+            this.cbBibliotekari.Location = new System.Drawing.Point(516, 262);
             this.cbBibliotekari.Name = "cbBibliotekari";
             this.cbBibliotekari.Size = new System.Drawing.Size(296, 24);
             this.cbBibliotekari.TabIndex = 2;
@@ -68,11 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(921, 387);
             this.Controls.Add(this.cbBibliotekari);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BibliotekarLoby";
             this.Text = "\\";
             this.Load += new System.EventHandler(this.BibliotekarLoby_Load);
