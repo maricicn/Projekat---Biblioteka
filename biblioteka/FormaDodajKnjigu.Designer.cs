@@ -376,11 +376,11 @@ namespace biblioteka
             "ne",
             "ne",
             "ne"});
-            this.clbSvaIzdavanja.Location = new System.Drawing.Point(235, 414);
+            this.clbSvaIzdavanja.Location = new System.Drawing.Point(237, 401);
             this.clbSvaIzdavanja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clbSvaIzdavanja.Name = "clbSvaIzdavanja";
             this.clbSvaIzdavanja.ScrollAlwaysVisible = true;
-            this.clbSvaIzdavanja.Size = new System.Drawing.Size(123, 21);
+            this.clbSvaIzdavanja.Size = new System.Drawing.Size(123, 38);
             this.clbSvaIzdavanja.TabIndex = 47;
             // 
             // btOk
