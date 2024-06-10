@@ -103,5 +103,17 @@ namespace biblioteka
             Dolor.Text = "";
             comboBox1.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string t = textBox1.Text;
+            for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
+            {
+                if(t == Data.prostorGdeSeNalazeProstorije[i].o)
+                {
+                    IP(Data.prostorGdeSeNalazeProstorije[i]);
+                }
+            }
+        }
     }
 }
