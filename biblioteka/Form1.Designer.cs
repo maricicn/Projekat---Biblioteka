@@ -82,6 +82,7 @@
             // 
             // izdavanje_knjiga
             // 
+            this.izdavanje_knjiga.Enabled = false;
             this.izdavanje_knjiga.Location = new System.Drawing.Point(26, 199);
             this.izdavanje_knjiga.Margin = new System.Windows.Forms.Padding(2);
             this.izdavanje_knjiga.Name = "izdavanje_knjiga";
@@ -93,6 +94,7 @@
             // 
             // vracanje_knjiga
             // 
+            this.vracanje_knjiga.Enabled = false;
             this.vracanje_knjiga.Location = new System.Drawing.Point(35, 96);
             this.vracanje_knjiga.Margin = new System.Windows.Forms.Padding(2);
             this.vracanje_knjiga.Name = "vracanje_knjiga";
@@ -104,6 +106,7 @@
             // 
             // pisac
             // 
+            this.pisac.Enabled = false;
             this.pisac.Location = new System.Drawing.Point(399, 190);
             this.pisac.Margin = new System.Windows.Forms.Padding(2);
             this.pisac.Name = "pisac";
@@ -115,6 +118,7 @@
             // 
             // knjiga
             // 
+            this.knjiga.Enabled = false;
             this.knjiga.Location = new System.Drawing.Point(621, 190);
             this.knjiga.Margin = new System.Windows.Forms.Padding(2);
             this.knjiga.Name = "knjiga";
@@ -126,6 +130,7 @@
             // 
             // prostorija
             // 
+            this.prostorija.Enabled = false;
             this.prostorija.Location = new System.Drawing.Point(396, 97);
             this.prostorija.Margin = new System.Windows.Forms.Padding(2);
             this.prostorija.Name = "prostorija";
@@ -137,6 +142,7 @@
             // 
             // polica
             // 
+            this.polica.Enabled = false;
             this.polica.Location = new System.Drawing.Point(617, 98);
             this.polica.Margin = new System.Windows.Forms.Padding(2);
             this.polica.Name = "polica";
@@ -148,6 +154,7 @@
             // 
             // bibliotekar
             // 
+            this.bibliotekar.Enabled = false;
             this.bibliotekar.Location = new System.Drawing.Point(494, 264);
             this.bibliotekar.Margin = new System.Windows.Forms.Padding(2);
             this.bibliotekar.Name = "bibliotekar";
@@ -159,6 +166,7 @@
             // 
             // citalac
             // 
+            this.citalac.Enabled = false;
             this.citalac.Location = new System.Drawing.Point(621, 257);
             this.citalac.Margin = new System.Windows.Forms.Padding(2);
             this.citalac.Name = "citalac";
@@ -183,6 +191,7 @@
             // 
             // izvestaj
             // 
+            this.izvestaj.Enabled = false;
             this.izvestaj.Location = new System.Drawing.Point(133, 234);
             this.izvestaj.Margin = new System.Windows.Forms.Padding(2);
             this.izvestaj.Name = "izvestaj";

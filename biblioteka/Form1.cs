@@ -14,7 +14,7 @@ using System.Security.Policy;
 
 namespace biblioteka
 {
-
+    
 
     public partial class Form1 : Form
     {
@@ -23,10 +23,11 @@ namespace biblioteka
         Point[] points;
         Font[] fonts;
         Padding[] paddings;
+        public static string idimeprezime;
 
         Size size;
 
-        private List<Librarian> librarians;
+        public static List<Librarian> librarians;
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace biblioteka
             Data.UcitajKnjige();
             Data.UcitajIzdavanja();
             Data.ucitajBibliotekare();
+            
 
 
             //Resizovanje
@@ -58,8 +60,9 @@ namespace biblioteka
             //SetCustomCursor();
             librarians = new List<Librarian>
             {
-                new Librarian { Username = "admin", Password = "admin123" }
+                new Librarian ("admin", "admin123")
             };
+            popuniBibliotekare();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -97,10 +100,21 @@ namespace biblioteka
             string username = username1.Text;
             string password = password1.Text;
 
-            Librarian librarian = librarians.Find(l => l.Username == username && l.Password == password);
+            Librarian librarian = librarians.Find(l => l.username == username && l.password == password);
             if (librarian != null)
             {
                 MessageBox.Show("Uspesno logovanje");
+                vracanje_knjiga.Enabled = true;
+                izdavanje_knjiga.Enabled = true;
+                izvestaj.Enabled = true;
+                prostorija.Enabled = true;
+                polica.Enabled = true;
+                pisac.Enabled = true;
+                knjiga.Enabled = true;
+                bibliotekar.Enabled = true;
+                citalac.Enabled = true;
+                idimeprezime = librarian.id_ime_prezime;
+                
                 // Ovde možete otvoriti glavnu formu aplikacije.
             }
             else
@@ -125,7 +139,7 @@ namespace biblioteka
                 return;
             }
 
-            Librarian newLibrarian = new Librarian { Username = username, Password = password };
+            Librarian newLibrarian = new Librarian(username, password);
             librarians.Add(newLibrarian);
 
             MessageBox.Show($"dodat je novi bibliotekar.\nUsername: {username}");
@@ -136,8 +150,20 @@ namespace biblioteka
         }
         public class Librarian
         {
-            public string Username { get; set; }
-            public string Password { get; set; }
+            public string username;
+            public string password;
+            public string id_ime_prezime;
+            public Librarian(string username, string password)
+            {
+                this.username = username;
+                this.password = password;
+            }
+            public Librarian(string username, string password, string id_ime_prezime)
+            {
+                this.username = username;
+                this.password = password;
+                this.id_ime_prezime = id_ime_prezime;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -205,6 +231,17 @@ namespace biblioteka
         {
             FormIzvestaj izvestaj = new FormIzvestaj();
             izvestaj.ShowDialog();
+        }
+        public static void popuniBibliotekare()
+        {
+            for (int i = 0; i < Bibliotekar.bibliotekari.Count; i++)
+            {
+                string username = Bibliotekar.bibliotekari[i].KorisnickoIme;
+                string password = Bibliotekar.bibliotekari[i].Lozinka;
+                string id_ime_prezime = Bibliotekar.bibliotekari[i].ID + " " + Bibliotekar.bibliotekari[i].Ime + " " + Bibliotekar.bibliotekari[i].Prezime;
+                Librarian newLibrarian = new Librarian(username, password, id_ime_prezime);
+                librarians.Add(newLibrarian);
+            }
         }
     }
 }

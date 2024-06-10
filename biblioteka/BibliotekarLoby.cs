@@ -73,6 +73,7 @@ namespace biblioteka
 
                 Data.sacuvajBibliotekare();
                 popuniComboBox();
+                Form1.popuniBibliotekare();
             }
             
         }
@@ -140,6 +141,7 @@ namespace biblioteka
 
                     Data.sacuvajBibliotekare();
                     popuniComboBox();
+                    Form1.popuniBibliotekare();
                 }
             
             }

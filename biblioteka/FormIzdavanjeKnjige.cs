@@ -19,6 +19,8 @@ namespace biblioteka
             InitializeComponent();
             dTVracanje.Value = dTIzdavanje.Value.AddDays(21);
             popuniComboBox();
+            popuniComboBoxBibliotekari();
+            cBBibliotekar.Text = Form1.idimeprezime;
         }
         void popuniComboBox()
         {
@@ -28,6 +30,17 @@ namespace biblioteka
                 if (Data.ListaKnjiga[i].Stanje.ToLower() != "izdata" && Data.ListaKnjiga[i].Status.ToLower() == "aktivan")
                 {
                     cBKnjiga.Items.Add(Data.ListaKnjiga[i].ID + " " + Data.ListaKnjiga[i].Naziv);
+                }
+            }
+        }
+        void popuniComboBoxBibliotekari()
+        {
+            cBBibliotekar.Items.Clear();
+            for (int i = 0; i < Bibliotekar.bibliotekari.Count; i++)
+            {
+                if (Bibliotekar.bibliotekari[i].Status.ToLower() == "aktivan")
+                {
+                    cBBibliotekar.Items.Add(Bibliotekar.bibliotekari[i].ID + " " + Bibliotekar.bibliotekari[i].Ime + " " + Bibliotekar.bibliotekari[i].Prezime);
                 }
             }
         }
@@ -57,6 +70,7 @@ namespace biblioteka
                 Data.ListaKnjiga[index - 1].Citalac = cBCitalac.Text;
                 Data.ListaKnjiga[index - 1].DatumIzdavanja = dTIzdavanje.Value;
                 Data.ListaKnjiga[index - 1].RokZaVracanje = dTVracanje.Value;
+                //Data.ListaKnjiga[index - 1].SvaIzdavanja.Add(izd.dt);
 
                 Data.SacuvajKnjige();
                 popuniComboBox();

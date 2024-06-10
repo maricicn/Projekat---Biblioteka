@@ -18,6 +18,8 @@ namespace biblioteka
         {
             InitializeComponent();
             popuniComboBox();
+            popuniComboBoxBibliotekari();
+            cBBibliotekar.Text = Form1.idimeprezime;
         }
         private void popuniComboBox()
         {
@@ -27,6 +29,17 @@ namespace biblioteka
                 if (Data.ListaKnjiga[i].Stanje.ToLower() == "izdata" && Data.ListaKnjiga[i].Status.ToLower() == "aktivan")
                 {
                     cBKnjiga.Items.Add(Data.ListaKnjiga[i].ID + " " + Data.ListaKnjiga[i].Naziv);
+                }
+            }
+        }
+        void popuniComboBoxBibliotekari()
+        {
+            cBBibliotekar.Items.Clear();
+            for (int i = 0; i < Bibliotekar.bibliotekari.Count; i++)
+            {
+                if (Bibliotekar.bibliotekari[i].Status.ToLower() == "aktivan")
+                {
+                    cBBibliotekar.Items.Add(Bibliotekar.bibliotekari[i].ID + " " + Bibliotekar.bibliotekari[i].Ime + " " + Bibliotekar.bibliotekari[i].Prezime);
                 }
             }
         }
@@ -62,6 +75,13 @@ namespace biblioteka
                     }
                 }
                 //Izmena podatak izdate knjige (stanje - u biblioteci, citalac, bibliotekar, datumi)
+                for (int i = 0; i < Data.ListaIzdavanja.Count; i++)
+                {
+                    if (Data.ListaIzdavanja[i].knjiga == Data.ListaKnjiga[index - 1].Naziv)
+                    {
+                        Data.ListaIzdavanja.RemoveAt(i);
+                    }
+                }
                 Data.ListaKnjiga[index - 1].Stanje = "u biblioteci";
                 Data.ListaKnjiga[index - 1].Bibliotekar = cBBibliotekar.Text;
                 Data.ListaKnjiga[index - 1].Citalac = cBCitalac.Text;
