@@ -97,5 +97,20 @@ namespace biblioteka
             comboBox2.Text = "";
             comboBox1.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string t = textBox1.Text;
+            for (int i = 0; i < Data.listaPolica.Count; i++)
+            {
+                if (t == Data.listaPolica[i].o)
+                {
+                    Lorem.Text = Data.listaPolica[i].Id;
+                    Ipsum.Text = Data.listaPolica[i].o;
+                    comboBox2.Text = Data.listaPolica[i].p;
+                    comboBox1.Text = Data.listaPolica[i].L_Aktivan ? "Aktivan" : "Neaktivan";
+                }
+            }
+        }
     }
 }
