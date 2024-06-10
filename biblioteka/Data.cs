@@ -18,6 +18,7 @@ namespace biblioteka
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
         public static List<Polica> listaPolica = new List<Polica>();
         public static List<Izdavanje> ListaIzdavanja = new List<Izdavanje>();
+        public static List<Zakasnjenje> ListaZakasnjenja = new List<Zakasnjenje>();
         public static int IP;
         public static int IP1;
         public static List<Prostorija> prostorGdeSeNalazeProstorije = new List<Prostorija>();
@@ -59,7 +60,7 @@ namespace biblioteka
             Knjiga k = new Knjiga();
             for (int i = 0; i < ListaKnjiga.Count; i++)
             {
-                if(ListaKnjiga[i].ID == indeks)
+                if (ListaKnjiga[i].ID == indeks)
                 {
                     k = ListaKnjiga[i];
                 }
@@ -73,7 +74,7 @@ namespace biblioteka
             Pisac p = new Pisac();
             for (int i = 0; i < ListaPisaca.Count; i++)
             {
-                if(ListaPisaca[i].ID == indeks)
+                if (ListaPisaca[i].ID == indeks)
                 {
                     p = ListaPisaca[i];
                 }
@@ -145,7 +146,7 @@ namespace biblioteka
 
                 sw.Close();
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
 
             }
@@ -168,14 +169,14 @@ namespace biblioteka
                     List<string> napomene = new List<string>();
                     List<string> SvaIzdanja = new List<string>();
                     List<string> Pisac = new List<string>();
-                    
-                    napomene = delovi[delovi.Count-1].Split('$').ToList<string>();
+
+                    napomene = delovi[delovi.Count - 1].Split('$').ToList<string>();
                     SvaIzdanja = delovi[delovi.Count - 3].Split('$').ToList<string>();
                     Pisac = delovi[delovi.Count - 2].Split('$').ToList<string>();
-                    
+
 
                     //sva izdanja, pisac, napomena;
-                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7],delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], DateTime.Parse(delovi[14]), DateTime.Parse(delovi[15]) ,SvaIzdanja, Pisac,napomene);
+                    Knjiga k = new Knjiga(delovi[0], delovi[1], delovi[2], delovi[3], int.Parse(delovi[4]), int.Parse(delovi[5]), delovi[6], delovi[7], delovi[8], delovi[9], delovi[10], int.Parse(delovi[11]), delovi[12], delovi[13], DateTime.Parse(delovi[14]), DateTime.Parse(delovi[15]), SvaIzdanja, Pisac, napomene);
                     ListaKnjiga.Add(k);
                 }
                 sr.Close();
@@ -236,11 +237,12 @@ namespace biblioteka
             }
             catch (Exception e)
             {
-                
+
             }
         }
         public static void UcitajIzdavanja()
         {
+            ListaIzdavanja.Clear();
             try
             {
                 StreamReader izdavanja = new StreamReader("izdavanjeFile.csv");
@@ -254,9 +256,18 @@ namespace biblioteka
                     {
                         napomene = delovi[6].Split('$').ToList<string>();
                     }*/
-
-                    Izdavanje i = new Izdavanje(delovi[0], delovi[1], DateTime.Parse(delovi[3]), DateTime.Parse(delovi[4]), delovi[2]);
-                    ListaIzdavanja.Add(i);
+                    string knjiga = delovi[1];
+                    for(int j = 0; j < Data.ListaKnjiga.Count; j++)
+                    {
+                        if ((Data.ListaKnjiga[j].ID + " " + Data.ListaKnjiga[j].Naziv) == knjiga)
+                        {
+                            if (Data.ListaKnjiga[j].Stanje.ToLower() == "izdata") {
+                                Izdavanje i = new Izdavanje(delovi[0], delovi[1], DateTime.Parse(delovi[3]), DateTime.Parse(delovi[4]), delovi[2]);
+                                ListaIzdavanja.Add(i);
+                            }
+                        }
+                    }
+                    
                     //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
                 }
                 izdavanja.Close();
@@ -264,6 +275,22 @@ namespace biblioteka
             catch (Exception e)
             {
 
+            }
+        }
+        public static void PopuniListuZakasnjenja()
+        {
+            ListaZakasnjenja.Clear();
+            for (int i = 0; i < ListaIzdavanja.Count; i++)
+            {
+                if (ListaIzdavanja[i].rokzavracanje < DateTime.Now)
+                {
+                    string citalac = ListaIzdavanja[i].citalac;
+                    string knjiga = ListaIzdavanja[i].knjiga;
+                    int zaks = (DateTime.Now- ListaIzdavanja[i].rokzavracanje).Days;
+                    Zakasnjenje zak = new Zakasnjenje(citalac, knjiga, zaks);
+                    ListaZakasnjenja.Add(zak);
+
+                }
             }
         }
 

@@ -14,12 +14,17 @@ namespace biblioteka
     public partial class FormIzvestaj : Form
     {
         public int index;
+        public int indexZakasnjenja;
         public FormIzvestaj()
         {
             InitializeComponent();
             if(Data.ListaIzdavanja.Count() > 0)
             {
                 IzvestajIspisi(0);
+            }
+            if(Data.ListaZakasnjenja.Count() > 0)
+            {
+                ZakasnjenjeIspisi(0);
             }
             
 
@@ -32,7 +37,12 @@ namespace biblioteka
             dateTimePicker1.Value = Data.ListaIzdavanja[index].rokzavracanje;
             textBox3.Text = Data.ListaIzdavanja[index].bibliotekar;
         }
-
+        private void ZakasnjenjeIspisi(int indexZakasnjenja)
+        {
+            textBox5.Text = Data.ListaZakasnjenja[indexZakasnjenja].citalac;
+            textBox4.Text = Data.ListaZakasnjenja[indexZakasnjenja].knjiga;
+            textBox7.Text = Data.ListaZakasnjenja[indexZakasnjenja].brojdana.ToString();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (index < Data.ListaIzdavanja.Count() - 1)
@@ -61,6 +71,24 @@ namespace biblioteka
         {
             index = Data.ListaIzdavanja.Count();
             IzvestajIspisi(index - 1);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (index < Data.ListaZakasnjenja.Count() - 1)
+            {
+                indexZakasnjenja++;
+                ZakasnjenjeIspisi(indexZakasnjenja);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (indexZakasnjenja >= 1)
+            {
+                indexZakasnjenja--;
+                ZakasnjenjeIspisi(indexZakasnjenja);
+            }
         }
     }
 }

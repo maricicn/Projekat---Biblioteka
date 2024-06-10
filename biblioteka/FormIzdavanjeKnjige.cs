@@ -61,6 +61,7 @@ namespace biblioteka
                 izdavanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dTIzdavanje.Value + ";" + dTVracanje.Value);
                 Izdavanje izd = new Izdavanje(cBCitalac.Text, cBKnjiga.Text, dTIzdavanje.Value, dTVracanje.Value, cBBibliotekar.Text);
                 Data.ListaIzdavanja.Add(izd);
+                Data.PopuniListuZakasnjenja();
                 string[] line = cBKnjiga.Text.Split(' ');
                 int index = int.Parse(line[0]);
     

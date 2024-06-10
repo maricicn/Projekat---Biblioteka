@@ -74,6 +74,7 @@ namespace biblioteka
                         Data.ListaIzdavanja.RemoveAt(i);
                     }
                 }
+                Data.PopuniListuZakasnjenja();
                 //Izmena podatak izdate knjige (stanje - u biblioteci, citalac, bibliotekar, datumi)
                 for (int i = 0; i < Data.ListaIzdavanja.Count; i++)
                 {

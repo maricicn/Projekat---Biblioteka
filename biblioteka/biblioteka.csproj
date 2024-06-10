@@ -147,6 +147,7 @@
     <Compile Include="PROSTORIJA37.Designer.cs">
       <DependentUpon>PROSTORIJA37.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zakasnjenje.cs" />
     <EmbeddedResource Include="BibliotekarLoby.resx">
       <DependentUpon>BibliotekarLoby.cs</DependentUpon>
     </EmbeddedResource>

@@ -36,6 +36,7 @@ namespace biblioteka
             Data.UcitajKnjige();
             Data.UcitajIzdavanja();
             Data.ucitajBibliotekare();
+            Data.PopuniListuZakasnjenja();
             
 
 
