@@ -24,22 +24,30 @@ namespace biblioteka
         {
             if (string.IsNullOrEmpty(lID) || string.IsNullOrEmpty(lo) || llp == null) return;
             ID = lID;
-o = lo;
+            o = lo;
             p = llp;
             L_Aktivan = lla;
         }
 
         public Prostorija(string s)
         {
-            string[] S = s.Split(';');
-            //if (S.Length != 3) return;
-            ID = S[0];
-            o = S[1];
-            L_Aktivan = S[2] == "True";
-            for (int i = 3; i < S.Length; i++)
+            try
             {
-                p.Add(Data.FP(S[i]));
+                string[] S = s.Split(';');
+                //if (S.Length != 3) return;
+                ID = S[0];
+                o = S[1];
+                L_Aktivan = S[2] == "True";
+                for (int i = 3; i < S.Length; i++)
+                {
+                    p.Add(Data.FP(S[i]));
+                }
             }
+            catch (Exception e)
+            {
+
+            }
+            
         }
 
         public void Dodavanje(string ID, string lo, List<string> lp, List<Napomena> napomena)

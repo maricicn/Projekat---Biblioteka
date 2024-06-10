@@ -326,6 +326,7 @@ namespace biblioteka
             this.cbProstorija.Name = "cbProstorija";
             this.cbProstorija.Size = new System.Drawing.Size(123, 24);
             this.cbProstorija.TabIndex = 39;
+            this.cbProstorija.SelectedIndexChanged += new System.EventHandler(this.cbProstorija_SelectedIndexChanged);
             // 
             // cbPolica
             // 

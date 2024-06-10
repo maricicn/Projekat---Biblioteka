@@ -18,6 +18,15 @@ namespace biblioteka
             InitializeComponent();
 
 
+            cbProstorija.Items.Clear();
+            for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
+            {
+                cbProstorija.Items.Add(Data.prostorGdeSeNalazeProstorije[i].o);
+            }
+
+            
+
+
             clbPisci.Items.Clear();
             for (int i = 0; i < Data.ListaPisaca.Count; i++)
             {
@@ -310,6 +319,22 @@ namespace biblioteka
             dateTimePicker2.Value = k.RokZaVracanje;
             cbBibliotekar.Text = k.Bibliotekar;
             txtNapomene.Lines = k.Napomena.ToArray();
+        }
+
+        private void cbProstorija_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbPolica.Items.Clear();
+            for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
+            {
+                if (cbProstorija.Text == Data.prostorGdeSeNalazeProstorije[i].o)
+                {
+                    for (int j = 0; j < Data.prostorGdeSeNalazeProstorije[i].p.Count; j++)
+                    {
+                        cbPolica.Items.Add(Data.prostorGdeSeNalazeProstorije[i].p[j].o);
+                    }
+                }
+            }
+
         }
     }
 }
