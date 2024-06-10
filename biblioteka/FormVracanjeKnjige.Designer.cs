@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVracanjeKnjige));
             this.cBBibliotekar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dTVracanje = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,7 @@
             // cBBibliotekar
             // 
             this.cBBibliotekar.FormattingEnabled = true;
-            this.cBBibliotekar.Location = new System.Drawing.Point(586, 242);
+            this.cBBibliotekar.Location = new System.Drawing.Point(584, 254);
             this.cBBibliotekar.Name = "cBBibliotekar";
             this.cBBibliotekar.Size = new System.Drawing.Size(192, 21);
             this.cBBibliotekar.TabIndex = 21;
@@ -57,7 +58,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
             this.label6.Image = global::biblioteka.Properties.Resources.images;
-            this.label6.Location = new System.Drawing.Point(610, 211);
+            this.label6.Location = new System.Drawing.Point(608, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 29);
             this.label6.TabIndex = 20;
@@ -65,7 +66,7 @@
             // 
             // dTVracanje
             // 
-            this.dTVracanje.Location = new System.Drawing.Point(337, 315);
+            this.dTVracanje.Location = new System.Drawing.Point(337, 305);
             this.dTVracanje.Name = "dTVracanje";
             this.dTVracanje.Size = new System.Drawing.Size(200, 20);
             this.dTVracanje.TabIndex = 19;
@@ -77,7 +78,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.IndianRed;
             this.label5.Image = global::biblioteka.Properties.Resources.images;
-            this.label5.Location = new System.Drawing.Point(341, 283);
+            this.label5.Location = new System.Drawing.Point(341, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(183, 29);
             this.label5.TabIndex = 17;
@@ -86,7 +87,7 @@
             // cBKnjiga
             // 
             this.cBKnjiga.FormattingEnabled = true;
-            this.cBKnjiga.Location = new System.Drawing.Point(59, 315);
+            this.cBKnjiga.Location = new System.Drawing.Point(59, 305);
             this.cBKnjiga.Name = "cBKnjiga";
             this.cBKnjiga.Size = new System.Drawing.Size(192, 21);
             this.cBKnjiga.TabIndex = 15;
@@ -99,7 +100,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.IndianRed;
             this.label3.Image = global::biblioteka.Properties.Resources.images;
-            this.label3.Location = new System.Drawing.Point(54, 283);
+            this.label3.Location = new System.Drawing.Point(54, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 29);
             this.label3.TabIndex = 14;
@@ -108,7 +109,7 @@
             // cBCitalac
             // 
             this.cBCitalac.FormattingEnabled = true;
-            this.cBCitalac.Location = new System.Drawing.Point(59, 189);
+            this.cBCitalac.Location = new System.Drawing.Point(59, 185);
             this.cBCitalac.Name = "cBCitalac";
             this.cBCitalac.Size = new System.Drawing.Size(192, 21);
             this.cBCitalac.TabIndex = 13;
@@ -120,7 +121,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.IndianRed;
             this.label2.Image = global::biblioteka.Properties.Resources.images;
-            this.label2.Location = new System.Drawing.Point(54, 157);
+            this.label2.Location = new System.Drawing.Point(54, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(269, 29);
             this.label2.TabIndex = 12;
@@ -143,7 +144,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.button1.Location = new System.Drawing.Point(641, 315);
+            this.button1.BackgroundImage = global::biblioteka.Properties.Resources.images;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.IndianRed;
+            this.button1.Location = new System.Drawing.Point(644, 281);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 67);
             this.button1.TabIndex = 22;
@@ -154,16 +158,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(353, 178);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.IndianRed;
+            this.label4.Image = global::biblioteka.Properties.Resources.images;
+            this.label4.Location = new System.Drawing.Point(341, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.Size = new System.Drawing.Size(259, 29);
             this.label4.TabIndex = 23;
             this.label4.Text = "Rok za vracanje knjige:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(337, 201);
+            this.dateTimePicker1.Location = new System.Drawing.Point(337, 185);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 24;
@@ -188,6 +194,7 @@
             this.Controls.Add(this.cBCitalac);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVracanjeKnjige";
             this.Text = "FormVracanjeKnjige";
             this.ResumeLayout(false);

@@ -237,6 +237,7 @@
             this.Controls.Add(this.password1);
             this.Controls.Add(this.username1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
