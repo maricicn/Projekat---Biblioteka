@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIzdavanjeKnjige));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cBCitalac = new System.Windows.Forms.ComboBox();
@@ -162,7 +163,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.button1.Location = new System.Drawing.Point(640, 320);
+            this.button1.BackgroundImage = global::biblioteka.Properties.Resources.images;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.IndianRed;
+            this.button1.Location = new System.Drawing.Point(641, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 67);
             this.button1.TabIndex = 11;
@@ -191,6 +195,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIzdavanjeKnjige";
             this.Text = "FormIzdavanjeKnjige";
             this.ResumeLayout(false);

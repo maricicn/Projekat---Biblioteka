@@ -251,5 +251,32 @@
   <ItemGroup>
     <None Include="Resources\Untitled-3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\86e42162d216e1f016d0dd49e5278bf2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brankic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floating_Shelf_Ash_Veneer_1500mm_Shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_37564907_UF78p26mRJWYrYqJ97G2Ym5iN4IhDCMX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leerer-weisser-Raum_620x417px.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

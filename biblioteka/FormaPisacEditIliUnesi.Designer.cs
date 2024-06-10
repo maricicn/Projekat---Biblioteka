@@ -29,6 +29,7 @@ namespace biblioteka
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPisacEditIliUnesi));
             this.btDodajPisca = new System.Windows.Forms.Button();
             this.btEditPisca = new System.Windows.Forms.Button();
             this.cbPisci = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,7 @@ namespace biblioteka
             this.btDodajPisca.ForeColor = System.Drawing.Color.IndianRed;
             this.btDodajPisca.Image = global::biblioteka.Properties.Resources.images;
             this.btDodajPisca.Location = new System.Drawing.Point(91, 145);
-            this.btDodajPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btDodajPisca.Margin = new System.Windows.Forms.Padding(2);
             this.btDodajPisca.Name = "btDodajPisca";
             this.btDodajPisca.Size = new System.Drawing.Size(172, 59);
             this.btDodajPisca.TabIndex = 0;
@@ -58,7 +59,7 @@ namespace biblioteka
             this.btEditPisca.ForeColor = System.Drawing.Color.IndianRed;
             this.btEditPisca.Image = global::biblioteka.Properties.Resources.images;
             this.btEditPisca.Location = new System.Drawing.Point(348, 145);
-            this.btEditPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditPisca.Margin = new System.Windows.Forms.Padding(2);
             this.btEditPisca.Name = "btEditPisca";
             this.btEditPisca.Size = new System.Drawing.Size(179, 59);
             this.btEditPisca.TabIndex = 1;
@@ -70,7 +71,7 @@ namespace biblioteka
             // 
             this.cbPisci.FormattingEnabled = true;
             this.cbPisci.Location = new System.Drawing.Point(348, 209);
-            this.cbPisci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPisci.Margin = new System.Windows.Forms.Padding(2);
             this.cbPisci.Name = "cbPisci";
             this.cbPisci.Size = new System.Drawing.Size(179, 21);
             this.cbPisci.TabIndex = 2;
@@ -92,7 +93,7 @@ namespace biblioteka
             // txtPretraga
             // 
             this.txtPretraga.Location = new System.Drawing.Point(162, 40);
-            this.txtPretraga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPretraga.Margin = new System.Windows.Forms.Padding(2);
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(135, 20);
             this.txtPretraga.TabIndex = 5;
@@ -124,7 +125,8 @@ namespace biblioteka
             this.Controls.Add(this.cbPisci);
             this.Controls.Add(this.btEditPisca);
             this.Controls.Add(this.btDodajPisca);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormaPisacEditIliUnesi";
             this.Text = "FormaPisacEditIliUnesi";
             this.ResumeLayout(false);

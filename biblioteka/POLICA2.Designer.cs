@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POLICA2));
             this.Sacuvaj = new System.Windows.Forms.Button();
             this.Lorem = new System.Windows.Forms.TextBox();
             this.Ipsum = new System.Windows.Forms.TextBox();
@@ -187,6 +188,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::biblioteka.Properties.Resources.Floating_Shelf_Ash_Veneer_1500mm_Shadow;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1078, 450);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
@@ -203,6 +206,8 @@
             this.Controls.Add(this.Ipsum);
             this.Controls.Add(this.Lorem);
             this.Controls.Add(this.Sacuvaj);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "POLICA2";
             this.Text = "POLICA2";
             this.ResumeLayout(false);
