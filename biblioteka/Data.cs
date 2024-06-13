@@ -18,6 +18,8 @@ namespace biblioteka
         public static List<Knjiga> ListaKnjiga = new List<Knjiga>();
         public static List<Polica> listaPolica = new List<Polica>();
         public static List<Izdavanje> ListaIzdavanja = new List<Izdavanje>();
+        public static List<Izdavanje> TrenutnaIzdavanja = new List<Izdavanje>();
+        public static List<Vracanje> ListaVracanja = new List<Vracanje> ();
         public static List<Zakasnjenje> ListaZakasnjenja = new List<Zakasnjenje>();
         public static int IP;
         public static int IP1;
@@ -240,7 +242,7 @@ namespace biblioteka
 
             }
         }
-        public static void UcitajIzdavanja()
+        /*public static void UcitajIzdavanja()
         {
             ListaIzdavanja.Clear();
             try
@@ -251,11 +253,11 @@ namespace biblioteka
                     string l = izdavanja.ReadLine();
                     string[] delovi = l.Split(';');
 
-                    /*List<string> napomene = new List<string>();
-                    if (delovi.Length >= 7)
-                    {
-                        napomene = delovi[6].Split('$').ToList<string>();
-                    }*/
+                    //List<string> napomene = new List<string>();
+                    //if (delovi.Length >= 7)
+                    //{
+                    //    napomene = delovi[6].Split('$').ToList<string>();
+                    //}
                     string knjiga = delovi[1];
                     for(int j = 0; j < Data.ListaKnjiga.Count; j++)
                     {
@@ -271,6 +273,46 @@ namespace biblioteka
                     //string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena
                 }
                 izdavanja.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }*/
+        public static void UcitajIzdavanja()
+        {
+            ListaIzdavanja.Clear();
+            try
+            {
+                StreamReader izdavanja = new StreamReader("izdavanjeFile.csv");
+                while (!izdavanja.EndOfStream)
+                {
+                    string l = izdavanja.ReadLine();
+                    string[] delovi = l.Split(';');
+                    Izdavanje i = new Izdavanje(delovi[0], delovi[1], DateTime.Parse(delovi[3]), DateTime.Parse(delovi[4]), delovi[2]);
+                    ListaIzdavanja.Add(i);
+                }
+                izdavanja.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
+        }
+        public static void UcitajVracanja()
+        {
+            ListaVracanja.Clear();
+            try
+            {
+                StreamReader vracanje = new StreamReader("vracanjeFile.csv");
+                while (!vracanje.EndOfStream)
+                {
+                    string l = vracanje.ReadLine();
+                    string[] delovi = l.Split(';');
+                    Vracanje v = new Vracanje(delovi[0], delovi[1], DateTime.Parse(delovi[3]), DateTime.Parse(delovi[4]), delovi[2], delovi[5], int.Parse(delovi[6]));
+                    ListaVracanja.Add(v);
+                }
+                vracanje.Close();
             }
             catch (Exception e)
             {

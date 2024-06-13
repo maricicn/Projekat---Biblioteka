@@ -63,26 +63,12 @@ namespace biblioteka
                 
                 StreamWriter vracanjeknjige = new StreamWriter("vracanjeFile.csv", append: true);
                 vracanjeknjige.WriteLine(cBCitalac.Text + ";" + cBKnjiga.Text + ";" + cBBibliotekar.Text + ";" + dateTimePicker1.Text + ";" + dTVracanje.Text + ";" + zakasnjenje + ";" + zakasnjenjeDani);
-                
+                Vracanje v = new Vracanje(cBCitalac.Text, cBKnjiga.Text, dateTimePicker1.Value, dTVracanje.Value, cBBibliotekar.Text, zakasnjenje, zakasnjenjeDani);
+                Data.ListaVracanja.Add(v);
                 string[] line = cBKnjiga.Text.Split(' ');
                 int index = int.Parse(line[0]);
 
-                for(int i = 0; i < Data.ListaIzdavanja.Count(); i++)
-                {
-                    if (Data.ListaIzdavanja[i].knjiga == cBKnjiga.Text)
-                    {
-                        Data.ListaIzdavanja.RemoveAt(i);
-                    }
-                }
-                Data.PopuniListuZakasnjenja();
                 //Izmena podatak izdate knjige (stanje - u biblioteci, citalac, bibliotekar, datumi)
-                for (int i = 0; i < Data.ListaIzdavanja.Count; i++)
-                {
-                    if (Data.ListaIzdavanja[i].knjiga == Data.ListaKnjiga[index - 1].Naziv)
-                    {
-                        Data.ListaIzdavanja.RemoveAt(i);
-                    }
-                }
                 Data.ListaKnjiga[index - 1].Stanje = "u biblioteci";
                 Data.ListaKnjiga[index - 1].Bibliotekar = cBBibliotekar.Text;
                 Data.ListaKnjiga[index - 1].Citalac = cBCitalac.Text;
