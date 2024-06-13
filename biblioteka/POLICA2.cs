@@ -36,13 +36,13 @@ namespace biblioteka
                     {
                         if (Data.prostorGdeSeNalazeProstorije[i].p[j].o.Trim() == p.o.Trim())
                         {
+                            MessageBox.Show($"{Data.prostorGdeSeNalazeProstorije[i].p[j].o.Trim()}, {p.o.Trim()}");
                             Data.prostorGdeSeNalazeProstorije[i].p.RemoveAt(j);
                         }
                     }
                 }
                 Data.SCUVAj();
                 Data.listaPolica[Data.IP] = p;
-                Data.listaPolica.Add(p);
                 for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
                 {
                     if (p.p == Data.prostorGdeSeNalazeProstorije[i].o)
@@ -52,7 +52,7 @@ namespace biblioteka
                     }
                 }
             }
-            catch
+            catch(ArgumentOutOfRangeException)
             {
                 Data.DodajPolicu(p);
 
