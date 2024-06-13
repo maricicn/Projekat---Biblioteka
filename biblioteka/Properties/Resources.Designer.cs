@@ -143,16 +143,6 @@ namespace biblioteka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap s {
-            get {
-                object obj = ResourceManager.GetObject("s", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap sofia_ritter_chatting_4k {
             get {
                 object obj = ResourceManager.GetObject("sofia-ritter-chatting-4k", resourceCulture);
