@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::biblioteka.Properties.Resources.Leerer_weisser_Raum_620x417px;
+            this.BackgroundImage = global::biblioteka.Properties.Resources.s;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1051, 450);
             this.Controls.Add(this.button2);

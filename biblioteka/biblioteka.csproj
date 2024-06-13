@@ -280,5 +280,8 @@
   <ItemGroup>
     <None Include="Resources\Leerer-weisser-Raum_620x417px.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
