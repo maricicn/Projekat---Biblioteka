@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WMPLib;
 
 namespace biblioteka
 {
     public partial class FormPisac : Form
     {
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
+
         public int indeks;
         public FormPisac()
         {
@@ -21,6 +24,12 @@ namespace biblioteka
             btSkrozDesno.Visible = false;
             btLevo.Visible = false;
             btDesno.Visible = false;
+
+            string url = Directory.GetCurrentDirectory();
+            url = Directory.GetParent(url).FullName + "\\bye.mp3";
+            player.URL = url;
+            player.controls.play();
+            
         }
         public FormPisac(Pisac p, int indeks)
         {
