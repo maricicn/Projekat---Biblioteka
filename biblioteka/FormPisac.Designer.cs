@@ -53,7 +53,7 @@
             // txtImePisca
             // 
             this.txtImePisca.Location = new System.Drawing.Point(201, 62);
-            this.txtImePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtImePisca.Margin = new System.Windows.Forms.Padding(2);
             this.txtImePisca.Name = "txtImePisca";
             this.txtImePisca.Size = new System.Drawing.Size(76, 20);
             this.txtImePisca.TabIndex = 2;
@@ -61,7 +61,7 @@
             // txtPrezimePisca
             // 
             this.txtPrezimePisca.Location = new System.Drawing.Point(201, 85);
-            this.txtPrezimePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrezimePisca.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrezimePisca.Name = "txtPrezimePisca";
             this.txtPrezimePisca.Size = new System.Drawing.Size(76, 20);
             this.txtPrezimePisca.TabIndex = 3;
@@ -69,7 +69,7 @@
             // txtGodinaRodjenjaPisca
             // 
             this.txtGodinaRodjenjaPisca.Location = new System.Drawing.Point(201, 132);
-            this.txtGodinaRodjenjaPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGodinaRodjenjaPisca.Margin = new System.Windows.Forms.Padding(2);
             this.txtGodinaRodjenjaPisca.Name = "txtGodinaRodjenjaPisca";
             this.txtGodinaRodjenjaPisca.Size = new System.Drawing.Size(76, 20);
             this.txtGodinaRodjenjaPisca.TabIndex = 4;
@@ -81,7 +81,7 @@
             "Aktivan",
             "Neaktivan"});
             this.cbStatusPisca.Location = new System.Drawing.Point(201, 37);
-            this.cbStatusPisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbStatusPisca.Margin = new System.Windows.Forms.Padding(2);
             this.cbStatusPisca.Name = "cbStatusPisca";
             this.cbStatusPisca.Size = new System.Drawing.Size(92, 21);
             this.cbStatusPisca.TabIndex = 5;
@@ -160,7 +160,7 @@
             "Muski",
             "Zenski"});
             this.cbPol.Location = new System.Drawing.Point(201, 107);
-            this.cbPol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPol.Margin = new System.Windows.Forms.Padding(2);
             this.cbPol.Name = "cbPol";
             this.cbPol.Size = new System.Drawing.Size(92, 21);
             this.cbPol.TabIndex = 11;
@@ -182,7 +182,7 @@
             // 
             this.txtNapomenePisca.AcceptsReturn = true;
             this.txtNapomenePisca.Location = new System.Drawing.Point(108, 201);
-            this.txtNapomenePisca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNapomenePisca.Margin = new System.Windows.Forms.Padding(2);
             this.txtNapomenePisca.Multiline = true;
             this.txtNapomenePisca.Name = "txtNapomenePisca";
             this.txtNapomenePisca.Size = new System.Drawing.Size(167, 86);
@@ -195,7 +195,7 @@
             this.btOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOk.ForeColor = System.Drawing.Color.IndianRed;
             this.btOk.Location = new System.Drawing.Point(336, 219);
-            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btOk.Margin = new System.Windows.Forms.Padding(2);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(137, 58);
             this.btOk.TabIndex = 14;
@@ -280,7 +280,7 @@
             this.Controls.Add(this.txtPrezimePisca);
             this.Controls.Add(this.txtImePisca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPisac";
             this.Text = "FormPisac";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
