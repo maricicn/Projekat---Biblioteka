@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace biblioteka
 {
     public class Osoba : Covek, IOsoba
@@ -36,6 +38,26 @@ namespace biblioteka
         }
 
         public string SkolskoZvanje;
+
+        public Osoba(string id, string status, string ime, string prezime, string pol, int godinarodjenja, List<string> napomena, string imejednogroditelja, int danrodjenja, int mesecrodjenja, string jmbg, string adresaulicabr, string adresagrad, int adresapostanskibr, string telefon, string mail, string stepenstrucnespreme, string skolskozvanje)
+            :base (id, status, ime, prezime, pol, godinarodjenja, napomena)
+        {
+            this.ImeJednogRoditelja = imejednogroditelja;
+            this.DanRodjenja = danrodjenja;
+            this.MesecRodjenja = mesecrodjenja;
+            this.JMBG = jmbg;
+            this.AdresaUlicaBr = adresaulicabr;
+            this.AdresaGrad = adresagrad;
+            this.AdresaPostanskiBr = adresapostanskibr;
+            this.Telefon = telefon;
+            this.Mail = mail;
+            this.StepenStrucneSpreme = stepenstrucnespreme;
+            this.SkolskoZvanje = skolskozvanje;
+        }
+        public Osoba()
+        {
+
+        }
 
         public bool JMBGProvera()
         {

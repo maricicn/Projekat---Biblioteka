@@ -50,10 +50,10 @@
             // 
             this.username1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.username1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.username1.Location = new System.Drawing.Point(35, 297);
-            this.username1.Margin = new System.Windows.Forms.Padding(2);
+            this.username1.Location = new System.Drawing.Point(47, 366);
+            this.username1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username1.Name = "username1";
-            this.username1.Size = new System.Drawing.Size(86, 20);
+            this.username1.Size = new System.Drawing.Size(113, 22);
             this.username1.TabIndex = 0;
             this.username1.TextChanged += new System.EventHandler(this.username2);
             // 
@@ -61,19 +61,20 @@
             // 
             this.password1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.password1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.password1.Location = new System.Drawing.Point(35, 319);
-            this.password1.Margin = new System.Windows.Forms.Padding(2);
+            this.password1.Location = new System.Drawing.Point(47, 393);
+            this.password1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.password1.Name = "password1";
-            this.password1.Size = new System.Drawing.Size(86, 20);
+            this.password1.Size = new System.Drawing.Size(113, 22);
             this.password1.TabIndex = 1;
             this.password1.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // potvrdi
             // 
-            this.potvrdi.Location = new System.Drawing.Point(133, 320);
-            this.potvrdi.Margin = new System.Windows.Forms.Padding(2);
+            this.potvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.potvrdi.Location = new System.Drawing.Point(177, 394);
+            this.potvrdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.potvrdi.Name = "potvrdi";
-            this.potvrdi.Size = new System.Drawing.Size(45, 19);
+            this.potvrdi.Size = new System.Drawing.Size(60, 23);
             this.potvrdi.TabIndex = 2;
             this.potvrdi.Text = "potvrdi";
             this.potvrdi.UseVisualStyleBackColor = true;
@@ -81,10 +82,11 @@
             // 
             // izdavanje_knjiga
             // 
-            this.izdavanje_knjiga.Location = new System.Drawing.Point(26, 199);
-            this.izdavanje_knjiga.Margin = new System.Windows.Forms.Padding(2);
+            this.izdavanje_knjiga.Enabled = false;
+            this.izdavanje_knjiga.Location = new System.Drawing.Point(35, 245);
+            this.izdavanje_knjiga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.izdavanje_knjiga.Name = "izdavanje_knjiga";
-            this.izdavanje_knjiga.Size = new System.Drawing.Size(94, 19);
+            this.izdavanje_knjiga.Size = new System.Drawing.Size(125, 23);
             this.izdavanje_knjiga.TabIndex = 3;
             this.izdavanje_knjiga.Text = "izdavanje knjiga";
             this.izdavanje_knjiga.UseVisualStyleBackColor = true;
@@ -92,10 +94,11 @@
             // 
             // vracanje_knjiga
             // 
-            this.vracanje_knjiga.Location = new System.Drawing.Point(35, 98);
-            this.vracanje_knjiga.Margin = new System.Windows.Forms.Padding(2);
+            this.vracanje_knjiga.Enabled = false;
+            this.vracanje_knjiga.Location = new System.Drawing.Point(47, 118);
+            this.vracanje_knjiga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vracanje_knjiga.Name = "vracanje_knjiga";
-            this.vracanje_knjiga.Size = new System.Drawing.Size(90, 19);
+            this.vracanje_knjiga.Size = new System.Drawing.Size(120, 31);
             this.vracanje_knjiga.TabIndex = 4;
             this.vracanje_knjiga.Text = "vracanje knjiga";
             this.vracanje_knjiga.UseVisualStyleBackColor = true;
@@ -103,10 +106,11 @@
             // 
             // pisac
             // 
-            this.pisac.Location = new System.Drawing.Point(399, 196);
-            this.pisac.Margin = new System.Windows.Forms.Padding(2);
+            this.pisac.Enabled = false;
+            this.pisac.Location = new System.Drawing.Point(532, 234);
+            this.pisac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pisac.Name = "pisac";
-            this.pisac.Size = new System.Drawing.Size(44, 19);
+            this.pisac.Size = new System.Drawing.Size(59, 33);
             this.pisac.TabIndex = 5;
             this.pisac.Text = "pisac";
             this.pisac.UseVisualStyleBackColor = true;
@@ -114,10 +118,11 @@
             // 
             // knjiga
             // 
-            this.knjiga.Location = new System.Drawing.Point(621, 196);
-            this.knjiga.Margin = new System.Windows.Forms.Padding(2);
+            this.knjiga.Enabled = false;
+            this.knjiga.Location = new System.Drawing.Point(828, 234);
+            this.knjiga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.knjiga.Name = "knjiga";
-            this.knjiga.Size = new System.Drawing.Size(56, 19);
+            this.knjiga.Size = new System.Drawing.Size(75, 31);
             this.knjiga.TabIndex = 6;
             this.knjiga.Text = "knjiga";
             this.knjiga.UseVisualStyleBackColor = true;
@@ -125,10 +130,11 @@
             // 
             // prostorija
             // 
-            this.prostorija.Location = new System.Drawing.Point(399, 98);
-            this.prostorija.Margin = new System.Windows.Forms.Padding(2);
+            this.prostorija.Enabled = false;
+            this.prostorija.Location = new System.Drawing.Point(528, 119);
+            this.prostorija.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.prostorija.Name = "prostorija";
-            this.prostorija.Size = new System.Drawing.Size(56, 19);
+            this.prostorija.Size = new System.Drawing.Size(87, 32);
             this.prostorija.TabIndex = 7;
             this.prostorija.Text = "prostorija";
             this.prostorija.UseVisualStyleBackColor = true;
@@ -136,10 +142,11 @@
             // 
             // polica
             // 
-            this.polica.Location = new System.Drawing.Point(621, 98);
-            this.polica.Margin = new System.Windows.Forms.Padding(2);
+            this.polica.Enabled = false;
+            this.polica.Location = new System.Drawing.Point(823, 121);
+            this.polica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.polica.Name = "polica";
-            this.polica.Size = new System.Drawing.Size(56, 19);
+            this.polica.Size = new System.Drawing.Size(75, 31);
             this.polica.TabIndex = 8;
             this.polica.Text = "polica";
             this.polica.UseVisualStyleBackColor = true;
@@ -147,33 +154,37 @@
             // 
             // bibliotekar
             // 
-            this.bibliotekar.Location = new System.Drawing.Point(494, 264);
-            this.bibliotekar.Margin = new System.Windows.Forms.Padding(2);
+            this.bibliotekar.Enabled = false;
+            this.bibliotekar.Location = new System.Drawing.Point(659, 325);
+            this.bibliotekar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bibliotekar.Name = "bibliotekar";
-            this.bibliotekar.Size = new System.Drawing.Size(66, 19);
+            this.bibliotekar.Size = new System.Drawing.Size(88, 23);
             this.bibliotekar.TabIndex = 9;
             this.bibliotekar.Text = "bibliotekar";
             this.bibliotekar.UseVisualStyleBackColor = true;
+            this.bibliotekar.Click += new System.EventHandler(this.bibliotekar_Click);
             // 
             // citalac
             // 
-            this.citalac.Location = new System.Drawing.Point(621, 257);
-            this.citalac.Margin = new System.Windows.Forms.Padding(2);
+            this.citalac.Enabled = false;
+            this.citalac.Location = new System.Drawing.Point(828, 316);
+            this.citalac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.citalac.Name = "citalac";
-            this.citalac.Size = new System.Drawing.Size(56, 19);
+            this.citalac.Size = new System.Drawing.Size(75, 23);
             this.citalac.TabIndex = 10;
             this.citalac.Text = "citalac";
             this.citalac.UseVisualStyleBackColor = true;
+            this.citalac.Click += new System.EventHandler(this.citalac_Click);
             // 
             // izlaz
             // 
             this.izlaz.BackColor = System.Drawing.Color.RosyBrown;
             this.izlaz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.izlaz.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.izlaz.Location = new System.Drawing.Point(380, 362);
-            this.izlaz.Margin = new System.Windows.Forms.Padding(2);
+            this.izlaz.Location = new System.Drawing.Point(507, 446);
+            this.izlaz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.izlaz.Name = "izlaz";
-            this.izlaz.Size = new System.Drawing.Size(37, 19);
+            this.izlaz.Size = new System.Drawing.Size(49, 23);
             this.izlaz.TabIndex = 11;
             this.izlaz.Text = "izlaz";
             this.izlaz.UseVisualStyleBackColor = false;
@@ -181,20 +192,22 @@
             // 
             // izvestaj
             // 
-            this.izvestaj.Location = new System.Drawing.Point(133, 236);
-            this.izvestaj.Margin = new System.Windows.Forms.Padding(2);
+            this.izvestaj.Enabled = false;
+            this.izvestaj.Location = new System.Drawing.Point(177, 288);
+            this.izvestaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.izvestaj.Name = "izvestaj";
-            this.izvestaj.Size = new System.Drawing.Size(56, 19);
+            this.izvestaj.Size = new System.Drawing.Size(75, 30);
             this.izvestaj.TabIndex = 12;
             this.izvestaj.Text = "izvestaj";
             this.izvestaj.UseVisualStyleBackColor = true;
+            this.izvestaj.Click += new System.EventHandler(this.izvestaj_Click);
             // 
             // novi
             // 
-            this.novi.Location = new System.Drawing.Point(133, 297);
-            this.novi.Margin = new System.Windows.Forms.Padding(2);
+            this.novi.Location = new System.Drawing.Point(177, 366);
+            this.novi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.novi.Name = "novi";
-            this.novi.Size = new System.Drawing.Size(46, 19);
+            this.novi.Size = new System.Drawing.Size(61, 23);
             this.novi.TabIndex = 13;
             this.novi.Text = "novi";
             this.novi.UseVisualStyleBackColor = true;
@@ -202,10 +215,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(688, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(917, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 22);
+            this.button1.Size = new System.Drawing.Size(52, 27);
             this.button1.TabIndex = 14;
             this.button1.Text = "help";
             this.button1.UseVisualStyleBackColor = true;
@@ -213,11 +226,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(736, 437);
+            this.ClientSize = new System.Drawing.Size(981, 538);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.novi);
             this.Controls.Add(this.izvestaj);
@@ -234,10 +247,11 @@
             this.Controls.Add(this.password1);
             this.Controls.Add(this.username1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.ResumeLayout(false);
             this.PerformLayout();
 

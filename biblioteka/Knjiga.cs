@@ -28,6 +28,11 @@ namespace biblioteka
         public List<string> Napomena = new List<string>();
 
 
+        public Knjiga()
+        {
+
+        }
+
         public Knjiga(string ID, string status, string naziv, string zanr, int redni_broj_izdanja, int godina_izdavanja, string izdavac, string ISBN, string stanje, string prostorija, string polica, int broj_primeraka, string citalac, string bibliotekar, DateTime datum_izdavanja, DateTime rok, List<string> sva_izdanja, List<string> pisac, List<string> napomena)
         {
             this.ID = ID;
@@ -42,11 +47,11 @@ namespace biblioteka
             this.Stanje = stanje;
             this.Prostorija = prostorija;
             this.Polica = polica;
-            this.UkupanBrojPrimeraka = UkupanBrojPrimeraka;
+            this.UkupanBrojPrimeraka = broj_primeraka;
             this.SvaIzdavanja = sva_izdanja;
             this.Citalac = citalac;
             this.DatumIzdavanja = datum_izdavanja;
-            this.RokZaVracanje = RokZaVracanje;
+            this.RokZaVracanje = rok;
             this.Bibliotekar = bibliotekar;
             this.Napomena = napomena;
         }

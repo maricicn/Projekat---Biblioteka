@@ -24,7 +24,7 @@ namespace biblioteka
         {
             if (string.IsNullOrEmpty(lID) || string.IsNullOrEmpty(lo) || llp == null) return;
             ID = lID;
-o = lo;
+            o = lo;
             p = llp;
             L_Aktivan = lla;
         }
@@ -37,9 +37,17 @@ o = lo;
             o = S[1];
             L_Aktivan = S[2].Trim() == "True";
             for (int i = 3; i < S.Length; i++)
+            try
             {
+                
                 p.Add(Data.FP(S[i]));
+                
             }
+            catch (Exception e)
+            {
+
+            }
+            
         }
 
         public void Dodavanje(string ID, string lo, List<string> lp, List<Napomena> napomena)

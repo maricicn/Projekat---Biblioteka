@@ -55,13 +55,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bibliotekar.cs" />
+    <Compile Include="BibliotekarLoby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BibliotekarLoby.Designer.cs">
+      <DependentUpon>BibliotekarLoby.cs</DependentUpon>
+    </Compile>
     <Compile Include="Citalac.cs" />
     <Compile Include="Covek.cs" />
+    <Compile Include="DodajCitaoca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajCitaoca.Designer.cs">
+      <DependentUpon>DodajCitaoca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaBibliotekar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaBibliotekar.Designer.cs">
+      <DependentUpon>FormaBibliotekar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaCItalac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaCItalac.Designer.cs">
+      <DependentUpon>FormaCItalac.cs</DependentUpon>
     </Compile>
     <Compile Include="FormaDodajKnjigu.cs">
       <SubType>Form</SubType>
@@ -107,6 +131,13 @@
     <Compile Include="IPisac.cs" />
     <Compile Include="IPolica.cs" />
     <Compile Include="IProstorija.cs" />
+    <Compile Include="FormIzvestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzvestaj.Designer.cs">
+      <DependentUpon>FormIzvestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izdavanje.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Napomena.cs" />
@@ -128,8 +159,22 @@
     <Compile Include="PROSTORIJA37.Designer.cs">
       <DependentUpon>PROSTORIJA37.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vracanje.cs" />
+    <Compile Include="Zakasnjenje.cs" />
+    <EmbeddedResource Include="BibliotekarLoby.resx">
+      <DependentUpon>BibliotekarLoby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajCitaoca.resx">
+      <DependentUpon>DodajCitaoca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaBibliotekar.resx">
+      <DependentUpon>FormaBibliotekar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaCItalac.resx">
+      <DependentUpon>FormaCItalac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaDodajKnjigu.resx">
       <DependentUpon>FormaDodajKnjigu.cs</DependentUpon>
@@ -142,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIzdavanjeKnjige.resx">
       <DependentUpon>FormIzdavanjeKnjige.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzvestaj.resx">
+      <DependentUpon>FormIzvestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPisac.resx">
       <DependentUpon>FormPisac.cs</DependentUpon>
@@ -201,6 +249,85 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofia-ritter-chatting-4k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\86e42162d216e1f016d0dd49e5278bf2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brankic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floating_Shelf_Ash_Veneer_1500mm_Shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_37564907_UF78p26mRJWYrYqJ97G2Ym5iN4IhDCMX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leerer-weisser-Raum_620x417px.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\razredni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xdxdxd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
