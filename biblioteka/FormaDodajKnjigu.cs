@@ -16,12 +16,18 @@ namespace biblioteka
         public FormaDodajKnjigu()
         {
             InitializeComponent();
-
+            btSkrozLevo.Visible = false;
+            btSkrozDesno.Visible = false;
+            btLevo.Visible = false;
+            btDesno.Visible = false;
 
             cbProstorija.Items.Clear();
             for (int i = 0; i < Data.prostorGdeSeNalazeProstorije.Count; i++)
             {
-                cbProstorija.Items.Add(Data.prostorGdeSeNalazeProstorije[i].o);
+                if (Data.prostorGdeSeNalazeProstorije[i].L_Aktivan == true)
+                {
+                    cbProstorija.Items.Add(Data.prostorGdeSeNalazeProstorije[i].o);
+                }
             }
 
             
@@ -49,7 +55,10 @@ namespace biblioteka
         {
             
             InitializeComponent();
-
+            btSkrozLevo.Visible = true;
+            btSkrozDesno.Visible = true;
+            btLevo.Visible = true;
+            btDesno.Visible = true;
 
             clbPisci.Items.Clear();
             this.indeks = indeks;
@@ -330,7 +339,10 @@ namespace biblioteka
                 {
                     for (int j = 0; j < Data.prostorGdeSeNalazeProstorije[i].p.Count; j++)
                     {
-                        cbPolica.Items.Add(Data.prostorGdeSeNalazeProstorije[i].p[j].o);
+                        if (Data.prostorGdeSeNalazeProstorije[i].p[j].L_Aktivan == true)
+                        {
+                            cbPolica.Items.Add(Data.prostorGdeSeNalazeProstorije[i].p[j].o);
+                        }
                     }
                 }
             }

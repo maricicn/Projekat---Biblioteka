@@ -81,6 +81,7 @@
             this.cbCitaoci.Size = new System.Drawing.Size(223, 21);
             this.cbCitaoci.TabIndex = 12;
             this.cbCitaoci.Text = " ";
+            this.cbCitaoci.SelectedIndexChanged += new System.EventHandler(this.cbCitaoci_SelectedIndexChanged);
             // 
             // btEditCitaoca
             // 

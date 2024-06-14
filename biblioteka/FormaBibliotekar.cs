@@ -20,11 +20,19 @@ namespace biblioteka
         public FormaBibliotekar()
         {
             InitializeComponent();
+            btSkrozLevo.Visible = false;
+            btSkrozDesno.Visible = false;
+            btLevo.Visible = false;
+            btDesno.Visible = false;
         }
 
         public FormaBibliotekar(Bibliotekar b, int indeks)
         {
             InitializeComponent();
+            btSkrozLevo.Visible = true;
+            btSkrozDesno.Visible = true;
+            btLevo.Visible = true;
+            btSkrozDesno.Visible = true;
             /*string ime = textBox1.Text;
             string prezime = textBox2.Text;
             string pol = comboBox4.SelectedItem.ToString();
@@ -164,117 +172,127 @@ namespace biblioteka
             txtGodinaRodjenjaPisca.Text = p.GodinaRodjenja.ToString();
 
             txtNapomenePisca.Lines = p.Napomena.ToArray();*/
-
-            indeks++;
-            if (indeks > Bibliotekar.bibliotekari.Count) indeks = 1;
-            Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
-            textBox1.Text = b.Ime;
-            textBox2.Text = b.Prezime;
-            comboBox4.Text = b.Pol;
-            comboBox1.Text = b.Status;
-            textBox5.Text = b.DanRodjenja.ToString();
-            textBox6.Text = b.MesecRodjenja.ToString();
-            textBox3.Text = b.GodinaRodjenja.ToString();
-            textBox7.Text = b.ImeJednogRoditelja;
-            textBox8.Text = b.JMBG;
-            textBox9.Text = b.AdresaUlicaBr;
-            textBox10.Text = b.AdresaGrad;
-            textBox11.Text = b.AdresaPostanskiBr.ToString();
-            textBox12.Text = b.Telefon;
-            textBox13.Text = b.Mail;
-            textBox14.Text = b.StepenStrucneSpreme;
-            textBox15.Text = b.SkolskoZvanje;
-            textBox16.Text = b.RadnaPozicija;
-            dateTimePicker1.Value = b.DatumZaposlenja;
-            textBox18.Text = b.KorisnickoIme;
-            textBox19.Text = b.Lozinka;
-            textBox4.Lines = b.Napomena.ToArray();
-
+            if (Bibliotekar.bibliotekari.Count > 1)
+            {
+                indeks++;
+                if (indeks > Bibliotekar.bibliotekari.Count) indeks = 1;
+                Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
+                textBox1.Text = b.Ime;
+                textBox2.Text = b.Prezime;
+                comboBox4.Text = b.Pol;
+                comboBox1.Text = b.Status;
+                textBox5.Text = b.DanRodjenja.ToString();
+                textBox6.Text = b.MesecRodjenja.ToString();
+                textBox3.Text = b.GodinaRodjenja.ToString();
+                textBox7.Text = b.ImeJednogRoditelja;
+                textBox8.Text = b.JMBG;
+                textBox9.Text = b.AdresaUlicaBr;
+                textBox10.Text = b.AdresaGrad;
+                textBox11.Text = b.AdresaPostanskiBr.ToString();
+                textBox12.Text = b.Telefon;
+                textBox13.Text = b.Mail;
+                textBox14.Text = b.StepenStrucneSpreme;
+                textBox15.Text = b.SkolskoZvanje;
+                textBox16.Text = b.RadnaPozicija;
+                dateTimePicker1.Value = b.DatumZaposlenja;
+                textBox18.Text = b.KorisnickoIme;
+                textBox19.Text = b.Lozinka;
+                textBox4.Lines = b.Napomena.ToArray();
+            }
 
 
         }
 
         private void btLevo_Click(object sender, EventArgs e)
         {
-            indeks--;
-            if (indeks <= 0) indeks = Bibliotekar.bibliotekari.Count;
-            Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
+            if (Bibliotekar.bibliotekari.Count > 1)
+            {
+                indeks--;
+                if (indeks <= 0) indeks = Bibliotekar.bibliotekari.Count;
+                Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
 
-            textBox1.Text = b.Ime;
-            textBox2.Text = b.Prezime;
-            comboBox4.Text = b.Pol;
-            comboBox1.Text = b.Status;
-            textBox5.Text = b.DanRodjenja.ToString();
-            textBox6.Text = b.MesecRodjenja.ToString();
-            textBox3.Text = b.GodinaRodjenja.ToString();
-            textBox7.Text = b.ImeJednogRoditelja;
-            textBox8.Text = b.JMBG;
-            textBox9.Text = b.AdresaUlicaBr;
-            textBox10.Text = b.AdresaGrad;
-            textBox11.Text = b.AdresaPostanskiBr.ToString();
-            textBox12.Text = b.Telefon;
-            textBox13.Text = b.Mail;
-            textBox14.Text = b.StepenStrucneSpreme;
-            textBox15.Text = b.SkolskoZvanje;
-            textBox16.Text = b.RadnaPozicija;
-            dateTimePicker1.Value = b.DatumZaposlenja;
-            textBox18.Text = b.KorisnickoIme;
-            textBox19.Text = b.Lozinka;
-            textBox4.Lines = b.Napomena.ToArray();
+                textBox1.Text = b.Ime;
+                textBox2.Text = b.Prezime;
+                comboBox4.Text = b.Pol;
+                comboBox1.Text = b.Status;
+                textBox5.Text = b.DanRodjenja.ToString();
+                textBox6.Text = b.MesecRodjenja.ToString();
+                textBox3.Text = b.GodinaRodjenja.ToString();
+                textBox7.Text = b.ImeJednogRoditelja;
+                textBox8.Text = b.JMBG;
+                textBox9.Text = b.AdresaUlicaBr;
+                textBox10.Text = b.AdresaGrad;
+                textBox11.Text = b.AdresaPostanskiBr.ToString();
+                textBox12.Text = b.Telefon;
+                textBox13.Text = b.Mail;
+                textBox14.Text = b.StepenStrucneSpreme;
+                textBox15.Text = b.SkolskoZvanje;
+                textBox16.Text = b.RadnaPozicija;
+                dateTimePicker1.Value = b.DatumZaposlenja;
+                textBox18.Text = b.KorisnickoIme;
+                textBox19.Text = b.Lozinka;
+                textBox4.Lines = b.Napomena.ToArray();
+            }
         }
 
         private void btSkrozDesno_Click(object sender, EventArgs e)
         {
-            indeks = Bibliotekar.bibliotekari.Count;
-            Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
-            textBox1.Text = b.Ime;
-            textBox2.Text = b.Prezime;
-            comboBox4.Text = b.Pol;
-            comboBox1.Text = b.Status;
-            textBox5.Text = b.DanRodjenja.ToString();
-            textBox6.Text = b.MesecRodjenja.ToString();
-            textBox3.Text = b.GodinaRodjenja.ToString();
-            textBox7.Text = b.ImeJednogRoditelja;
-            textBox8.Text = b.JMBG;
-            textBox9.Text = b.AdresaUlicaBr;
-            textBox10.Text = b.AdresaGrad;
-            textBox11.Text = b.AdresaPostanskiBr.ToString();
-            textBox12.Text = b.Telefon;
-            textBox13.Text = b.Mail;
-            textBox14.Text = b.StepenStrucneSpreme;
-            textBox15.Text = b.SkolskoZvanje;
-            textBox16.Text = b.RadnaPozicija;
-            dateTimePicker1.Value = b.DatumZaposlenja;
-            textBox18.Text = b.KorisnickoIme;
-            textBox19.Text = b.Lozinka;
-            textBox4.Lines = b.Napomena.ToArray();
+            if (Bibliotekar.bibliotekari.Count > 1)
+            {
+                indeks = Bibliotekar.bibliotekari.Count;
+                Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
+                textBox1.Text = b.Ime;
+                textBox2.Text = b.Prezime;
+                comboBox4.Text = b.Pol;
+                comboBox1.Text = b.Status;
+                textBox5.Text = b.DanRodjenja.ToString();
+                textBox6.Text = b.MesecRodjenja.ToString();
+                textBox3.Text = b.GodinaRodjenja.ToString();
+                textBox7.Text = b.ImeJednogRoditelja;
+                textBox8.Text = b.JMBG;
+                textBox9.Text = b.AdresaUlicaBr;
+                textBox10.Text = b.AdresaGrad;
+                textBox11.Text = b.AdresaPostanskiBr.ToString();
+                textBox12.Text = b.Telefon;
+                textBox13.Text = b.Mail;
+                textBox14.Text = b.StepenStrucneSpreme;
+                textBox15.Text = b.SkolskoZvanje;
+                textBox16.Text = b.RadnaPozicija;
+                dateTimePicker1.Value = b.DatumZaposlenja;
+                textBox18.Text = b.KorisnickoIme;
+                textBox19.Text = b.Lozinka;
+                textBox4.Lines = b.Napomena.ToArray();
+            }
         }
 
         private void btSkrozLevo_Click(object sender, EventArgs e)
         {
-            indeks = 1;
-            Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
-            textBox1.Text = b.Ime;
-            textBox2.Text = b.Prezime;
-            comboBox4.Text = b.Pol;
-            comboBox1.Text = b.Status;
-            textBox5.Text = b.DanRodjenja.ToString();
-            textBox6.Text = b.MesecRodjenja.ToString();
-            textBox3.Text = b.GodinaRodjenja.ToString();
-            textBox7.Text = b.ImeJednogRoditelja;
-            textBox8.Text = b.JMBG;
-            textBox9.Text = b.AdresaUlicaBr;
-            textBox10.Text = b.AdresaGrad;
-            textBox11.Text = b.AdresaPostanskiBr.ToString();
-            textBox12.Text = b.Telefon;
-            textBox13.Text = b.Mail;
-            textBox14.Text = b.StepenStrucneSpreme;
-            textBox15.Text = b.SkolskoZvanje;
-            textBox16.Text = b.RadnaPozicija;
-            dateTimePicker1.Value = b.DatumZaposlenja;
-            textBox18.Text = b.KorisnickoIme;
-            textBox19.Text = b.Lozinka;
-            textBox4.Lines = b.Napomena.ToArray();
+            if (Bibliotekar.bibliotekari.Count > 1)
+            {
+                indeks = 1;
+                Bibliotekar b = Data.pomeranjeBibliotekara(indeks);
+                textBox1.Text = b.Ime;
+                textBox2.Text = b.Prezime;
+                comboBox4.Text = b.Pol;
+                comboBox1.Text = b.Status;
+                textBox5.Text = b.DanRodjenja.ToString();
+                textBox6.Text = b.MesecRodjenja.ToString();
+                textBox3.Text = b.GodinaRodjenja.ToString();
+                textBox7.Text = b.ImeJednogRoditelja;
+                textBox8.Text = b.JMBG;
+                textBox9.Text = b.AdresaUlicaBr;
+                textBox10.Text = b.AdresaGrad;
+                textBox11.Text = b.AdresaPostanskiBr.ToString();
+                textBox12.Text = b.Telefon;
+                textBox13.Text = b.Mail;
+                textBox14.Text = b.StepenStrucneSpreme;
+                textBox15.Text = b.SkolskoZvanje;
+                textBox16.Text = b.RadnaPozicija;
+                dateTimePicker1.Value = b.DatumZaposlenja;
+                textBox18.Text = b.KorisnickoIme;
+                textBox19.Text = b.Lozinka;
+                textBox4.Lines = b.Napomena.ToArray();
+            }
         }
     }
 }

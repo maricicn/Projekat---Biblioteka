@@ -19,6 +19,7 @@ namespace biblioteka
             InitializeComponent();
             popuniComboBox();
             popuniComboBoxBibliotekari();
+            popuniComboBoxCitaoci();
             cBBibliotekar.Text = Form1.idimeprezime;
         }
         private void popuniComboBox()
@@ -40,6 +41,17 @@ namespace biblioteka
                 if (Bibliotekar.bibliotekari[i].Status.ToLower() == "aktivan")
                 {
                     cBBibliotekar.Items.Add(Bibliotekar.bibliotekari[i].ID + " " + Bibliotekar.bibliotekari[i].Ime + " " + Bibliotekar.bibliotekari[i].Prezime);
+                }
+            }
+        }
+        void popuniComboBoxCitaoci()
+        {
+            cBCitalac.Items.Clear();
+            for (int i = 0; i < Data.ListaCitalaca.Count; i++)
+            {
+                if (Data.ListaCitalaca[i].Status.ToLower() == "aktivan")
+                {
+                    cBCitalac.Items.Add(Data.ListaCitalaca[i].ID + " " + Data.ListaCitalaca[i].Ime + " " + Data.ListaCitalaca[i].Prezime);
                 }
             }
         }

@@ -18,11 +18,19 @@ namespace biblioteka
         public DodajCitaoca()
         {
             InitializeComponent();
+            btSkrozLevo.Visible = false;
+            btSkrozDesno.Visible = false;
+            btLevo.Visible = false;
+            btDesno.Visible = false;
         }
 
         public DodajCitaoca(Citalac c, int indeks)
         {
             InitializeComponent();
+            btSkrozLevo.Visible = true;
+            btSkrozDesno.Visible = true;
+            btLevo.Visible = true;
+            btDesno.Visible = true;
             this.indeks = indeks;
             /*cbStatusPisca.Text = p.Status;
             txtImePisca.Text = p.Ime;

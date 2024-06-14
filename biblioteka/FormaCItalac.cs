@@ -241,5 +241,10 @@ namespace biblioteka
                 }
             }
         }
+
+        private void cbCitaoci_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
