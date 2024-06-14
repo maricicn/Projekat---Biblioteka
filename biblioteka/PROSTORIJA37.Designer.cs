@@ -227,6 +227,7 @@
             this.Controls.Add(this.Ipsum);
             this.Controls.Add(this.Lorem);
             this.Controls.Add(this.Sacuvaj);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PROSTORIJA37";
             this.Text = "PROSTORIJA37";
