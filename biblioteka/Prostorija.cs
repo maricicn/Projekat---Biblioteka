@@ -35,7 +35,7 @@ o = lo;
             //if (S.Length != 3) return;
             ID = S[0];
             o = S[1];
-            L_Aktivan = S[2] == "True";
+            L_Aktivan = S[2].Trim() == "True";
             for (int i = 3; i < S.Length; i++)
             {
                 p.Add(Data.FP(S[i]));
