@@ -31,17 +31,17 @@ namespace biblioteka
 
         public Prostorija(string s)
         {
+            string[] S = s.Split(';');
+            //if (S.Length != 3) return;
+            ID = S[0];
+            o = S[1];
+            L_Aktivan = S[2].Trim() == "True";
+            for (int i = 3; i < S.Length; i++)
             try
             {
-                string[] S = s.Split(';');
-                //if (S.Length != 3) return;
-                ID = S[0];
-                o = S[1];
-                L_Aktivan = S[2] == "True";
-                for (int i = 3; i < S.Length; i++)
-                {
-                    p.Add(Data.FP(S[i]));
-                }
+                
+                p.Add(Data.FP(S[i]));
+                
             }
             catch (Exception e)
             {
