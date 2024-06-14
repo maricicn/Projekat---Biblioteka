@@ -42,20 +42,20 @@
             this.lblPronadjenCitalac.AutoSize = true;
             this.lblPronadjenCitalac.ForeColor = System.Drawing.Color.IndianRed;
             this.lblPronadjenCitalac.Image = global::biblioteka.Properties.Resources.images;
-            this.lblPronadjenCitalac.Location = new System.Drawing.Point(104, 148);
-            this.lblPronadjenCitalac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPronadjenCitalac.Location = new System.Drawing.Point(139, 182);
             this.lblPronadjenCitalac.Name = "lblPronadjenCitalac";
-            this.lblPronadjenCitalac.Size = new System.Drawing.Size(56, 13);
+            this.lblPronadjenCitalac.Size = new System.Drawing.Size(74, 17);
             this.lblPronadjenCitalac.TabIndex = 15;
             this.lblPronadjenCitalac.Text = "Bibliotekar";
             // 
             // txtPretraga
             // 
-            this.txtPretraga.Location = new System.Drawing.Point(105, 123);
-            this.txtPretraga.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPretraga.Location = new System.Drawing.Point(140, 151);
+            this.txtPretraga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(135, 20);
+            this.txtPretraga.Size = new System.Drawing.Size(179, 22);
             this.txtPretraga.TabIndex = 14;
+            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged_1);
             // 
             // lblPretraga
             // 
@@ -63,30 +63,32 @@
             this.lblPretraga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPretraga.ForeColor = System.Drawing.Color.IndianRed;
             this.lblPretraga.Image = global::biblioteka.Properties.Resources.images;
-            this.lblPretraga.Location = new System.Drawing.Point(30, 123);
-            this.lblPretraga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPretraga.Location = new System.Drawing.Point(40, 151);
             this.lblPretraga.Name = "lblPretraga";
-            this.lblPretraga.Size = new System.Drawing.Size(70, 20);
+            this.lblPretraga.Size = new System.Drawing.Size(86, 25);
             this.lblPretraga.TabIndex = 13;
             this.lblPretraga.Text = "Pretraga";
             // 
             // cbCitaoci
             // 
+            this.cbCitaoci.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbCitaoci.FormattingEnabled = true;
-            this.cbCitaoci.Location = new System.Drawing.Point(550, 307);
-            this.cbCitaoci.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCitaoci.Location = new System.Drawing.Point(665, 373);
+            this.cbCitaoci.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCitaoci.Name = "cbCitaoci";
-            this.cbCitaoci.Size = new System.Drawing.Size(223, 21);
+            this.cbCitaoci.Size = new System.Drawing.Size(296, 24);
             this.cbCitaoci.TabIndex = 12;
+            this.cbCitaoci.Text = " ";
             // 
             // btEditCitaoca
             // 
             this.btEditCitaoca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditCitaoca.BackgroundImage")));
             this.btEditCitaoca.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEditCitaoca.ForeColor = System.Drawing.Color.IndianRed;
-            this.btEditCitaoca.Location = new System.Drawing.Point(550, 189);
+            this.btEditCitaoca.Location = new System.Drawing.Point(665, 233);
+            this.btEditCitaoca.Margin = new System.Windows.Forms.Padding(4);
             this.btEditCitaoca.Name = "btEditCitaoca";
-            this.btEditCitaoca.Size = new System.Drawing.Size(222, 96);
+            this.btEditCitaoca.Size = new System.Drawing.Size(296, 118);
             this.btEditCitaoca.TabIndex = 11;
             this.btEditCitaoca.Text = "Edituj Citaoca";
             this.btEditCitaoca.UseVisualStyleBackColor = true;
@@ -97,9 +99,10 @@
             this.btDodajCitaoca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDodajCitaoca.BackgroundImage")));
             this.btDodajCitaoca.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDodajCitaoca.ForeColor = System.Drawing.Color.IndianRed;
-            this.btDodajCitaoca.Location = new System.Drawing.Point(27, 189);
+            this.btDodajCitaoca.Location = new System.Drawing.Point(100, 233);
+            this.btDodajCitaoca.Margin = new System.Windows.Forms.Padding(4);
             this.btDodajCitaoca.Name = "btDodajCitaoca";
-            this.btDodajCitaoca.Size = new System.Drawing.Size(222, 96);
+            this.btDodajCitaoca.Size = new System.Drawing.Size(296, 118);
             this.btDodajCitaoca.TabIndex = 10;
             this.btDodajCitaoca.Text = "Dodaj Citaoca";
             this.btDodajCitaoca.UseVisualStyleBackColor = true;
@@ -107,15 +110,16 @@
             // 
             // FormaCItalac
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblPronadjenCitalac);
             this.Controls.Add(this.txtPretraga);
             this.Controls.Add(this.lblPretraga);
             this.Controls.Add(this.cbCitaoci);
             this.Controls.Add(this.btEditCitaoca);
             this.Controls.Add(this.btDodajCitaoca);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormaCItalac";
             this.Text = "FormaCItalac";
             this.ResumeLayout(false);

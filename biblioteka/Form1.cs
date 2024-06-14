@@ -14,8 +14,6 @@ using System.Security.Policy;
 
 namespace biblioteka
 {
-    
-
     public partial class Form1 : Form
     {
 
@@ -36,6 +34,7 @@ namespace biblioteka
             Data.UcitajKnjige();
             Data.UcitajIzdavanja();
             Data.ucitajBibliotekare();
+            Data.UcitajCitaoce();
             Data.PopuniListuZakasnjenja();
             
 
@@ -61,7 +60,7 @@ namespace biblioteka
             //SetCustomCursor();
             librarians = new List<Librarian>
             {
-                new Librarian ("admin", "admin123")
+                new Librarian ("a", "a")
             };
             popuniBibliotekare();
         }
@@ -243,6 +242,12 @@ namespace biblioteka
                 Librarian newLibrarian = new Librarian(username, password, id_ime_prezime);
                 librarians.Add(newLibrarian);
             }
+        }
+
+        private void citalac_Click(object sender, EventArgs e)
+        {
+            FormaCItalac forma = new FormaCItalac();
+            forma.ShowDialog();
         }
     }
 }
