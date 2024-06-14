@@ -29,6 +29,14 @@ o = lo;
             L_Aktivan = lla;
         }
 
+        public Prostorija(string lID, string lo, bool lla)
+        {
+            if (string.IsNullOrEmpty(lID) || string.IsNullOrEmpty(lo)) return;
+            ID = lID;
+            o = lo;
+            L_Aktivan = lla;
+        }
+
         public Prostorija(string s)
         {
             string[] S = s.Split(';');

@@ -37,21 +37,24 @@ namespace biblioteka
 
 
             string[] po = Dolor.Text.Split(',');
-            List<Polica> s = new List<Polica>();
-            foreach (string a in po)
-            {
-                for (int i = 0; i < Data.listaPolica.Count; i++)
-                {
-                    if (a == Data.listaPolica[i].Id)
-                    {
-                        s.Add(Data.listaPolica[i]);
-                    }
-                }
-            }
-            Prostorija po1 = new Prostorija(Lorem.Text, Ipsum.Text, s, comboBox1.Text == "Aktivan");
+            //List<Polica> s = new List<Polica>();
+            //foreach (string a in po)
+            //{
+            //    for (int i = 0; i < Data.listaPolica.Count; i++)
+            //    {
+            //        if (a == Data.listaPolica[i].Id)
+            //        {
+            //            s.Add(Data.listaPolica[i]);
+            //        }
+            //    }
+            //}
+
+            Prostorija po1 = new Prostorija(Lorem.Text, Ipsum.Text, comboBox1.Text == "Aktivan");
             try
             {
+                Prostorija s = Data.prostorGdeSeNalazeProstorije[Data.IP1];
                 Data.prostorGdeSeNalazeProstorije[Data.IP1] = po1;
+                po1.p = s.p;
             }
             catch
             {
