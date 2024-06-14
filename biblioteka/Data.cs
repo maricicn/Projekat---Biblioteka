@@ -19,7 +19,8 @@ namespace biblioteka
         public static List<Polica> listaPolica = new List<Polica>();
         public static List<Izdavanje> ListaIzdavanja = new List<Izdavanje>();
         public static List<Izdavanje> TrenutnaIzdavanja = new List<Izdavanje>();
-        public static List<Vracanje> ListaVracanja = new List<Vracanje> ();
+        public static List<Vracanje> ListaVracanja = new List<Vracanje>();
+        public static List<Citalac> ListaCitalaca = new List<Citalac>();
         public static List<Zakasnjenje> ListaZakasnjenja = new List<Zakasnjenje>();
         public static int IP;
         public static int IP1;
@@ -38,6 +39,20 @@ namespace biblioteka
 
 
 
+
+        public static Citalac pomeranjeCitaoca(int g)
+        {
+            string indeks = g.ToString();
+            Citalac c = new Citalac();
+            for (int i = 0; i < ListaCitalaca.Count; i++)
+            {
+                if (ListaCitalaca[i].ID == indeks)
+                {
+                    c = ListaCitalaca[i];
+                }
+            }
+            return c;
+        }
 
 
         public static Bibliotekar pomeranjeBibliotekara(int g)
@@ -83,6 +98,145 @@ namespace biblioteka
             }
             return p;
         }
+
+
+
+
+
+
+        public static void DodajCitaoca(Citalac c)
+        {
+            ListaCitalaca.Add(c);
+        }
+
+        public static void SacuvajCitaoce()
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter("citaoci.csv");
+
+                for (int i = 0; i < ListaCitalaca.Count; i++)
+                {
+                    Citalac c = ListaCitalaca[i];
+                    string n = "";
+                    string sk = "";
+                    string stk = "";
+
+                    if (c.Napomena.Count > 0)
+                    {
+                        for (int j = 0; j < c.Napomena.Count - 1; j++)
+                        {
+                            n += c.Napomena[j] + '$';
+                        }
+                        n += c.Napomena[c.Napomena.Count - 1];
+                    }
+
+
+                    if (c.SveKnjige.Count > 0)
+                    {
+                        for (int j = 0; j < c.SveKnjige.Count - 1; j++)
+                        {
+                            sk += c.SveKnjige[j] + '$';
+                        }
+                        sk += c.SveKnjige[c.SveKnjige.Count - 1];
+                    }
+
+
+                    if (c.SveTrenutneKnjige.Count > 0)
+                    {
+                        for (int j = 0; j < c.SveTrenutneKnjige.Count - 1; j++)
+                        {
+                            stk = c.SveTrenutneKnjige[j] + '$';
+                        }
+                        stk = c.SveTrenutneKnjige[c.SveTrenutneKnjige.Count - 1];
+                    }
+
+                    //string id, string status, string ime, string prezime, string pol, int godinarodjenja, string imejednogroditelja,
+                    /*int danrodjenja, int mesecrodjenja, string jmbg, string adresaulicabr, string adresagrad, int adresapostanskibr, string telefon,
+                        string mail, string stepenstrucnespreme, string skolskozvanje,
+                        string TrenRadniStatus, string BrojIDDokumenta, string BrojClanskeKarte, DateTime PrviUpis, DateTime ProduzenjeClanstva,
+                        float IznosClanarine, DateTime TrajanjeClanstva;*/
+                    string x = c.PrviUpis.ToString();
+                    sw.WriteLine(c.ID
+                        + ";" + c.Status
+                        + ";" + c.Ime
+                        + ";" + c.Prezime
+                        + ";" + c.Pol
+                        + ";" + c.GodinaRodjenja
+                        + ";" + c.ImeJednogRoditelja
+                        + ";" + c.DanRodjenja
+                        + ";" + c.MesecRodjenja
+                        + ";" + c.JMBG
+                        + ";" + c.AdresaUlicaBr
+                        + ";" + c.AdresaGrad
+                        + ";" + c.AdresaPostanskiBr
+                        + ";" + c.Telefon
+                        + ";" + c.Mail
+                        + ";" + c.StepenStrucneSpreme
+                        + ";" + c.SkolskoZvanje
+                        + ";" + c.TrenRadniStatus
+                        + ";" + c.BrojIDDokumenta
+                        + ";" + c.BrojClanskeKarte
+                        + ";" + c.PrviUpis
+                        + ";" + c.ProduzenjeClanstva
+                        + ";" + c.IznosClanarine
+                        + ";" + c.TrajanjeClanstva
+                        + ";" + sk + ";" + stk + ";" + n);
+                }
+
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+
+
+
+
+
+        public static void UcitajCitaoce()
+        {
+            //try
+            {
+                StreamReader sr = new StreamReader("citaoci.csv", true);
+                while (!sr.EndOfStream)
+                {
+                    string l = sr.ReadLine();
+
+                    List<string> delovi = new List<string>();
+                    delovi = l.Split(';').ToList<string>();
+                    //string[] delovi = l.Split(',');
+
+                    List<string> napomene = new List<string>();
+                    List<string> sveKnjige = new List<string>();
+                    List<string> sveTrenutneKnjige = new List<string>();
+
+                    napomene = delovi[delovi.Count - 1].Split('$').ToList<string>();
+                    sveTrenutneKnjige = delovi[delovi.Count - 2].Split('$').ToList<string>();
+                    sveKnjige = delovi[delovi.Count - 3].Split('$').ToList<string>();
+
+
+                    
+                    Citalac c = new Citalac(delovi[0], delovi[1], delovi[2], delovi[3], delovi[4], int.Parse(delovi[5]), delovi[6], int.Parse(delovi[7]), int.Parse(delovi[8]), delovi[9], delovi[10], delovi[11], int.Parse(delovi[12]), delovi[13], delovi[14], delovi[15], delovi[16], delovi[17], delovi[18], delovi[19], DateTime.Parse(delovi[20]), DateTime.Parse(delovi[21]), float.Parse(delovi[22]), DateTime.Parse(delovi[23]), sveKnjige, sveTrenutneKnjige, napomene);
+                    ListaCitalaca.Add(c);
+                }
+                sr.Close();
+            }
+            //catch (Exception e)
+            {
+
+            }
+        }
+
+
+
+
+
+
+
 
         public static void SacuvajKnjige()
         {
