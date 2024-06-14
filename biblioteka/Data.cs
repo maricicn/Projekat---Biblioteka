@@ -199,7 +199,7 @@ namespace biblioteka
 
         public static void UcitajCitaoce()
         {
-            //try
+            try
             {
                 StreamReader sr = new StreamReader("citaoci.csv", true);
                 while (!sr.EndOfStream)
@@ -225,7 +225,7 @@ namespace biblioteka
                 }
                 sr.Close();
             }
-            //catch (Exception e)
+            catch (Exception e)
             {
 
             }
