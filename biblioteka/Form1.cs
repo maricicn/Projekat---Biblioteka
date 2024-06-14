@@ -60,7 +60,7 @@ namespace biblioteka
             //SetCustomCursor();
             librarians = new List<Librarian>
             {
-                new Librarian ("a", "a")
+                new Librarian ("admin", "admin123")
             };
             popuniBibliotekare();
         }
