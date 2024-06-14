@@ -143,6 +143,16 @@ namespace biblioteka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap razredni {
+            get {
+                object obj = ResourceManager.GetObject("razredni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap s {
             get {
                 object obj = ResourceManager.GetObject("s", resourceCulture);
@@ -236,6 +246,16 @@ namespace biblioteka.Properties {
         internal static System.Drawing.Bitmap Untitled_51 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-51", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xdxdxd {
+            get {
+                object obj = ResourceManager.GetObject("xdxdxd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

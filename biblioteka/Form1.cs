@@ -65,10 +65,6 @@ namespace biblioteka
             popuniBibliotekare();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
         private void SetCustomCursor1()
         {
             /*
