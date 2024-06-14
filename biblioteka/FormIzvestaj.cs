@@ -112,7 +112,7 @@ namespace biblioteka
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (index < Data.ListaZakasnjenja.Count() - 1)
+            if (indexZakasnjenja < Data.ListaZakasnjenja.Count() - 1)
             {
                 indexZakasnjenja++;
                 ZakasnjenjeIspisi(indexZakasnjenja);
