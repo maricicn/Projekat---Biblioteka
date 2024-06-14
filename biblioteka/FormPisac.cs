@@ -35,6 +35,15 @@ namespace biblioteka
         public FormPisac(Pisac p, int indeks)
         {
             InitializeComponent();
+
+
+            string url = Directory.GetCurrentDirectory();
+            url = Directory.GetParent(url).FullName;
+            url = Directory.GetParent(url).FullName + "\\bye.mp3";
+            player.URL = url;
+            player.controls.play();
+
+
             btSkrozLevo.Visible = true;
             btSkrozDesno.Visible = true;
             btLevo.Visible = true;

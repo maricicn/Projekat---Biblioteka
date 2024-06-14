@@ -11,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Security.Policy;
+using static biblioteka.Form1;
 
 namespace biblioteka
 {
@@ -244,6 +245,23 @@ namespace biblioteka
         {
             FormaCItalac forma = new FormaCItalac();
             forma.ShowDialog();
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Uspesno ste se izlogovali");
+            vracanje_knjiga.Enabled = false;
+            izdavanje_knjiga.Enabled = false;
+            izvestaj.Enabled = false;
+            prostorija.Enabled = false;
+            polica.Enabled = false;
+            pisac.Enabled = false;
+            knjiga.Enabled = false;
+            bibliotekar.Enabled = false;
+            citalac.Enabled = false;
+            username1.Text = "";
+            password1.Text = "";
+
         }
     }
 }
