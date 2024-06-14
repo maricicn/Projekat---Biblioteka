@@ -37,17 +37,9 @@ namespace biblioteka
             o = S[1];
             L_Aktivan = S[2].Trim() == "True";
             for (int i = 3; i < S.Length; i++)
-            try
             {
-                
-                p.Add(Data.FP(S[i]));
-                
+                p.Add(Data.FP(S[i]));   
             }
-            catch (Exception e)
-            {
-
-            }
-            
         }
 
         public void Dodavanje(string ID, string lo, List<string> lp, List<Napomena> napomena)
