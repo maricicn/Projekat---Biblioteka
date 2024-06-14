@@ -26,6 +26,7 @@ namespace biblioteka
             btDesno.Visible = false;
 
             string url = Directory.GetCurrentDirectory();
+            url = Directory.GetParent(url).FullName;
             url = Directory.GetParent(url).FullName + "\\bye.mp3";
             player.URL = url;
             player.controls.play();
